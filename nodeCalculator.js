@@ -85,7 +85,7 @@ function innerCheck(sorted,max,coord,every){
 }
 function inside(variable,array){
     for(let i = 0; i<array.length;i++){
-        if (variable === array[i]){
+        if (variable.trim() == array[i].trim()){
             return true
         }
     }
@@ -108,7 +108,7 @@ function main(trio,node){
         let empty = []
         for (let j = 0; j<lines.length;j++){
             if (lines[j][0] === op[i]){
-                if(inside(lines[j][1],op) && inside(lines[j][2],op)){
+                if(inside(lines[j][1],op) && inside(lines[j][2].trim(),op)){
                     empty.push(lines[j])
                 }
             }
@@ -116,14 +116,14 @@ function main(trio,node){
         sorted.push(empty)
     }
     let leng = []
-    
+    let ln = sorted.length
+    let optimal = Math.round((op.length/3)*2)
     for(let i = 0; i<sorted.length;i++){
         if(sorted[i].length === 0){
             sorted.splice(i,1)
         }
     }
-    let ln = sorted.length
-    let optimal = Math.round((ln/3)*2)
+    
     for(let i = 0; i< sorted.length;i++){
         leng.push(sorted[i].length)
     }
@@ -133,6 +133,9 @@ function main(trio,node){
     }
     out.innerHTML = ""
     // not possible
+    console.log(ln)
+    console.log(optimal)
+    console.log(sorted.length)
     if(ln < optimal){
         out.appendChild(document.createTextNode("impossible"))
         return 
