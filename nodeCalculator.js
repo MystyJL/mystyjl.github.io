@@ -133,9 +133,6 @@ function main(trio,node){
     }
     out.innerHTML = ""
     // not possible
-    console.log(ln)
-    console.log(optimal)
-    console.log(sorted.length)
     if(ln < optimal){
         out.appendChild(document.createTextNode("impossible"))
         return 
