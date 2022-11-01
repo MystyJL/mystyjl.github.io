@@ -53,6 +53,9 @@ function outterCheck(coords,sorted,every){
     return false
 }
 function itterate(coord,max,i,min){
+    if(coord.length ===0){
+        return false
+    }
     if (coord.length === 1 && (coord[0][i]+1)>=max[0])
         return false
     else if (coord.length === 1){
