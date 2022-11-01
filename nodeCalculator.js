@@ -34,14 +34,9 @@ function test(master,every,coord){
 function outterCheck(coords,sorted,every){
     // max is the list of maxes for the y aka the length of the buckets in position sorted[x]
     // max1 is the list of maxes for the x's should me sorted.length,sorted.length-1,... reversed
-    // min of position i should be the x in coords at position i-1 to ensure no duplicates
     let max = []
     let max1 = []
-    let min = [0]
-    // initializing min max and max1
-    for (let i = 1; i<coords.length;i++){
-        min.push(coords[i-1][0]+1)
-    }
+    // initializing max and max1
     for(let i = 0; i<coords.length;i++){
         max.push((sorted[coords[i][0]]).length)
         max1.push(sorted.length)
@@ -50,18 +45,13 @@ function outterCheck(coords,sorted,every){
         max1[max1.length-i-1] -= i
     }
     if (innerCheck(sorted,max,coords,every))
-            return true
+        return true
     // you can think of this while as a bunch of nested for loops
-    while(itterate(coords,max1,0,min)!=false){
+    while(itterate(coords,max1,0)!=false){
         // max needs to change every time because the "buckets" do not have equal lengths
         max = []
         for(let i = 0; i<coords.length;i++){
             max.push(sorted[coords[i][0]].length)
-        }
-        // minimums of x's in position i should be 1+ x's in position i-1
-        min = [0]
-        for (let i = 1; i<coords.length;i++){
-            min.push(coords[i-1][0]+1)
         }
         // iterates the y coordinates instead of the x coordinates
         if (innerCheck(sorted,max,coords,every))
@@ -77,26 +67,22 @@ function outterCheck(coords,sorted,every){
 // coord is coordinate array of structure [[x,y],...]
 // max is the max that x or y can go to depending on i
 // i tells us whether to look at x or y
-// min is what we set our coords to when we carry over
-function itterate(coord,max,i,min){
+function itterate(coord,max,i){
     // base case of the recursion
     if(coord.length ===0){
         return false
-    }
-    // what i thought was a valid base case but its here now cause im too scared to remove it
-    if (coord.length === 1 && (coord[0][i]+1)>=max[0])
-        return false
-    else if (coord.length === 1){
-        coord[0][i]+=1
-        return true
     }
     // the itteration
     coord[coord.length-1][i]+=1
     // carrying over the 1 like when you add 1 to 9999999999 and you have to recursively carry over
     if (coord[coord.length-1][i]>=max[max.length-1]){
-        coord[coord.length-1][i] = min[min.length-1]-1
+        coord[coord.length-1][i] = 0
         // the recursive (inductive) step
-        return true && itterate(coord.slice(0,coord.length-1),max.slice(0,max.length-1),i,min.slice(0,min.length-1))
+        let boolz = true && itterate(coord.slice(0,coord.length-1),max.slice(0,max.length-1),i)
+        if (i == 0 && coord.length >1 && coord[coord.length-1][i]<= coord[coord.length-2][i]){
+            coord[coord.length-1][i] = coord[coord.length-2][i]+1
+        }
+        return boolz
     }
     return true
 }
@@ -106,20 +92,12 @@ function itterate(coord,max,i,min){
 // every a list of all useful nodes parts
 // max is a list of the lengths of the "buckets" in sorted
 function innerCheck(sorted,max,coord,every){
-    // the min portion of the itterate code is so we never double check
     // it isnt useful for when we change y but it is very helpful when we itterate x
     // for y we always return to 0
-    let min = []
-    for(let i = 0; i<max.length;i++){
-        if (coord[i][1]>max[i]){
-            return false
-        }
-        min.push(1)
-    }
     if (test(sorted,every,coord))
         return true
     // the itterate function was my solution to using 3-9 nested for loops
-    while(itterate(coord,max,1,min)){
+    while(itterate(coord,max,1)){
         if (test(sorted,every,coord))
             return true
     }
