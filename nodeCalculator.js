@@ -80,6 +80,14 @@ function innerCheck(sorted,max,coord,every){
     }
     return false
 }
+function inside(variable,array){
+    for(let i = 0; i<array.length;i++){
+        if (variable === array[i]){
+            return true
+        }
+    }
+    return false
+}
 var nodes = document.getElementById('optimal');
 var trios = document.getElementById('trio');
 var out = document.getElementById('output');
@@ -96,19 +104,23 @@ function main(trio,node){
     for (let i = 0; i<op.length;i++){
         let empty = []
         for (let j = 0; j<lines.length;j++){
-            if (lines[j][0] === op[i])
-                empty.push(lines[j])
+            if (lines[j][0] === op[i]){
+                if(inside(lines[j][1],op) && inside(lines[j][2],op)){
+                    empty.push(lines[j])
+                }
+            }
         }
         sorted.push(empty)
     }
     let leng = []
-    let ln = sorted.length
-    let optimal = Math.round((ln/3)*2)
+    
     for(let i = 0; i<sorted.length;i++){
         if(sorted[i].length === 0){
             sorted.splice(i,1)
         }
     }
+    let ln = sorted.length
+    let optimal = Math.round((ln/3)*2)
     for(let i = 0; i< sorted.length;i++){
         leng.push(sorted[i].length)
     }
