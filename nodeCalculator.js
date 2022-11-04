@@ -139,16 +139,13 @@ function main(trio,node){
                 }
             }
         }
-        sorted.push(empty)
+        if (empty.length >0){
+            sorted.push(empty)
+        }
     }
     
     // lowest number
     let optimal = Math.ceil((op.length/3)*2)
-    for(let i = 0; i<sorted.length;i++){
-        if(sorted[i].length === 0){
-            sorted.splice(i,1)
-        }
-    }    
     // leng holds the length of each "bucket" in sorted 
     let leng = []
     for(let i = 0; i< sorted.length;i++){
