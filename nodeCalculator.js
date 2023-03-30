@@ -125,6 +125,10 @@ function main(trio,node){
         lines[i] = lines[i].trim()
         lines[i] = lines[i].split(",")
     }
+    for(let i = 0; i<op.length;i++){
+        op[i] = op[i].toLowerCase()
+        op[i] = op[i].trim()
+    }
     // you can think of sorted as an array of buckets
     let sorted = []
     for (let i = 0; i<op.length;i++){
@@ -143,7 +147,6 @@ function main(trio,node){
             sorted.push(empty)
         }
     }
-    
     // lowest number
     let optimal = Math.ceil((op.length/3)*2)
     // leng holds the length of each "bucket" in sorted 
@@ -159,7 +162,6 @@ function main(trio,node){
     }
     // clear the output area
     out.innerHTML = ""
-
     // impossible case
     if(sorted.length < optimal){
         out.appendChild(document.createTextNode("impossible"))
@@ -177,6 +179,12 @@ function main(trio,node){
     out.appendChild(document.createTextNode("impossible"))
     return 
 }
+// loadStorage(){
+
+// }
 calc.addEventListener('click', function(evt) {
     main(trios,nodes)
 })
+// document.addEventListener("DOMContentLoaded", function() {
+//     loadStorage()
+//   });
