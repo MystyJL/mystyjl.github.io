@@ -179,12 +179,41 @@ function main(trio,node){
     out.appendChild(document.createTextNode("impossible"))
     return 
 }
-// loadStorage(){
-
-// }
+var t = `Fan, Ghost, Vortex
+Fan, Ground, Ghost
+Fan, Clone, Vortex
+Ground, Iron Fan, Fan
+Ground, Clone, Ghost
+Ground, Ghost, Iron Fan
+Ghost, Fan, Vortex
+Ghost, Vortex, Fan
+Vortex, Ghost, Clone
+Vortex, Iron Fan, Fan
+Vortex, Fan, Iron Fan
+Vortex, Fan, Ghost
+Clone, Ghost, Ground
+Clone, Vortex, Ghost`
+var essential = `fan,ghost,vortex,ground,clone,iron fan`
+function loadStorage(){
+    if (localStorage.getItem("Trios")!=null){
+        t = JSON.parse(localStorage.Trios);
+    }
+    if (localStorage.getItem("Essential")!=null){
+        essential = JSON.parse(localStorage.Essential);
+    }
+    nodes.value = essential
+    trios.value = t
+}
+function store(){
+    console.log(nodes.value)
+    console.log(trios.value)
+    localStorage.Essential= JSON.stringify(nodes.value);
+    localStorage.Trios = JSON.stringify(trios.value)
+}
 calc.addEventListener('click', function(evt) {
+    store()
     main(trios,nodes)
 })
-// document.addEventListener("DOMContentLoaded", function() {
-//     loadStorage()
-//   });
+document.addEventListener("DOMContentLoaded", function() {
+    loadStorage()
+  });
