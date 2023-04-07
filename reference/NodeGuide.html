@@ -8,1066 +8,1519 @@
     
     <link rel="stylesheet" href="./NodeGuide.css">
 </head>
-<h1>Maplestory Node Solver</h1>
-<p class="title"> If something is wrong feel free to dm me on discord what exactly is wrong and I will change it</p>
-<p class="title">Made by: Mysty#0575</p>
-<p class="title"> <a class="link"href="../index.html">Mix and Match Solver</a></p>
-<h2 id="tableTitle">Table of Contents</h2>
-<div class="toc">
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Adele/Icon.png">
-        </li>
-        <li>
-            <a href="#adele">Adele</a>            
-        </li>
-    </ul>    
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/AngelicBuster/Icon.png">
-        </li>
-        <li>
-            <a href="#ab">Angelic Buster</a>           
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Aran/Icon.png">
-        </li>
-        <li>
-            <a href="#aran">Aran</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/FirePoison/Icon.png">
-        </li>
-        <li>
-            <a href="#fp">Arch Mage(F/P)</a>           
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/IceLightning/Icon.png">
-        </li>
-        <li>
-            <a href="#il">Arch Mage(I/L)</a>            
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Ark/Icon.png">
-        </li>
-        <li>
-            <a href="#ark">Ark</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/BattleMage/Icon.png">
-        </li>
-        <li>
-            <a href="#bam">Battle Mage</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/BeastTamer/Icon.png">
-        </li>
-        <li>
-            <a href="#bt">Beast Tamer</a>        
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Bishop/Icon.png">
-        </li>
-        <li>
-            <a href="#bish">Bishop</a>         
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Blaster/Icon.png">
-        </li>
-        <li>
-            <a href="#blaster">Blaster</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/BlazeWizard/Icon.png">
-        </li>
-        <li>
-            <a href="#bw">Blaze Wizard</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Bowmaster/Icon.png">
-        </li>
-        <li>
-            <a href="#bm">Bowmaster</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Buccaneer/Icon.png">
-        </li>
-        <li>
-            <a href="#bucc">Buccaneer</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Cadena/Icon.png">
-        </li>
-        <li>
-            <a href="#cadena">Cadena</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/CannonMaster/Icon.png">
-        </li>
-        <li>
-            <a href="#cm">Cannoneer</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Corsair/Icon.png">
-        </li>
-        <li>
-            <a href="#sair">Corsair</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/DarkKnight/Icon.png">
-        </li>
-        <li>
-            <a href="#dk">Dark Knight</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/DawnWarrior/Icon.png">
-        </li>
-        <li>
-            <a href="#dw">Dawn Warrior</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/DemonAvenger/Icon.png">
-        </li>
-        <li>
-            <a href="#da">Demon Avenger</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/DemonSlayer/Icon.png">
-        </li>
-        <li>
-            <a href="#ds">Demon Slayer</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/DualBlade/Icon.png">
-        </li>
-        <li>
-            <a href="#db">Dual Blade</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Evan/Icon.png">
-        </li>
-        <li>
-            <a href="#evan">Evan</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Hayato/Icon.png">
-        </li>
-        <li>
-            <a href="#hayato">Hayato</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Hero/Icon.png">
-        </li>
-        <li>
-            <a href="#hero">Hero</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Hoyoung/Icon.png">
-        </li>
-        <li>
-            <a href="#hy">Hoyoung</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Illium/Icon.png">
-        </li>
-        <li>
-            <a href="#illium">Illium</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Jett/Icon.png">
-        </li>
-        <li>
-            <a href="#jett">Jett</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Kain/Icon.png">
-        </li>
-        <li>
-            <a href="#kain">Kain</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Kaiser/Icon.png">
-        </li>
-        <li>
-            <a href="#kaiser">Kaiser</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Kanna/Icon.png">
-        </li>
-        <li>
-            <a href="#kanna">Kanna</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Kinesis/Icon.png">
-        </li>
-        <li>
-            <a href="#kinesis">Kinesis</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Lara/Icon.png">
-        </li>
-        <li>
-            <a href="#lara">Lara</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Luminous/Icon.png">
-        </li>
-        <li>
-            <a href="#lumi">Luminous</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Marksman/Icon.png">
-        </li>
-        <li>
-            <a href="#mm">Marksman</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Mechanic/Icon.png">
-        </li>
-        <li>
-            <a href="#mech">Mechanic</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Mercedes/Icon.png">
-        </li>
-        <li>
-            <a href="#merc">Mercedes</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Mihile/Icon.png">
-        </li>
-        <li>
-            <a href="#mihile">Mihile</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/NightLord/Icon.png">
-        </li>
-        <li>
-            <a href="#nl">Night Lord</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/NightWalker/Icon.png">
-        </li>
-        <li>
-            <a href="#nw">Night Walker</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Paladin/Icon.png">
-        </li>
-        <li>
-            <a href="#pally">Paladin</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/PathFinder/Icon.png">
-        </li>
-        <li>
-            <a href="#pf">Path Finder</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Phantom/Icon.png">
-        </li>
-        <li>
-            <a href="#phant">Phantom</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Shade/Icon.png">
-        </li>
-        <li>
-            <a href="#shade">Shade</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Shadower/Icon.png">
-        </li>
-        <li>
-            <a href="#shad">Shadower</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/ThunderBreaker/Icon.png">
-        </li>
-        <li>
-            <a href="#tb">Thunder Breaker</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/WildHunter/Icon.png">
-        </li>
-        <li>
-            <a href="#wh">Wild Hunter</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/WindArcher/Icon.png">
-        </li>
-        <li>
-            <a href="#wa">Wind Archer</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Xenon/Icon.png">
-        </li>
-        <li>
-            <a href="#xenon">Xenon</a>
-        </li>
-    </ul> 
-    <ul>
-        <li>
-            <img alt="Icon" src="../resources/Zero/Icon.png">
-        </li>
-        <li>
-            <a href="#zero">Zero</a>
-        </li>
-    </ul> 
-
-
-   
-    
-    
-    
-    
-</div>
-
 <body>
-    <h2 id="adele">Adele</h2>
-    <div class="section">
-        <table>
-            <tr>
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Magic Dispatch</p>
-                    <img alt="Icon" src="../resources/Adele/S2.png">
-                </td>
-                <td>
-                    <p>Aether Forge</p>
-                    <img alt="Icon" src="../resources/Adele/S5.png">
-                </td>
-                <td>
-                    <p>Hunting Decree</p>
-                    <img alt="Icon" src="../resources/Adele/S9.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Cleave</p>
-                    <img alt="Icon" src="../resources/Adele/S8.png">
-                </td>
-                <td>
-                    <p>Reign of Destruction</p>
-                    <img alt="Icon" src="../resources/Adele/S7.png">
-                </td>
-                <td>
-                    <p>Aether Bloom</p>
-                    <img alt="Icon" src="../resources/Adele/S10.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Optional
-                </th>
-                <td>
-                    <p>Impale</p>
-                    <img alt="Icon" src="../resources/Adele/S4.png">
-                </td>
-                <td>
-                </td>
-                <td>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="ab">Angelic Buster</h2>
-    <div class="section">
-        <table>
+    <div id="mid" >
+        <h1>Maplestory Node Solver</h1>
+        <p class="title"> If something is wrong feel free to dm me on discord what exactly is wrong and I will change it</p>
+        <p class="title">Made by: Mysty#0575</p>
+        <p class="title"> <a class="link"href="../index.html">Mix and Match Solver</a></p>
+        <h2 id="tableTitle">Table of Contents</h2>
+        <div class="toc">
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Adele/Icon.png">
+                </li>
+                <li>
+                    <a href="#adele">Adele</a>            
+                </li>
+            </ul>    
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/AngelicBuster/Icon.png">
+                </li>
+                <li>
+                    <a href="#ab">Angelic Buster</a>           
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Aran/Icon.png">
+                </li>
+                <li>
+                    <a href="#aran">Aran</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/FirePoison/Icon.png">
+                </li>
+                <li>
+                    <a href="#fp">Arch Mage(F/P)</a>           
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/IceLightning/Icon.png">
+                </li>
+                <li>
+                    <a href="#il">Arch Mage(I/L)</a>            
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Ark/Icon.png">
+                </li>
+                <li>
+                    <a href="#ark">Ark</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/BattleMage/Icon.png">
+                </li>
+                <li>
+                    <a href="#bam">Battle Mage</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/BeastTamer/Icon.png">
+                </li>
+                <li>
+                    <a href="#bt">Beast Tamer</a>        
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Bishop/Icon.png">
+                </li>
+                <li>
+                    <a href="#bish">Bishop</a>         
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Blaster/Icon.png">
+                </li>
+                <li>
+                    <a href="#blaster">Blaster</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/BlazeWizard/Icon.png">
+                </li>
+                <li>
+                    <a href="#bw">Blaze Wizard</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Bowmaster/Icon.png">
+                </li>
+                <li>
+                    <a href="#bm">Bowmaster</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Buccaneer/Icon.png">
+                </li>
+                <li>
+                    <a href="#bucc">Buccaneer</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Cadena/Icon.png">
+                </li>
+                <li>
+                    <a href="#cadena">Cadena</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/CannonMaster/Icon.png">
+                </li>
+                <li>
+                    <a href="#cm">Cannoneer</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Corsair/Icon.png">
+                </li>
+                <li>
+                    <a href="#sair">Corsair</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/DarkKnight/Icon.png">
+                </li>
+                <li>
+                    <a href="#dk">Dark Knight</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/DawnWarrior/Icon.png">
+                </li>
+                <li>
+                    <a href="#dw">Dawn Warrior</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/DemonAvenger/Icon.png">
+                </li>
+                <li>
+                    <a href="#da">Demon Avenger</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/DemonSlayer/Icon.png">
+                </li>
+                <li>
+                    <a href="#ds">Demon Slayer</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/DualBlade/Icon.png">
+                </li>
+                <li>
+                    <a href="#db">Dual Blade</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Evan/Icon.png">
+                </li>
+                <li>
+                    <a href="#evan">Evan</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Hayato/Icon.png">
+                </li>
+                <li>
+                    <a href="#hayato">Hayato</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Hero/Icon.png">
+                </li>
+                <li>
+                    <a href="#hero">Hero</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Hoyoung/Icon.png">
+                </li>
+                <li>
+                    <a href="#hy">Hoyoung</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Illium/Icon.png">
+                </li>
+                <li>
+                    <a href="#illium">Illium</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Jett/Icon.png">
+                </li>
+                <li>
+                    <a href="#jett">Jett</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Kain/Icon.png">
+                </li>
+                <li>
+                    <a href="#kain">Kain</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Kaiser/Icon.png">
+                </li>
+                <li>
+                    <a href="#kaiser">Kaiser</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Kanna/Icon.png">
+                </li>
+                <li>
+                    <a href="#kanna">Kanna</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Kinesis/Icon.png">
+                </li>
+                <li>
+                    <a href="#kinesis">Kinesis</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Lara/Icon.png">
+                </li>
+                <li>
+                    <a href="#lara">Lara</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Luminous/Icon.png">
+                </li>
+                <li>
+                    <a href="#lumi">Luminous</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Marksman/Icon.png">
+                </li>
+                <li>
+                    <a href="#mm">Marksman</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Mechanic/Icon.png">
+                </li>
+                <li>
+                    <a href="#mech">Mechanic</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Mercedes/Icon.png">
+                </li>
+                <li>
+                    <a href="#merc">Mercedes</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Mihile/Icon.png">
+                </li>
+                <li>
+                    <a href="#mihile">Mihile</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/NightLord/Icon.png">
+                </li>
+                <li>
+                    <a href="#nl">Night Lord</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/NightWalker/Icon.png">
+                </li>
+                <li>
+                    <a href="#nw">Night Walker</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Paladin/Icon.png">
+                </li>
+                <li>
+                    <a href="#pally">Paladin</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/PathFinder/Icon.png">
+                </li>
+                <li>
+                    <a href="#pf">Pathfinder</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Phantom/Icon.png">
+                </li>
+                <li>
+                    <a href="#phant">Phantom</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Shade/Icon.png">
+                </li>
+                <li>
+                    <a href="#shade">Shade</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Shadower/Icon.png">
+                </li>
+                <li>
+                    <a href="#shad">Shadower</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/ThunderBreaker/Icon.png">
+                </li>
+                <li>
+                    <a href="#tb">Thunder Breaker</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/WildHunter/Icon.png">
+                </li>
+                <li>
+                    <a href="#wh">Wild Hunter</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/WindArcher/Icon.png">
+                </li>
+                <li>
+                    <a href="#wa">Wind Archer</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Xenon/Icon.png">
+                </li>
+                <li>
+                    <a href="#xenon">Xenon</a>
+                </li>
+            </ul> 
+            <ul>
+                <li>
+                    <img alt="Icon" src="../resources/Zero/Icon.png">
+                </li>
+                <li>
+                    <a href="#zero">Zero</a>
+                </li>
+            </ul> 
+        </div>
+        <h2 id="adele">Adele</h2>
+        <div class="section">
+            <table>
+                <tr>
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Magic Dispatch</p>
+                        <img alt="Icon" src="../resources/Adele/S2.png">
+                    </td>
+                    <td>
+                        <p>Aether Forge</p>
+                        <img alt="Icon" src="../resources/Adele/S5.png">
+                    </td>
+                    <td>
+                        <p>Hunting Decree</p>
+                        <img alt="Icon" src="../resources/Adele/S9.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Cleave</p>
+                        <img alt="Icon" src="../resources/Adele/S8.png">
+                    </td>
+                    <td>
+                        <p>Reign of Destruction</p>
+                        <img alt="Icon" src="../resources/Adele/S7.png">
+                    </td>
+                    <td>
+                        <p>Aether Bloom</p>
+                        <img alt="Icon" src="../resources/Adele/S10.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Optional
+                    </th>
+                    <td>
+                        <p>Impale</p>
+                        <img alt="Icon" src="../resources/Adele/S4.png">
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="ab">Angelic Buster</h2>
+        <div class="section">
+            <table>
+                    <tr class="important">
+                        <th>
+                            Trio #1
+                        </th>
+                        <td>
+                            <p>Trinity</p>
+                            <img alt="Icon" src="../resources/AngelicBuster/S9.png">
+                        </td>
+                        <td>
+                            <p>Celestial Roar</p>
+                            <img alt="Icon" src="../resources/AngelicBuster/S8.png">
+                        </td>
+                        <td>
+                            <p>Soul Seeker</p>
+                            <img alt="Icon" src="../resources/AngelicBuster/S5.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Trio #2<br>
+                        </th>
+                        <td>
+                            <p>Supreme Supernova</p>
+                            <img alt="Icon" src="../resources/AngelicBuster/S12.png">
+                        </td>
+                        <td>
+                            <p>Soul Resonance</p>
+                            <img alt="Icon" src="../resources/AngelicBuster/S11.png">
+                        </td>
+                        <td>
+                            <p>Finale Ribbon</p>
+                            <img alt="Icon" src="../resources/AngelicBuster/S10.png">
+                        </td>
+                    </tr>
+                </table>
+        </div>
+        <h2 id="aran">Aran</h2>
+        <div class="section">
+            <h3>Bossing Mule</h3>
+            <table>
                 <tr class="important">
                     <th>
                         Trio #1
                     </th>
                     <td>
-                        <p>Trinity</p>
-                        <img alt="Icon" src="../resources/AngelicBuster/S9.png">
+                        <p>Beyond Blade</p>
+                        <img alt="Icon" src="../resources/Aran/S10.png">
                     </td>
                     <td>
-                        <p>Celestial Roar</p>
-                        <img alt="Icon" src="../resources/AngelicBuster/S8.png">
+                        <p>Final Blow</p>
+                        <img alt="Icon" src="../resources/Aran/S9.png">
                     </td>
                     <td>
-                        <p>Soul Seeker</p>
-                        <img alt="Icon" src="../resources/AngelicBuster/S5.png">
+                        <p>Hunter's Prey</p>
+                        <img alt="Icon" src="../resources/Aran/S12.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Main</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Beyond Blade</p>
+                        <img alt="Icon" src="../resources/Aran/S10.png">
+                    </td>
+                    <td>
+                        <p>Final Blow</p>
+                        <img alt="Icon" src="../resources/Aran/S9.png">
+                    </td>
+                    <td>
+                        <p>Hunter's Prey</p>
+                        <img alt="Icon" src="../resources/Aran/S12.png">
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        Trio #2<br>
+                        Trio #2
                     </th>
                     <td>
-                        <p>Supreme Supernova</p>
-                        <img alt="Icon" src="../resources/AngelicBuster/S12.png">
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/Aran/S4.png">
                     </td>
                     <td>
-                        <p>Soul Resonance</p>
-                        <img alt="Icon" src="../resources/AngelicBuster/S11.png">
+                        <p>Smash Swing</p>
+                        <img alt="Icon" src="../resources/Aran/S2.png">
                     </td>
                     <td>
-                        <p>Finale Ribbon</p>
-                        <img alt="Icon" src="../resources/AngelicBuster/S10.png">
+                        <p>Maha's Domain or Judgement Dray</p>
+                        <img alt="Icon" src="../resources/Aran/S13.png">
+                        <img alt="Icon" src="../resources/Aran/S7.png">
                     </td>
                 </tr>
             </table>
         </div>
-    <h2 id="aran">Aran</h2>
-    <div class="section">
-        <h3>Bossing Mule</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Beyond Blade</p>
-                    <img alt="Icon" src="../resources/Aran/S10.png">
-                </td>
-                <td>
-                    <p>Final Blow</p>
-                    <img alt="Icon" src="../resources/Aran/S9.png">
-                </td>
-                <td>
-                    <p>Hunter's Prey</p>
-                    <img alt="Icon" src="../resources/Aran/S12.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Main</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Beyond Blade</p>
-                    <img alt="Icon" src="../resources/Aran/S10.png">
-                </td>
-                <td>
-                    <p>Final Blow</p>
-                    <img alt="Icon" src="../resources/Aran/S9.png">
-                </td>
-                <td>
-                    <p>Hunter's Prey</p>
-                    <img alt="Icon" src="../resources/Aran/S12.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Final Attack</p>
-                    <img alt="Icon" src="../resources/Aran/S4.png">
-                </td>
-                <td>
-                    <p>Smash Swing</p>
-                    <img alt="Icon" src="../resources/Aran/S2.png">
-                </td>
-                <td>
-                    <p>Maha's Domain or Judgement Dray</p>
-                    <img alt="Icon" src="../resources/Aran/S13.png">
-                    <img alt="Icon" src="../resources/Aran/S7.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="fp">Arch Mage(F/P)</h2>
-    <h2 id="il">Arch Mage(I/L)</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Chain Lightning</p>
-                    <img alt="Icon" src="../resources/IceLightning/S8.png">
-                </td>
-                <td>
-                    <p>Thunder Sphere</p>
-                    <img alt="Icon" src="../resources/IceLightning/S6.png">
-                </td>
-                <td>
-                    <p>Lightning Orb</p>
-                    <img alt="Icon" src="../resources/IceLightning/S11.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Frozen Orb</p>
-                    <img alt="Icon" src="../resources/IceLightning/S10.png">
-                </td>
-                <td>
-                    <p>Blizzard</p>
-                    <img alt="Icon" src="../resources/IceLightning/S9.png">
-                </td>
-                <td>
-                    <p>Elquines or Ice Strike</p>
-                    <img alt="Icon" src="../resources/IceLightning/S7.png">
-                    <img alt="Icon" src="../resources/IceLightning/S4.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="ark">Ark</h2>
-    <h2 id="bam">Battle Mage</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Finishing Blow</p>
-                    <img alt="Icon" src="../resources/BattleMage/S8.png">
-                </td>
-                <td>
-                    <p>Dark Shock</p>
-                    <img alt="Icon" src="../resources/BattleMage/S7.png">
-                </td>
-                <td>
-                    <p>Condemnation</p>
-                    <img alt="Icon" src="../resources/BattleMage/S2.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Dark Genesis</p>
-                    <img alt="Icon" src="../resources/BattleMage/S9.png">
-                </td>
-                <td>
-                    <p>Sweeping Staff</p>
-                    <img alt="Icon" src="../resources/BattleMage/S10.png">
-                </td>
-                <td>
-                    <p>Battle Burst</p>
-                    <img alt="Icon" src="../resources/BattleMage/S6.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="bt">Beast Tamer</h2>
-    <h2 id="bish">Bishop</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Big Bang</p>
-                    <img alt="Icon" src="../resources/Bishop/S4.png">
-                </td>
-                <td>
-                    <p>Angel Ray</p>
-                    <img alt="Icon" src="../resources/Bishop/S6.png">
-                </td>
-                <td>
-                    <p>Bahamut</p>
-                    <img alt="Icon" src="../resources/Bishop/S5.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Heaven's Door</p>
-                    <img alt="Icon" src="../resources/Bishop/S8.png">
-                </td>
-                <td>
-                    <p>Genesis</p>
-                    <img alt="Icon" src="../resources/Bishop/S7.png">
-                </td>
-                <td>
-                    <p>Heal</p>
-                    <img alt="Icon" src="../resources/Bishop/S1.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="blaster">Blaster</h2>
-    <div class="section">
-        <h3>Bossing Mule</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Magnum Punch</p>
-                    <img alt="Icon" src="../resources/Blaster/S1.png">
-                </td>
-                <td>
-                    <p>Double Blast</p>
-                    <img alt="Icon" src="../resources/Blaster/S5.png">
-                </td>
-                <td>
-                    <p>Bunker Buster Explosion</p>
-                    <img alt="Icon" src="../resources/Blaster/S3.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Main</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Magnum Punch</p>
-                    <img alt="Icon" src="../resources/Blaster/S1.png">
-                </td>
-                <td>
-                    <p>Double Blast</p>
-                    <img alt="Icon" src="../resources/Blaster/S5.png">
-                </td>
-                <td>
-                    <p>Bunker Buster Explosion</p>
-                    <img alt="Icon" src="../resources/Blaster/S3.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Shotgun Punch</p>
-                    <img alt="Icon" src="../resources/Blaster/S8.png">
-                </td>
-                <td>
-                    <p>Revolving Cannon</p>
-                    <img alt="Icon" src="../resources/Blaster/S2.png">
-                </td>
-                <td>
-                    <p>Hammer Smash</p>
-                    <img alt="Icon" src="../resources/Blaster/S6.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="bw">Blaze Wizard</h2>
-    <div class="section">
-        <table>
-            <tr>
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Orbital Flame</p>
-                    <img alt="Icon" src="../resources/BlazeWizard/S1.png">
-                </td>
-                <td>
-                    <p>Blazing Extinction</p>
-                    <img alt="Icon" src="../resources/BlazeWizard/S7.png">
-                </td>
-                <td>
-                    <p>Phoenix Drive</p>
-                    <img alt="Icon" src="../resources/BlazeWizard/S10.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Towering Inferno </p>
-                    <img alt="Icon" src="../resources/BlazeWizard/S8.png">
-                </td>
-                <td>
-                    <p>Cataclysm</p>
-                    <img alt="Icon" src="../resources/BlazeWizard/S9.png">
-                </td>
-                <td>
-                    <p>Cinder Maelstrom or Orbital Explosion or Flame Tempest</p>
-                    <img alt="Icon" src="../resources/BlazeWizard/S6.png">
-                    <img alt="Icon" src="../resources/BlazeWizard/S4.png">
-                    <img alt="Icon" src="../resources/BlazeWizard/S5.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="bm">Bowmaster</h2>
-    <div class="section">
-        <h3>Bossing Mule</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Hurricane</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S7.png">
-                </td>
-                <td>
-                    <p>Arrow Blaster</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S6.png">
-                </td>
-                <td>
-                    <p>Quiver Cartridge</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S9.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Main</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Hurricane</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S7.png">
-                </td>
-                <td>
-                    <p>Arrow Blaster</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S6.png">
-                </td>
-                <td>
-                    <p>Quiver Cartridge</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S9.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Arrow Stream</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S8.png">
-                </td>
-                <td>
-                    <p>Final Attack</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S1.png">
-                </td>
-                <td>
-                    <p>Pheonix or Gritty Gust</p>
-                    <img alt="Icon" src="../resources/Bowmaster/S4.png">
-                    <img alt="Icon" src="../resources/Bowmaster/S10.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="bucc">Buccaneer</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Bossing
-                </th>
-                <td>
-                    <p>Octopunch</p>
-                    <img alt="Icon" src="../resources/Buccaneer/S6.png">
-                </td>
-                <td>
-                    <p>Sea Serpent's Rage</p>
-                    <img alt="Icon" src="../resources/Buccaneer/S5.png">
-                </td>
-                <td>
-                    <p>Nautilus Strike</p>
-                    <img alt="Icon" src="../resources/Buccaneer/S7.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Mobbing
-                </th>
-                <td>
-                    <p>Hook Bomber</p>
-                    <img alt="Icon" src="../resources/Buccaneer/S8.png">
-                </td>
-                <td>
-                    <p>Sea Serpent Burst</p>
-                    <img alt="Icon" src="../resources/Buccaneer/S1.png">
-                </td>
-                <td>
-                    <p>Corkscrew Blow</p>
-                    <img alt="Icon" src="../resources/Buccaneer/S4.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="cadena">Cadena</h2>
-    <h2 id="cm">Cannon Master</h2>
-    <div class="section">
-        <h3>Bossing</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Essential
-                </th>
-                <td>
-                    <p>Cannon Barrage</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S14.png">
-                </td>
-                <td>
-                    <p>Monkey Militia</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S13.png">
-                </td>
-                <td>
-                    <p>Monkey Fury</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S9.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Optional
-                </th>
-                <td>
-                    <p>Rolling Rainbow</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S15.png">
-                </td>
-                <td>
-                    <p>Cannon Bazooka</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S10.png">
-                </td>
-                <td>
-                    <p>Anchors Away</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S12.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Mobbing</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Essential
-                </th>
-                <td>
-                    <p>Anchors Away</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S12.png">
-                </td>
-                <td>
-                    <p>Monkey Militia</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S13.png">
-                </td>
-                <td>
-                    <p>Monkey Fury</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S9.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Situational
-                </th>
-                <td>
-                    <p>Nautilus Strike</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S11.png">
-                </td>
-                <td>
-                    <p>Cannon Bazooka</p>
-                    <img alt="Icon" src="../resources/CannonMaster/S10.png">
-                </td>
-                <td>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="sair">Corsair</h2>
-    <h2 id="dk">Dark Knight</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Must Have
-                </th>
-                <td>
-                    <p>Dark Impale</p>
-                    <img alt="Icon" src="../resources/DarkKnight/S6.png">
-                </td>
-                <td>
-                    <p>Gungnir's Descent</p>
-                    <img alt="Icon" src="../resources/DarkKnight/S7.png">
-                </td>
-                <td>
-                    <p>Evil Eye</p>
-                    <img alt="Icon" src="../resources/DarkKnight/S5.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Nightshade Explosion</p>
-                    <img alt="Icon" src="../resources/DarkKnight/S8.png">
-                </td>
-                <td>
-                    <p>Leap Attack</p>
-                    <img alt="Icon" src="../resources/DarkKnight/S3.png">
-                </td>
-                <td>
-                    <p>Final Attack</p>
-                    <img alt="Icon" src="../resources/DarkKnight/S1.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="dw">Dawn Warrior</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Solar Slash</p>
-                    <img alt="Icon" src="../resources/DawnWarrior/S5.png">
-                </td>
-                <td>
-                    <p>Cosmic Shower</p>
-                    <img alt="Icon" src="../resources/DawnWarrior/S7.png">
-                </td>
-                <td>
-                    <p>Cosmic Burst</p>
-                    <img alt="Icon" src="../resources/DawnWarrior/S4.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="da">Demon Avenger</h2>
-    <div class="section">
-        <table>
+        <h2 id="fp">Arch Mage(F/P)</h2>
+        <div class="section">
+            <h3>Bossing Mule</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Flame Sweep</p>
+                        <img alt="Icon" src="../resources/FirePoison/S10.png">
+                        
+                    </td>
+                    <td>
+                        <p>Mist Eruption</p>
+                        <img alt="Icon" src="../resources/FirePoison/S8.png">
+                    </td>
+                    <td>
+                        <p>Ignite</p>
+                        <img alt="Icon" src="../resources/FirePoison/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Flame Haze</p>
+                        <img alt="Icon" src="../resources/FirePoison/S7.png">
+                        
+                    </td>
+                    <td>
+                        <p>Meteor Shower</p>
+                        <img alt="Icon" src="../resources/FirePoison/S11.png">
+                        
+                    </td>
+                    <td>
+                        <p>Teleport Mastery</p>
+                        <img alt="Icon" src="../resources/FirePoison/S6.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Lvl 275+
+                    </th>
+                    <td>
+                        <p>Ifrit</p>
+                        <img alt="Icon" src="../resources/FirePoison/S9.png">
+                    </td>
+                    <td>
+                        <p>Megiddo Flame</p>
+                        <img alt="Icon" src="../resources/FirePoison/S12.png">
+                    </td>
+                    <td>
+                        <p>Inferno Aura</p>
+                        <img alt="Icon" src="../resources/FirePoison/S13.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>General</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Flame Haze</p>
+                        <img alt="Icon" src="../resources/FirePoison/S7.png">
+                    </td>
+                    <td>
+                        <p>Mist Eruption</p>
+                        <img alt="Icon" src="../resources/FirePoison/S8.png">
+                    </td>
+                    <td>
+                        <p>Flame Sweep</p>
+                        <img alt="Icon" src="../resources/FirePoison/S10.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Teleport Mastery</p>
+                        <img alt="Icon" src="../resources/FirePoison/S6.png">
+                    </td>
+                    <td>
+                        <p>Inferno Aura</p>
+                        <img alt="Icon" src="../resources/FirePoison/S13.png">
+                    </td>
+                    <td>
+                        <p>Ignite</p>
+                        <img alt="Icon" src="../resources/FirePoison/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3
+                    </th>
+                    <td>
+                        <p>Ifrit</p>
+                        <img alt="Icon" src="../resources/FirePoison/S9.png">
+                    </td>
+                    <td>
+                        <p>Megiddo Flame</p>
+                        <img alt="Icon" src="../resources/FirePoison/S12.png">
+                    </td>
+                    <td>
+                        <p>Meteor Shower</p>
+                        <img alt="Icon" src="../resources/FirePoison/S11.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="il">Arch Mage(I/L)</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Chain Lightning</p>
+                        <img alt="Icon" src="../resources/IceLightning/S8.png">
+                    </td>
+                    <td>
+                        <p>Thunder Sphere</p>
+                        <img alt="Icon" src="../resources/IceLightning/S6.png">
+                    </td>
+                    <td>
+                        <p>Lightning Orb</p>
+                        <img alt="Icon" src="../resources/IceLightning/S11.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Frozen Orb</p>
+                        <img alt="Icon" src="../resources/IceLightning/S10.png">
+                    </td>
+                    <td>
+                        <p>Blizzard</p>
+                        <img alt="Icon" src="../resources/IceLightning/S9.png">
+                    </td>
+                    <td>
+                        <p>Elquines or Ice Strike</p>
+                        <img alt="Icon" src="../resources/IceLightning/S7.png">
+                        <img alt="Icon" src="../resources/IceLightning/S4.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="ark">Ark</h2>
+        <div class="section">
+            <h3>Do Not Want To Combo</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Essential
+                    </th>
+                    <td>
+                        <p>Impending Death</p>
+                        <img alt="Icon" src="../resources/Ark/S4.png">
+                    </td>
+                    <td>
+                        <p>Basic Charge Drive</p>
+                        <img alt="Icon" src="../resources/Ark/S1.png">
+                    </td>
+                    <td>
+                        <p>Ominous Nightmare</p>
+                        <img alt="Icon" src="../resources/Ark/S2.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Bossing<br>(take off when mobbing)
+                    </th>
+                    <td>
+                        <p>Abyssal Charge Drive</p>
+                        <img alt="Icon" src="../resources/Ark/S7.png">
+                    </td>
+                    <td>
+                        <p>Unstoppable Impulse</p>
+                        <img alt="Icon" src="../resources/Ark/S4.png">
+                    </td>
+                    <td>
+                        <p>Creeping Terror</p>
+                        <img alt="Icon" src="../resources/Ark/S8.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Mobbing
+                    </th>
+                    <td>
+                        <p>Scarlet Charge Drive</p>
+                        <img alt="Icon" src="../resources/Ark/S3.png">
+                    </td>
+                    <td>
+                        <p>Gust Charge Drive</p>
+                        <img alt="Icon" src="../resources/Ark/S6.png">
+                    </td>
+                    <td>
+                        <p>Creeping Terror</p>
+                        <img alt="Icon" src="../resources/Ark/S8.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Combo</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Essential
+                    </th>
+                    <td>
+                        <p>Impending Death</p>
+                        <img alt="Icon" src="../resources/Ark/S4.png">
+                    </td>
+                    <td>
+                        <p>Basic Charge Drive</p>
+                        <img alt="Icon" src="../resources/Ark/S1.png">
+                    </td>
+                    <td>
+                        <p>Ominous Nightmare</p>
+                        <img alt="Icon" src="../resources/Ark/S2.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Abyssal Charge Drive</p>
+                        <img alt="Icon" src="../resources/Ark/S7.png">
+                    </td>
+                    <td>
+                        <p>Unstoppable Impulse</p>
+                        <img alt="Icon" src="../resources/Ark/S4.png">
+                    </td>
+                    <td>
+                        <p>Creeping Terror</p>
+                        <img alt="Icon" src="../resources/Ark/S8.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3
+                    </th>
+                    <td>
+                        <p>Scarlet Charge Drive</p>
+                        <img alt="Icon" src="../resources/Ark/S3.png">
+                    </td>
+                    <td>
+                        <p>Gust Charge Drive</p>
+                        <img alt="Icon" src="../resources/Ark/S6.png">
+                    </td>
+                    <td>
+                        <p>Creeping Terror</p>
+                        <img alt="Icon" src="../resources/Ark/S8.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="bam">Battle Mage</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Finishing Blow</p>
+                        <img alt="Icon" src="../resources/BattleMage/S8.png">
+                    </td>
+                    <td>
+                        <p>Dark Shock</p>
+                        <img alt="Icon" src="../resources/BattleMage/S7.png">
+                    </td>
+                    <td>
+                        <p>Condemnation</p>
+                        <img alt="Icon" src="../resources/BattleMage/S2.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Dark Genesis</p>
+                        <img alt="Icon" src="../resources/BattleMage/S9.png">
+                    </td>
+                    <td>
+                        <p>Sweeping Staff</p>
+                        <img alt="Icon" src="../resources/BattleMage/S10.png">
+                    </td>
+                    <td>
+                        <p>Battle Burst</p>
+                        <img alt="Icon" src="../resources/BattleMage/S6.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="bt">Beast Tamer</h2>
+        <div class="section">
+            <h3>Recommended</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Paw Swipe</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S1.png">
+                    </td>
+                    <td>
+                        <p>Lil Fort</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S4.png">
+                    </td>
+                    <td>
+                        <p>Tornado Flight</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S13.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Really Deep Breath</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S3.png">
+                    </td>
+                    <td>
+                        <p>Formation Attack</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S12.png">
+                    </td>
+                    <td>
+                        <p>Fishy Slap or Deep Breath</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S5.png">
+                        <img alt="Icon" src="../resources/BeastTamer/S2.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Optional
+                    </th>
+                    <td>
+                        <p>Leopard's Paw</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S7.png">
+                    </td>
+                    <td>
+                        <p>Macho Dance</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S8.png">
+                    </td>
+                    <td>
+                        <p>Three-Point Pounce</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S10.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>"I have too many nodes and want to boost everything"</h3>
+            <table>
+                <tr>
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Paw Swipe</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S1.png">
+                    </td>
+                    <td>
+                        <p>Lil Fort</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S4.png">
+                    </td>
+                    <td>
+                        <p>Fishy Slap</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S5.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Deep Breath</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S2.png">
+                    </td>
+                    <td>
+                        <p>Really Deep Breath</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S3.png">
+                    </td>
+                    <td>
+                        <p>Table Flip</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S6.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3
+                    </th>
+                    <td>
+                        <p>Tornado Flight</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S13.png">
+                    </td>
+                    <td>
+                        <p>Formation Attack</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S12.png">
+                    </td>
+                    <td>
+                        <p>Group Bear Blaster</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S16.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #4
+                    </th>
+                    <td>
+                        <p>Leopard's Paw</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S7.png">
+                    </td>
+                    <td>
+                        <p>Macho Dance</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S8.png">
+                    </td>
+                    <td>
+                        <p>Three-Point Pounce</p>
+                        <img alt="Icon" src="../resources/BeastTamer/S10.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="bish">Bishop</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Big Bang</p>
+                        <img alt="Icon" src="../resources/Bishop/S4.png">
+                    </td>
+                    <td>
+                        <p>Angel Ray</p>
+                        <img alt="Icon" src="../resources/Bishop/S6.png">
+                    </td>
+                    <td>
+                        <p>Bahamut</p>
+                        <img alt="Icon" src="../resources/Bishop/S5.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Heaven's Door</p>
+                        <img alt="Icon" src="../resources/Bishop/S8.png">
+                    </td>
+                    <td>
+                        <p>Genesis</p>
+                        <img alt="Icon" src="../resources/Bishop/S7.png">
+                    </td>
+                    <td>
+                        <p>Heal</p>
+                        <img alt="Icon" src="../resources/Bishop/S1.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="blaster">Blaster</h2>
+        <div class="section">
+            <h3>Bossing Mule</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Magnum Punch</p>
+                        <img alt="Icon" src="../resources/Blaster/S1.png">
+                    </td>
+                    <td>
+                        <p>Double Blast</p>
+                        <img alt="Icon" src="../resources/Blaster/S5.png">
+                    </td>
+                    <td>
+                        <p>Bunker Buster Explosion</p>
+                        <img alt="Icon" src="../resources/Blaster/S3.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Main</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Magnum Punch</p>
+                        <img alt="Icon" src="../resources/Blaster/S1.png">
+                    </td>
+                    <td>
+                        <p>Double Blast</p>
+                        <img alt="Icon" src="../resources/Blaster/S5.png">
+                    </td>
+                    <td>
+                        <p>Bunker Buster Explosion</p>
+                        <img alt="Icon" src="../resources/Blaster/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Shotgun Punch</p>
+                        <img alt="Icon" src="../resources/Blaster/S8.png">
+                    </td>
+                    <td>
+                        <p>Revolving Cannon</p>
+                        <img alt="Icon" src="../resources/Blaster/S2.png">
+                    </td>
+                    <td>
+                        <p>Hammer Smash</p>
+                        <img alt="Icon" src="../resources/Blaster/S6.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="bw">Blaze Wizard</h2>
+        <div class="section">
+            <table>
+                <tr>
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Orbital Flame</p>
+                        <img alt="Icon" src="../resources/BlazeWizard/S1.png">
+                    </td>
+                    <td>
+                        <p>Blazing Extinction</p>
+                        <img alt="Icon" src="../resources/BlazeWizard/S7.png">
+                    </td>
+                    <td>
+                        <p>Phoenix Drive</p>
+                        <img alt="Icon" src="../resources/BlazeWizard/S10.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Towering Inferno </p>
+                        <img alt="Icon" src="../resources/BlazeWizard/S8.png">
+                    </td>
+                    <td>
+                        <p>Cataclysm</p>
+                        <img alt="Icon" src="../resources/BlazeWizard/S9.png">
+                    </td>
+                    <td>
+                        <p>Cinder Maelstrom or Orbital Explosion or Flame Tempest</p>
+                        <img alt="Icon" src="../resources/BlazeWizard/S6.png">
+                        <img alt="Icon" src="../resources/BlazeWizard/S4.png">
+                        <img alt="Icon" src="../resources/BlazeWizard/S5.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="bm">Bowmaster</h2>
+        <div class="section">
+            <h3>Bossing Mule</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Hurricane</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S7.png">
+                    </td>
+                    <td>
+                        <p>Arrow Blaster</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S6.png">
+                    </td>
+                    <td>
+                        <p>Quiver Cartridge</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S9.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Main</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Hurricane</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S7.png">
+                    </td>
+                    <td>
+                        <p>Arrow Blaster</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S6.png">
+                    </td>
+                    <td>
+                        <p>Quiver Cartridge</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S9.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Arrow Stream</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S8.png">
+                    </td>
+                    <td>
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S1.png">
+                    </td>
+                    <td>
+                        <p>Pheonix or Gritty Gust</p>
+                        <img alt="Icon" src="../resources/Bowmaster/S4.png">
+                        <img alt="Icon" src="../resources/Bowmaster/S10.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="bucc">Buccaneer</h2>
+        <div class="section">
+            <table>
                 <tr class="important">
                     <th>
                         Bossing
                     </th>
                     <td>
-                        <p>Execution</p>
-                        <img alt="Icon" src="../resources/DemonAvenger/S7.png">
+                        <p>Octopunch</p>
+                        <img alt="Icon" src="../resources/Buccaneer/S6.png">
                     </td>
                     <td>
-                        <p>Nether Shield</p>
-                        <img alt="Icon" src="../resources/DemonAvenger/S8.png">
+                        <p>Sea Serpent's Rage</p>
+                        <img alt="Icon" src="../resources/Buccaneer/S5.png">
                     </td>
                     <td>
-                        <p>Infernal Exceed</p>
-                        <img alt="Icon" src="../resources/DemonAvenger/S11.png">
+                        <p>Nautilus Strike</p>
+                        <img alt="Icon" src="../resources/Buccaneer/S7.png">
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        Extra
+                        Mobbing
                     </th>
                     <td>
-                        <p>Lunar Slash</p>
-                        <img alt="Icon" src="../resources/DemonAvenger/S4.png">
+                        <p>Hook Bomber</p>
+                        <img alt="Icon" src="../resources/Buccaneer/S8.png">
                     </td>
                     <td>
-                        <p>Nether Slice</p>
-                        <img alt="Icon" src="../resources/DemonAvenger/S9.png">
+                        <p>Sea Serpent Burst</p>
+                        <img alt="Icon" src="../resources/Buccaneer/S1.png">
                     </td>
                     <td>
-                        <p>Thousand Swords</p>
-                        <img alt="Icon" src="../resources/DemonAvenger/S12.png">
+                        <p>Corkscrew Blow</p>
+                        <img alt="Icon" src="../resources/Buccaneer/S4.png">
                     </td>
                 </tr>
             </table>
         </div>
-    <h2 id="ds">Demon Slayer</h2>
+        <h2 id="cadena">Cadena</h2>
+        <div class="section">
+            <h3>Example</h3>
+            <table>
+                <tr>
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Chain Arts: Thrash</p>
+                        <img alt="Icon" src="../resources/Cadena/S1.png">
+                    </td>
+                    <td>
+                        <p>Summon Scimitar</p>
+                        <img alt="Icon" src="../resources/Cadena/S2.png">
+                    </td>
+                    <td>
+                        <p>Summon Daggers</p>
+                        <img alt="Icon" src="../resources/Cadena/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Summon Shotgun</p>
+                        <img alt="Icon" src="../resources/Cadena/S4.png">
+                    </td>
+                    <td>
+                        <p>Summon Brick Boost</p>
+                        <img alt="Icon" src="../resources/Cadena/S5.png">
+                    </td>
+                    <td>
+                        <p>Chain Arts: Beatdown</p>
+                        <img alt="Icon" src="../resources/Cadena/S6.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3
+                    </th>
+                    <td>
+                        <p>Summon Spiked Bat</p>
+                        <img alt="Icon" src="../resources/Cadena/S7.png">
+                    </td>
+                    <td>
+                        <p>Chain Arts: Crush</p>
+                        <img alt="Icon" src="../resources/Cadena/S8.png">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="cm">Cannoneer</h2>
+        <div class="section">
+            <h3>Bossing</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Essential
+                    </th>
+                    <td>
+                        <p>Cannon Barrage</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S14.png">
+                    </td>
+                    <td>
+                        <p>Monkey Militia</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S13.png">
+                    </td>
+                    <td>
+                        <p>Monkey Fury</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S9.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Optional
+                    </th>
+                    <td>
+                        <p>Rolling Rainbow</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S15.png">
+                    </td>
+                    <td>
+                        <p>Cannon Bazooka</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S10.png">
+                    </td>
+                    <td>
+                        <p>Anchors Away</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S12.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Mobbing</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Essential
+                    </th>
+                    <td>
+                        <p>Anchors Away</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S12.png">
+                    </td>
+                    <td>
+                        <p>Monkey Militia</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S13.png">
+                    </td>
+                    <td>
+                        <p>Monkey Fury</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S9.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Situational
+                    </th>
+                    <td>
+                        <p>Nautilus Strike</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S11.png">
+                    </td>
+                    <td>
+                        <p>Cannon Bazooka</p>
+                        <img alt="Icon" src="../resources/CannonMaster/S10.png">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="sair">Corsair</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Bossing
+                    </th>
+                    <td>
+                        <p>Rapid Fire</p>
+                        <img alt="Icon" src="../resources/Corsair/S7.png">
+                    </td>
+                    <td>
+                        <p>Brain Scrambler</p>
+                        <img alt="Icon" src="../resources/Corsair/S9.png">
+                    </td>
+                    <td>
+                        <p>Majestic Presence</p>
+                        <img alt="Icon" src="../resources/Corsair/S11.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Summons
+                    </th>
+                    <td>
+                        <p>Siege Bomber</p>
+                        <img alt="Icon" src="../resources/Corsair/S6.png">
+                    </td>
+                    <td>
+                        <p>Broadside</p>
+                        <img alt="Icon" src="../resources/Corsair/S12.png">
+                    </td>
+                    <td>
+                        <p>Scurvy Summons</p>
+                        <img alt="Icon" src="../resources/Corsair/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Mobbing
+                    </th>
+                    <td>
+                        <p>Nautilus Strike</p>
+                        <img alt="Icon" src="../resources/Corsair/S8.png">
+                    </td>
+                    <td>
+                        <p>Ugly Bomb</p>
+                        <img alt="Icon" src="../resources/Corsair/S14.png">
+                    </td>
+                    <td>
+                        <p>Eight Legs Easton</p>
+                        <img alt="Icon" src="../resources/Corsair/S10.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="dk">Dark Knight</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Must Have
+                    </th>
+                    <td>
+                        <p>Dark Impale</p>
+                        <img alt="Icon" src="../resources/DarkKnight/S6.png">
+                    </td>
+                    <td>
+                        <p>Gungnir's Descent</p>
+                        <img alt="Icon" src="../resources/DarkKnight/S7.png">
+                    </td>
+                    <td>
+                        <p>Evil Eye</p>
+                        <img alt="Icon" src="../resources/DarkKnight/S5.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Nightshade Explosion</p>
+                        <img alt="Icon" src="../resources/DarkKnight/S8.png">
+                    </td>
+                    <td>
+                        <p>Leap Attack</p>
+                        <img alt="Icon" src="../resources/DarkKnight/S3.png">
+                    </td>
+                    <td>
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/DarkKnight/S1.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="dw">Dawn Warrior</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Solar Slash</p>
+                        <img alt="Icon" src="../resources/DawnWarrior/S5.png">
+                    </td>
+                    <td>
+                        <p>Cosmic Shower</p>
+                        <img alt="Icon" src="../resources/DawnWarrior/S7.png">
+                    </td>
+                    <td>
+                        <p>Cosmic Burst</p>
+                        <img alt="Icon" src="../resources/DawnWarrior/S4.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="da">Demon Avenger</h2>
+        <div class="section">
+            <table>
+                    <tr class="important">
+                        <th>
+                            Bossing
+                        </th>
+                        <td>
+                            <p>Execution</p>
+                            <img alt="Icon" src="../resources/DemonAvenger/S7.png">
+                        </td>
+                        <td>
+                            <p>Nether Shield</p>
+                            <img alt="Icon" src="../resources/DemonAvenger/S8.png">
+                        </td>
+                        <td>
+                            <p>Infernal Exceed</p>
+                            <img alt="Icon" src="../resources/DemonAvenger/S11.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Extra
+                        </th>
+                        <td>
+                            <p>Lunar Slash</p>
+                            <img alt="Icon" src="../resources/DemonAvenger/S4.png">
+                        </td>
+                        <td>
+                            <p>Nether Slice</p>
+                            <img alt="Icon" src="../resources/DemonAvenger/S9.png">
+                        </td>
+                        <td>
+                            <p>Thousand Swords</p>
+                            <img alt="Icon" src="../resources/DemonAvenger/S12.png">
+                        </td>
+                    </tr>
+                </table>
+        </div>
+        <h2 id="ds">Demon Slayer</h2>
         <div class="section">
             <table>
                 <tr class="important">
@@ -1106,7 +1559,7 @@
                 </tr>
             </table>
         </div>
-    <h2 id="db">Dual Blade</h2>
+        <h2 id="db">Dual Blade</h2>
         <div class="section">
             <table>
                 <tr class="important">
@@ -1128,7 +1581,7 @@
                 </tr>
                 <tr>
                     <th>
-                        Extra
+                        Mobbing
                     </th>
                     <td>
                         <p>Blade Ascension</p>
@@ -1145,8 +1598,52 @@
                 </tr>
             </table>
         </div>
-    <h2 id="evan">Evan</h2>
-    <h2 id="hayato">Hayato</h2>
+        <h2 id="evan">Evan</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th >
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Mana Burst</p>
+                        <img alt="Icon" src="../resources/Evan/S1.png">
+                    </td>
+                    <td>
+                        <p>Earth Circle</p>
+                        <img alt="Icon" src="../resources/Evan/S8.png">
+                    </td>
+                    <td>
+                        <p>Wind Circle</p>
+                        <img alt="Icon" src="../resources/Evan/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Pick any 2 of the last 2 boxes
+                    </th>
+                    <td>
+                        <p>Dragon Breath</p>
+                        <img alt="Icon" src="../resources/Evan/S9.png">
+                    </td>
+                    <td>
+                        <p>Thunder Circle or Magic Debris or Dragon Flash or Dragon Dive</p>
+                        <img alt="Icon" src="../resources/Evan/S5.png">
+                        <img alt="Icon" src="../resources/Evan/S7.png">
+                        <img alt="Icon" src="../resources/Evan/S4.png">
+                        <img alt="Icon" src="../resources/Evan/S6.png">
+                    </td>
+                    <td>
+                        <p>Dragon Master or Summon Onyx Dragon or Dragon Spark Boost or Dark Fog</p>
+                        <img alt="Icon" src="../resources/Evan/S11.png">
+                        <img alt="Icon" src="../resources/Evan/S12.png">
+                        <img alt="Icon" src="../resources/Evan/S2.png">
+                        <img alt="Icon" src="../resources/Evan/S10.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="hayato">Hayato</h2>
         <div class="section">
             <table>
                 <tr class="important">
@@ -1183,7 +1680,7 @@
                 </tr>
             </table>
         </div>
-    <h2 id="hero">Hero</h2>
+        <h2 id="hero">Hero</h2>
         <div class="section">
             <table>
                 <tr class="important">
@@ -1222,707 +1719,1586 @@
                 </tr>
             </table>
         </div>
-    <h2 id="hy">Hoyoung</h2>
-    <h2 id="illium">Illium</h2>
-    <div class="section">
-        <h3>Bossing Focus</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Radiant Javelin</p>
-                    <img alt="Icon" src="../resources/Illium/S1.png">
-                </td>
-                <td>
-                    <p>Deus & Ex</p>
-                    <img alt="Icon" src="../resources/Illium/S8.png">
-                </td>
-                <td>
-                    <p>Umbral Brand</p>
-                    <img alt="Icon" src="../resources/Illium/S2.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Reaction - Destruction</p>
-                    <img alt="Icon" src="../resources/Illium/S3.png">
-                </td>
-                <td>
-                    <p>Machina & Reaction</p>
-                    <img alt="Icon" src="../resources/Illium/S4.png">
-                </td>
-                <td>
-                    <p>Longinus Spear</p>
-                    <img alt="Icon" src="../resources/Illium/S6.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Mobbing Focus</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Radiant Javelin</p>
-                    <img alt="Icon" src="../resources/Illium/S1.png">
-                </td>
-                <td>
-                    <p>Reaction - Destruction</p>
-                    <img alt="Icon" src="../resources/Illium/S3.png">
-                    
-                </td>
-                <td>
-                    <p>Machina & Reaction</p>
-                    <img alt="Icon" src="../resources/Illium/S4.png">
-                    
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Deus & Ex</p>
-                    <img alt="Icon" src="../resources/Illium/S8.png">
-                </td>
-                <td>
-                    <p>Umbral Brand</p>
-                    <img alt="Icon" src="../resources/Illium/S2.png">
-                </td>
-                <td>
-                    <p>Longinus Spear</p>
-                    <img alt="Icon" src="../resources/Illium/S6.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="jett">Jett</h2>
-    <div class="section">
-        <h3>Lvl 250 Legion Mule</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Planet Buster</p>
-                    <img alt="Icon" src="../resources/Jett/S11.png">
-                </td>
-                <td>
-                    <p>Falling Stars</p>
-                    <img alt="Icon" src="../resources/Jett/S6.png">
-                </td>
-                <td>
-                    <p>Vortex Cross</p>
-                    <img alt="Icon" src="../resources/Jett/S5.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Bossing Mule</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Starforce Salvo</p>
-                    <img alt="Icon" src="../resources/Jett/S9.png">
-                </td>
-                <td>
-                    <p>Backup Beatdown</p>
-                    <img alt="Icon" src="../resources/Jett/S10.png">
-                </td>
-                <td>
-                    <p>Singularity Shock</p>
-                    <img alt="Icon" src="../resources/Jett/S12.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Main</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Starforce Salvo</p>
-                    <img alt="Icon" src="../resources/Jett/S9.png">
-                </td>
-                <td>
-                    <p>Planet Buster</p>
-                    <img alt="Icon" src="../resources/Jett/S11.png">
-                </td>
-                <td>
-                    <p>Backup Beatdown</p>
-                    <img alt="Icon" src="../resources/Jett/S10.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Singularity Shock</p>
-                    <img alt="Icon" src="../resources/Jett/S12.png">
-                </td>
-                <td>
-                    <p>Falling Stars</p>
-                    <img alt="Icon" src="../resources/Jett/S6.png">
-                </td>
-                <td>
-                    <p>Stellar Impact or Vortex Cross</p>
-                    <img alt="Icon" src="../resources/Jett/S4.png">
-                    <img alt="Icon" src="../resources/Jett/S5.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Seperate Bossing and Training Trios</h3>
-        <table>
-            <tr>
-                <th>
-                    Bossing Trio
-                </th>
-                <td>
-                    <p>Starforce Salvo</p>
-                    <img alt="Icon" src="../resources/Jett/S9.png">
-                </td>
-                <td>
-                    <p>Backup Beatdown</p>
-                    <img alt="Icon" src="../resources/Jett/S10.png">
-                </td>
-                <td>
-                    <p>Singularity Shock</p>
-                    <img alt="Icon" src="../resources/Jett/S12.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Training Trio
-                </th>
-                <td>
-                    <p>Planet Buster</p>
-                    <img alt="Icon" src="../resources/Jett/S11.png">
-                </td>
-                <td>
-                    <p>Falling Stars</p>
-                    <img alt="Icon" src="../resources/Jett/S6.png">
-                </td>
-                <td>
-                    <p>Stellar Impact or Vortex Cross</p>
-                    <img alt="Icon" src="../resources/Jett/S4.png">
-                    <img alt="Icon" src="../resources/Jett/S5.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="kain">Kain</h2>
-    <h2 id="kaiser">Kaiser</h2>
-    <h2 id="kanna">Kanna</h2>
-    <h2 id="kinesis">Kinesis</h2>
-    <h2 id="lara">Lara</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Essence Sprinkle</p>
-                    <img alt="Icon" src="../resources/Lara/S1.png">
-                </td>
-                <td>
-                    <p>Dragon Vein Eruption</p>
-                    <img alt="Icon" src="../resources/Lara/S5.png">
-                </td>
-                <td>
-                    <p>Dragon Vein Absorption</p>
-                    <img alt="Icon" src="../resources/Lara/S6.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Mountain Seed</p>
-                    <img alt="Icon" src="../resources/Lara/S4.png">
-                </td>
-                <td>
-                    <p>Mountain Kids</p>
-                    <img alt="Icon" src="../resources/Lara/S3.png">
-                </td>
-                <td>
-                    <p>Wake Up Call or Dragon Vein Traces</p>
-                    <img alt="Icon" src="../resources/Lara/S2.png">
-                    <img alt="Icon" src="../resources/Lara/S8.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="lumi">Luminous</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Reflection</p>
-                    <img alt="Icon" src="../resources/Luminous/S9.png">
-                </td>
-                <td>
-                    <p>Ender</p>
-                    <img alt="Icon" src="../resources/Luminous/S12.png">
-                </td>
-                <td>
-                    <p>Apocalypse</p>
-                    <img alt="Icon" src="../resources/Luminous/S11.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="mm">Marksman</h2>
-    <div class="section">
-        <h3>Bossing Mule</h3>
-        <table>
-            <tr >
-                <th>
-                    Trio #1
-                </th>
-                <td class="important">
-                    <p>Snipe</p>
-                    <img alt="Icon" src="../resources/Marksman/S6.png">
-                </td>
-                <td class="important">
-                    <p>Piercing Arrow</p>
-                    <img alt="Icon" src="../resources/Marksman/S5.png">
-                </td>
-                <td>
-                    <p>Bolt Swift</p>
-                    <img alt="Icon" src="../resources/Marksman/S2.png">
-                </td>
-            </tr>
-        </table>
-        <h3>General</h3>
-        <table>
-            <tr >
-                <th>
-                    Trio #1
-                </th>
-                <td class="important">
-                    <p>Snipe</p>
-                    <img alt="Icon" src="../resources/Marksman/S6.png">
-                </td>
-                <td class="important">
-                    <p>Piercing Arrow</p>
-                    <img alt="Icon" src="../resources/Marksman/S5.png">
-                </td>
-                <td>
-                    <p>Bolt Swift</p>
-                    <img alt="Icon" src="../resources/Marksman/S2.png">
-                </td>
-            </tr>
-            <tr >
-                <th>
-                    Trio #2<br>
-                    (Optional)
-                </th>
-                <td>
-                    <p>High Speed Shot</p>
-                    <img alt="Icon" src="../resources/Marksman/S7.png">
-                </td>
-                <td>
-                    <p>Final Attack</p>
-                    <img alt="Icon" src="../resources/Marksman/S1.png">
-                </td>
-                <td>
-                    <p>Covering Fire</p>
-                    <img alt="Icon" src="../resources/Marksman/S4.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="mech">Mechanic</h2>
-    <h2 id="merc">Mercedes</h2>
-    <h2 id="mihile">Mihile</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Radiant Cross</p>
-                    <img alt="Icon" src="../resources/Mihile/S8.png">
-                </td>
-                <td>
-                    <p>Install Shield</p>
-                    <img alt="Icon" src="../resources/Mihile/S7.png">
-                </td>
-                <td>
-                    <p>Royal Guard</p>
-                    <img alt="Icon" src="../resources/Mihile/S2.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Charging Light</p>
-                    <img alt="Icon" src="../resources/Mihile/S9.png">
-                </td>
-                <td>
-                    <p>Final Attack</p>
-                    <img alt="Icon" src="../resources/Mihile/S5.png">
-                </td>
-                <td>
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="nl">Night Lord</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Showdown</p>
-                    <img alt="Icon" src="../resources/NightLord/S9.png">
-                </td>
-                <td>
-                    <p>Quad star</p>
-                    <img alt="Icon" src="../resources/NightLord/S7.png">
-                </td>
-                <td>
-                    <p>Assassin's Mark</p>
-                    <img alt="Icon" src="../resources/NightLord/S3.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Sudden Raid</p>
-                    <img alt="Icon" src="../resources/NightLord/S8.png">
-                </td>
-                <td>
-                    <p>Death Star</p>
-                    <img alt="Icon" src="../resources/NightLord/S10.png">
-                </td>
-                <td>
-                    <p>Dark Flare</p>
-                    <img alt="Icon" src="../resources/NightLord/S4.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="nw">Night Walker</h2>
-    <div class="section">
-        <table>
+        <h2 id="hy">Hoyoung</h2>
+        <div class="section">
+            <table>
                 <tr class="important">
-                    <th>
-                        Trio #1
+                    <th >
+                        Essential #1
                     </th>
                     <td>
-                        <p>Quintuple Star</p>
-                        <img alt="Icon" src="../resources/NightWalker/S6.png">
+                        <p>Humanity: As-You-Will Fan</p>
+                        <img alt="Icon" src="../resources/Hoyoung/S1.png">
                     </td>
                     <td>
-                        <p>Shadow Bats</p>
-                        <img alt="Icon" src="../resources/NightWalker/S2.png">
+                        <p>Earth: Ground-Shattering Wave</p>
+                        <img alt="Icon" src="../resources/Hoyoung/S2.png">
                     </td>
                     <td>
-                        <p>Dark Omen</p>
-                        <img alt="Icon" src="../resources/NightWalker/S7.png">
+                        <p>Heaven: Iron Fan Gale</p>
+                        <img alt="Icon" src="../resources/Hoyoung/S3.png">
+                    </td>
+                </tr>
+                <tr class="important">
+                    <th>
+                        Essential #2
+                    </th>
+                    <td>
+                        <p>Scroll: Star Vortex</p>
+                        <img alt="Icon" src="../resources/Hoyoung/S8.png">
+                    </td>
+                    <td>
+                        <p>Talisman: Seeking Ghost Flame</p>
+                        <img alt="Icon" src="../resources/Hoyoung/S5.png">
+                    </td>
+                    <td>
+                        <p>Talisman: Clone</p>
+                        <img alt="Icon" src="../resources/Hoyoung/S9.png">
                     </td>
                 </tr>
                 <tr>
                     <th>
-                        Trio #2<br>
-                        (Optional)
+                        Nice to Have... Eventually
                     </th>
                     <td>
-                        <p>Shadow Spark</p>
-                        <img alt="Icon" src="../resources/NightWalker/S5.png">
+                        <p>Talisman: Evil-Sealing Gourd</p>
+                        <img alt="Icon" src="../resources/Hoyoung/S4.png">
                     </td>
                     <td>
-                        <p>Dominion <br>(Half Boost)</p>
-                        <img alt="Icon" src="../resources/NightWalker/S9.png">
+                        <p>Scroll: Butterfly Dream</p>
+                        <img alt="Icon" src="../resources/Hoyoung/S7.png">
                     </td>
                     <td>
                     </td>
                 </tr>
             </table>
         </div>
-    <h2 id="pally">Paladin</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Bossing
-                </th>
-                <td>
-                    <p>Execution</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S7.png">
-                </td>
-                <td>
-                    <p>Nether Shield</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S8.png">
-                </td>
-                <td>
-                    <p>Infernal Exceed</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S11.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Extra
-                </th>
-                <td>
-                    <p>Lunar Slash</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S4.png">
-                </td>
-                <td>
-                    <p>Nether Slice</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S9.png">
-                </td>
-                <td>
-                    <p>Thousand Swords</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S12.png">
-                </td>
-            </tr>
-        </table>
+        <h2 id="illium">Illium</h2>
+        <div class="section">
+            <h3>Bossing Focus</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Radiant Javelin</p>
+                        <img alt="Icon" src="../resources/Illium/S1.png">
+                    </td>
+                    <td>
+                        <p>Deus & Ex</p>
+                        <img alt="Icon" src="../resources/Illium/S8.png">
+                    </td>
+                    <td>
+                        <p>Umbral Brand</p>
+                        <img alt="Icon" src="../resources/Illium/S2.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Reaction - Destruction</p>
+                        <img alt="Icon" src="../resources/Illium/S3.png">
+                    </td>
+                    <td>
+                        <p>Machina & Reaction</p>
+                        <img alt="Icon" src="../resources/Illium/S4.png">
+                    </td>
+                    <td>
+                        <p>Longinus Spear</p>
+                        <img alt="Icon" src="../resources/Illium/S6.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Mobbing Focus</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Radiant Javelin</p>
+                        <img alt="Icon" src="../resources/Illium/S1.png">
+                    </td>
+                    <td>
+                        <p>Reaction - Destruction</p>
+                        <img alt="Icon" src="../resources/Illium/S3.png">
+                        
+                    </td>
+                    <td>
+                        <p>Machina & Reaction</p>
+                        <img alt="Icon" src="../resources/Illium/S4.png">
+                        
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Deus & Ex</p>
+                        <img alt="Icon" src="../resources/Illium/S8.png">
+                    </td>
+                    <td>
+                        <p>Umbral Brand</p>
+                        <img alt="Icon" src="../resources/Illium/S2.png">
+                    </td>
+                    <td>
+                        <p>Longinus Spear</p>
+                        <img alt="Icon" src="../resources/Illium/S6.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="jett">Jett</h2>
+        <div class="section">
+            <h3>Lvl 250 Legion Mule</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Planet Buster</p>
+                        <img alt="Icon" src="../resources/Jett/S11.png">
+                    </td>
+                    <td>
+                        <p>Falling Stars</p>
+                        <img alt="Icon" src="../resources/Jett/S6.png">
+                    </td>
+                    <td>
+                        <p>Vortex Cross</p>
+                        <img alt="Icon" src="../resources/Jett/S5.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Bossing Mule</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Starforce Salvo</p>
+                        <img alt="Icon" src="../resources/Jett/S9.png">
+                    </td>
+                    <td>
+                        <p>Backup Beatdown</p>
+                        <img alt="Icon" src="../resources/Jett/S10.png">
+                    </td>
+                    <td>
+                        <p>Singularity Shock</p>
+                        <img alt="Icon" src="../resources/Jett/S12.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Main</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Starforce Salvo</p>
+                        <img alt="Icon" src="../resources/Jett/S9.png">
+                    </td>
+                    <td>
+                        <p>Planet Buster</p>
+                        <img alt="Icon" src="../resources/Jett/S11.png">
+                    </td>
+                    <td>
+                        <p>Backup Beatdown</p>
+                        <img alt="Icon" src="../resources/Jett/S10.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Singularity Shock</p>
+                        <img alt="Icon" src="../resources/Jett/S12.png">
+                    </td>
+                    <td>
+                        <p>Falling Stars</p>
+                        <img alt="Icon" src="../resources/Jett/S6.png">
+                    </td>
+                    <td>
+                        <p>Stellar Impact or Vortex Cross</p>
+                        <img alt="Icon" src="../resources/Jett/S4.png">
+                        <img alt="Icon" src="../resources/Jett/S5.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Seperate Bossing and Training Trios</h3>
+            <table>
+                <tr>
+                    <th>
+                        Bossing Trio
+                    </th>
+                    <td>
+                        <p>Starforce Salvo</p>
+                        <img alt="Icon" src="../resources/Jett/S9.png">
+                    </td>
+                    <td>
+                        <p>Backup Beatdown</p>
+                        <img alt="Icon" src="../resources/Jett/S10.png">
+                    </td>
+                    <td>
+                        <p>Singularity Shock</p>
+                        <img alt="Icon" src="../resources/Jett/S12.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Training Trio
+                    </th>
+                    <td>
+                        <p>Planet Buster</p>
+                        <img alt="Icon" src="../resources/Jett/S11.png">
+                    </td>
+                    <td>
+                        <p>Falling Stars</p>
+                        <img alt="Icon" src="../resources/Jett/S6.png">
+                    </td>
+                    <td>
+                        <p>Stellar Impact or Vortex Cross</p>
+                        <img alt="Icon" src="../resources/Jett/S4.png">
+                        <img alt="Icon" src="../resources/Jett/S5.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="kain">Kain</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th >
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Strike Arrow</p>
+                        <img alt="Icon" src="../resources/Kain/S1.png">
+                    </td>
+                    <td>
+                        <p>Dragon Fang</p>
+                        <img alt="Icon" src="../resources/Kain/S3.png">
+                    </td>
+                    <td>
+                        <p>Death's Blessing</p>
+                        <img alt="Icon" src="../resources/Kain/S6.png">
+                    </td>
+                </tr>
+                <tr class="important">
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Falling Dust</p>
+                        <img alt="Icon" src="../resources/Kain/S7.png">
+                    </td>
+                    <td>
+                        <p>Shaft Break</p>
+                        <img alt="Icon" src="../resources/Kain/S4.png">
+                    </td>
+                    <td>
+                        <p>Scattering Shot</p>
+                        <img alt="Icon" src="../resources/Kain/S2.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Nice to Have... Eventually
+                    </th>
+                    <td>
+                        <p>Phantom Blade</p>
+                        <img alt="Icon" src="../resources/Kain/S5.png">
+                    </td>
+                    <td>
+                        <p>Chain Sickle</p>
+                        <img alt="Icon" src="../resources/Kain/S8.png">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="kaiser">Kaiser</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th >
+                        Bossing
+                    </th>
+                    <td>
+                        <p>Gigas Wave</p>
+                        <img alt="Icon" src="../resources/Kaiser/S9.png">
+                    </td>
+                    <td>
+                        <p>Tempest Blades</p>
+                        <img alt="Icon" src="../resources/Kaiser/S5.png">
+                    </td>
+                    <td>
+                        <p>Wing Beat</p>
+                        <img alt="Icon" src="../resources/Kaiser/S6.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Mobbing
+                    </th>
+                    <td>
+                        <p>Blade Burst</p>
+                        <img alt="Icon" src="../resources/Kaiser/S11.png">
+                    </td>
+                    <td>
+                        <p>Inferno Breath</p>
+                        <img alt="Icon" src="../resources/Kaiser/S12.png">
+                    </td>
+                    <td>
+                        <p>Stone Dragon</p>
+                        <img alt="Icon" src="../resources/Kaiser/S8.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Swap for a mobbing of your choice
+                    </th>
+                    <td>
+                        <p>Ancestral Prominence</p>
+                        <img alt="Icon" src="../resources/Kaiser/S13.png">
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="kanna">Kanna</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th >
+                        Primary #1
+                    </th>
+                    <td>
+                        <p>Shikigami Haunting</p>
+                        <img alt="Icon" src="../resources/Kanna/S1.png">
+                    </td>
+                    <td>
+                        <p>Tengu Strike</p>
+                        <img alt="Icon" src="../resources/Kanna/S7.png">
+                    </td>
+                    <td>
+                        <p>Yosuzume</p>
+                        <img alt="Icon" src="../resources/Kanna/S8.png">
+                    </td>
+                </tr>
+                <tr class="important">
+                    <th>
+                        Primary #2<br>
+                        (can be swapped with Bossing when bossing)
+                    </th>
+                    <td>
+                        <p>Ghost Yaksha Boss</p>
+                        <img alt="Icon" src="../resources/Kanna/S2.png">
+                    </td>
+                    <td>
+                        <p>Kishin Shoukan</p>
+                        <img alt="Icon" src="../resources/Kanna/S3.png">
+                    </td>
+                    <td>
+                        <p>Exorcist's Charm</p>
+                        <img alt="Icon" src="../resources/Kanna/S6.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Bossing
+                    </th>
+                    <td>
+                        <p>Vanquisher's Charm</p>
+                        <img alt="Icon" src="../resources/Kanna/S9.png">
+                    </td>
+                    <td>
+                        <p>Shikigami Doppelganger</p>
+                        <img alt="Icon" src="../resources/Kanna/S14.png">
+                    </td>
+                    <td>
+                        <p>Nine-Tailed Fury</p>
+                        <img alt="Icon" src="../resources/Kanna/S13.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="kinesis">Kinesis</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th >
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Psychic Grab</p>
+                        <img alt="Icon" src="../resources/Kinesis/S6.png">
+                    </td>
+                    <td>
+                        <p>Ultimate - Metal Press</p>
+                        <img alt="Icon" src="../resources/Kinesis/S13.png">
+                    </td>
+                    <td>
+                        <p>Ultimate - Trainwreck</p>
+                        <img alt="Icon" src="../resources/Kinesis/S7.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Ultimate - B.P.M.</p>
+                        <img alt="Icon" src="../resources/Kinesis/S10.png">
+                    </td>
+                    <td>
+                        <p>Kinetic Combo</p>
+                        <img alt="Icon" src="../resources/Kinesis/S8.png">
+                    </td>
+                    <td>
+                        <p>Psychic Drain</p>
+                        <img alt="Icon" src="../resources/Kinesis/S5.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="lara">Lara</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Essence Sprinkle</p>
+                        <img alt="Icon" src="../resources/Lara/S1.png">
+                    </td>
+                    <td>
+                        <p>Dragon Vein Eruption</p>
+                        <img alt="Icon" src="../resources/Lara/S5.png">
+                    </td>
+                    <td>
+                        <p>Dragon Vein Absorption</p>
+                        <img alt="Icon" src="../resources/Lara/S6.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Mountain Seed</p>
+                        <img alt="Icon" src="../resources/Lara/S4.png">
+                    </td>
+                    <td>
+                        <p>Mountain Kids</p>
+                        <img alt="Icon" src="../resources/Lara/S3.png">
+                    </td>
+                    <td>
+                        <p>Wake Up Call or Dragon Vein Traces</p>
+                        <img alt="Icon" src="../resources/Lara/S2.png">
+                        <img alt="Icon" src="../resources/Lara/S8.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="lumi">Luminous</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Reflection</p>
+                        <img alt="Icon" src="../resources/Luminous/S9.png">
+                    </td>
+                    <td>
+                        <p>Ender</p>
+                        <img alt="Icon" src="../resources/Luminous/S12.png">
+                    </td>
+                    <td>
+                        <p>Apocalypse</p>
+                        <img alt="Icon" src="../resources/Luminous/S11.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="mm">Marksman</h2>
+        <div class="section">
+            <h3>Bossing Mule</h3>
+            <table>
+                <tr >
+                    <th>
+                        Trio #1
+                    </th>
+                    <td class="important">
+                        <p>Snipe</p>
+                        <img alt="Icon" src="../resources/Marksman/S6.png">
+                    </td>
+                    <td class="important">
+                        <p>Piercing Arrow</p>
+                        <img alt="Icon" src="../resources/Marksman/S5.png">
+                    </td>
+                    <td>
+                        <p>Bolt Swift</p>
+                        <img alt="Icon" src="../resources/Marksman/S2.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>General</h3>
+            <table>
+                <tr >
+                    <th>
+                        Trio #1
+                    </th>
+                    <td class="important">
+                        <p>Snipe</p>
+                        <img alt="Icon" src="../resources/Marksman/S6.png">
+                    </td>
+                    <td class="important">
+                        <p>Piercing Arrow</p>
+                        <img alt="Icon" src="../resources/Marksman/S5.png">
+                    </td>
+                    <td>
+                        <p>Bolt Swift</p>
+                        <img alt="Icon" src="../resources/Marksman/S2.png">
+                    </td>
+                </tr>
+                <tr >
+                    <th>
+                        Trio #2<br>
+                        (Optional)
+                    </th>
+                    <td>
+                        <p>High Speed Shot</p>
+                        <img alt="Icon" src="../resources/Marksman/S7.png">
+                    </td>
+                    <td>
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/Marksman/S1.png">
+                    </td>
+                    <td>
+                        <p>Covering Fire</p>
+                        <img alt="Icon" src="../resources/Marksman/S4.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="mech">Mechanic</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th >
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Homing Beacon</p>
+                        <img alt="Icon" src="../resources/Mechanic/S5.png">
+                    </td>
+                    <td>
+                        <p>Distortion Bomb</p>
+                        <img alt="Icon" src="../resources/Mechanic/S14.png">
+                    </td>
+                    <td>
+                        <p>Heavy and AP Salvo Plus</p>
+                        <img alt="Icon" src="../resources/Mechanic/S13.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Robo Launcher RM7</p>
+                        <img alt="Icon" src="../resources/Mechanic/S6.png">
+                    </td>
+                    <td>
+                        <p>Rock 'n Shock</p>
+                        <img alt="Icon" src="../resources/Mechanic/S8.png">
+                    </td>
+                    <td>
+                        <p>Bots 'n Tots</p>
+                        <img alt="Icon" src="../resources/Mechanic/S12.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="merc">Mercedes</h2>
+        <div class="section">
+            <h3>General</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Bossing
+                    </th>
+                    <td>
+                        <p>Unicorn Spike</p>
+                        <img alt="Icon" src="../resources/Mercedes/S5.png">
+                    </td>
+                    <td>
+                        <p>Ishtar's Ring</p>
+                        <img alt="Icon" src="../resources/Mercedes/S7.png">
+                    </td>
+                    <td>
+                        <p>Stunning Strikes</p>
+                        <img alt="Icon" src="../resources/Mercedes/S3.png">
+                    </td>
+                </tr>
+                <tr class="important">
+                    <th >
+                        Bossing + Mobbing
+                    </th>
+                    <td>
+                        <p>Leaf Tornado</p>
+                        <img alt="Icon" src="../resources/Mercedes/S4.png">
+                    </td>
+                    <td>
+                        <p>Spikes Royale</p>
+                        <img alt="Icon" src="../resources/Mercedes/S8.png">
+                    </td>
+                    <td>
+                        <p>Wrath of Enlil</p>
+                        <img alt="Icon" src="../resources/Mercedes/S10.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Supplimentary
+                    </th>
+                    <td>
+                        <p>Rising Rush</p>
+                        <img alt="Icon" src="../resources/Mercedes/S2.png">
+                    </td>
+                    <td>
+                        <p>Lightning Edge</p>
+                        <img alt="Icon" src="../resources/Mercedes/S9.png">
+                    </td>
+                    <td>
+                        <p>Elemental Knights</p>
+                        <img alt="Icon" src="../resources/Mercedes/S6.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Some Prefer This</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Bossing
+                    </th>
+                    <td>
+                        <p>Unicorn Spike</p>
+                        <img alt="Icon" src="../resources/Mercedes/S5.png">
+                    </td>
+                    <td>
+                        <p>Ishtar's Ring</p>
+                        <img alt="Icon" src="../resources/Mercedes/S7.png">
+                    </td>
+                    <td>
+                        <p>Stunning Strikes</p>
+                        <img alt="Icon" src="../resources/Mercedes/S3.png">
+                    </td>
+                </tr>
+                <tr class="important">
+                    <th >
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Elemental Knights</p>
+                        <img alt="Icon" src="../resources/Mercedes/S6.png">
+                    </td>
+                    <td>
+                        <p>Spikes Royale</p>
+                        <img alt="Icon" src="../resources/Mercedes/S8.png">
+                    </td>
+                    <td>
+                        <p>Wrath of Enlil</p>
+                        <img alt="Icon" src="../resources/Mercedes/S10.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3
+                    </th>
+                    <td>
+                        <p>Rising Rush</p>
+                        <img alt="Icon" src="../resources/Mercedes/S2.png">
+                    </td>
+                    <td>
+                        <p>Lightning Edge</p>
+                        <img alt="Icon" src="../resources/Mercedes/S9.png">
+                    </td>
+                    <td>
+                        <p>Leaf Tornado</p>
+                        <img alt="Icon" src="../resources/Mercedes/S4.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="mihile">Mihile</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Radiant Cross</p>
+                        <img alt="Icon" src="../resources/Mihile/S8.png">
+                    </td>
+                    <td>
+                        <p>Install Shield</p>
+                        <img alt="Icon" src="../resources/Mihile/S7.png">
+                    </td>
+                    <td>
+                        <p>Royal Guard</p>
+                        <img alt="Icon" src="../resources/Mihile/S2.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Charging Light</p>
+                        <img alt="Icon" src="../resources/Mihile/S9.png">
+                    </td>
+                    <td>
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/Mihile/S5.png">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="nl">Night Lord</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Showdown</p>
+                        <img alt="Icon" src="../resources/NightLord/S9.png">
+                    </td>
+                    <td>
+                        <p>Quad star</p>
+                        <img alt="Icon" src="../resources/NightLord/S7.png">
+                    </td>
+                    <td>
+                        <p>Assassin's Mark</p>
+                        <img alt="Icon" src="../resources/NightLord/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Sudden Raid</p>
+                        <img alt="Icon" src="../resources/NightLord/S8.png">
+                    </td>
+                    <td>
+                        <p>Death Star</p>
+                        <img alt="Icon" src="../resources/NightLord/S10.png">
+                    </td>
+                    <td>
+                        <p>Dark Flare</p>
+                        <img alt="Icon" src="../resources/NightLord/S4.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="nw">Night Walker</h2>
+        <div class="section">
+            <table>
+                    <tr class="important">
+                        <th>
+                            Trio #1
+                        </th>
+                        <td>
+                            <p>Quintuple Star</p>
+                            <img alt="Icon" src="../resources/NightWalker/S6.png">
+                        </td>
+                        <td>
+                            <p>Shadow Bats</p>
+                            <img alt="Icon" src="../resources/NightWalker/S2.png">
+                        </td>
+                        <td>
+                            <p>Dark Omen</p>
+                            <img alt="Icon" src="../resources/NightWalker/S7.png">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            Trio #2<br>
+                            (Optional)
+                        </th>
+                        <td>
+                            <p>Shadow Spark</p>
+                            <img alt="Icon" src="../resources/NightWalker/S5.png">
+                        </td>
+                        <td>
+                            <p>Dominion <br>(Half Boost)</p>
+                            <img alt="Icon" src="../resources/NightWalker/S9.png">
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <h2 id="pally">Paladin</h2>    
+        <div class="section">
+            <h3>All Rounder</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Blast</p>
+                        <img alt="Icon" src="../resources/Paladin/S7.png">
+                    </td>
+                    <td>
+                        <p>Divine Judgement</p>
+                        <img alt="Icon" src="../resources/Paladin/S4.png">
+                    </td>
+                    <td>
+                        <p>Divine Charge</p>
+                        <img alt="Icon" src="../resources/Paladin/S6.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Heavens Hammer</p>
+                        <img alt="Icon" src="../resources/Paladin/S8.png">
+                    </td>
+                    <td>
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/Paladin/S1.png">
+                    </td>
+                    <td>
+                        <p>Leap Attack or Smite Shield</p>
+                        <img alt="Icon" src="../resources/Paladin/S5.png">
+                        <img alt="Icon" src="../resources/Paladin/S9.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Bossing</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Blast</p>
+                        <img alt="Icon" src="../resources/Paladin/S7.png">
+                    </td>
+                    <td>
+                        <p>Divine Judgement</p>
+                        <img alt="Icon" src="../resources/Paladin/S4.png">
+                    </td>
+                    <td>
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/Paladin/S1.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Heavens Hammer</p>
+                        <img alt="Icon" src="../resources/Paladin/S8.png">
+                    </td>
+                    <td>
+                        <p>Divine Charge</p>
+                        <img alt="Icon" src="../resources/Paladin/S6.png">
+                        
+                    </td>
+                    <td>
+                        <p>Leap Attack or Smite Shield</p>
+                        <img alt="Icon" src="../resources/Paladin/S5.png">
+                        <img alt="Icon" src="../resources/Paladin/S9.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Mobbing</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Heavens Hammer</p>
+                        <img alt="Icon" src="../resources/Paladin/S8.png">
+                    </td>
+                    <td>
+                        <p>Divine Charge</p>
+                        <img alt="Icon" src="../resources/Paladin/S6.png">
+                    </td>
+                    <td>
+                        <p>Divine Judgement</p>
+                        <img alt="Icon" src="../resources/Paladin/S4.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Blast</p>
+                        <img alt="Icon" src="../resources/Paladin/S7.png">
+                    </td>
+                    <td>
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/Paladin/S1.png">
+                    </td>
+                    <td>
+                        <p>Leap Attack or Smite Shield</p>
+                        <img alt="Icon" src="../resources/Paladin/S5.png">
+                        <img alt="Icon" src="../resources/Paladin/S9.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="pf">Pathfinder</h2>
+        <div class="section">
+            <h3>Recommended</h3>
+            <table>
+                <tr class="important">
+                    <th >
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Cardinal Deluge</p>
+                        <img alt="Icon" src="../resources/PathFinder/S1.png">
+                    </td>
+                    <td>
+                        <p>Cardinal Burst</p>
+                        <img alt="Icon" src="../resources/PathFinder/S2.png">
+                    </td>
+                    <td>
+                        <p>Glyph of Impalement</p>
+                        <img alt="Icon" src="../resources/PathFinder/S7.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Swarm Shot</p>
+                        <img alt="Icon" src="../resources/PathFinder/S5.png">
+                    </td>
+                    <td>
+                        <p>Combo Assault</p>
+                        <img alt="Icon" src="../resources/PathFinder/S8.png">
+                    </td>
+                    <td>
+                        <p>Cardinal Torrent</p>
+                        <img alt="Icon" src="../resources/PathFinder/S3.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>I Have Extra Node Slots</h3>
+            <table>
+                <tr class="important">
+                    <th >
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Cardinal Deluge</p>
+                        <img alt="Icon" src="../resources/PathFinder/S1.png">
+                    </td>
+                    <td>
+                        <p>Cardinal Burst</p>
+                        <img alt="Icon" src="../resources/PathFinder/S2.png">
+                    </td>
+                    <td>
+                        <p>Glyph of Impalement</p>
+                        <img alt="Icon" src="../resources/PathFinder/S7.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Swarm Shot</p>
+                        <img alt="Icon" src="../resources/PathFinder/S5.png">
+                    </td>
+                    <td>
+                        <p>Combo Assault</p>
+                        <img alt="Icon" src="../resources/PathFinder/S8.png">
+                    </td>
+                    <td>
+                        <p>Cardinal Torrent</p>
+                        <img alt="Icon" src="../resources/PathFinder/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3
+                    </th>
+                    <td>
+                        <p>Triple Impact Boost</p>
+                        <img alt="Icon" src="../resources/PathFinder/S6.png">
+                    </td>
+                    <td>
+                        <p>Shadow Raven</p>
+                        <img alt="Icon" src="../resources/PathFinder/S4.png">
+                    </td>
+                    <td>
+                        <p>Ancient Astra</p>
+                        <img alt="Icon" src="../resources/PathFinder/S9.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="phant">Phantom</h2>
+        <div class="section">
+            <h3>Bossing Mule</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Bossing
+                    </th>
+                    <td>
+                        <p>Mille Aiguilles</p>
+                        <img alt="Icon" src="../resources/Phantom/S10.png">
+                    </td>
+                    <td>
+                        <p>Carte Blanc</p>
+                        <img alt="Icon" src="../resources/Phantom/S5.png">
+                    </td>
+                    <td>
+                        <p>Tempest</p>
+                        <img alt="Icon" src="../resources/Phantom/S12.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Mobbing
+                    </th>
+                    <td>
+                        <p>Rose Carte Finale</p>
+                        <img alt="Icon" src="../resources/Phantom/S14.png">
+                    </td>
+                    <td>
+                        <p>Impeccable Memory II</p>
+                        <img alt="Icon" src="../resources/Phantom/S6.png">
+                    </td>
+                    <td>
+                        <p>Impeccable Memory III</p>
+                        <img alt="Icon" src="../resources/Phantom/S9.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>High Level Main</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Bossing
+                    </th>
+                    <td>
+                        <p>Mille Aiguilles</p>
+                        <img alt="Icon" src="../resources/Phantom/S10.png">
+                    </td>
+                    <td>
+                        <p>Carte Blanc</p>
+                        <img alt="Icon" src="../resources/Phantom/S5.png">
+                    </td>
+                    <td>
+                        <p>Tempest</p>
+                        <img alt="Icon" src="../resources/Phantom/S12.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Mobbing
+                    </th>
+                    <td>
+                        <p>Rose Carte Finale</p>
+                        <img alt="Icon" src="../resources/Phantom/S14.png">
+                    </td>
+                    <td>
+                        <p>Impeccable Memory II</p>
+                        <img alt="Icon" src="../resources/Phantom/S6.png">
+                    </td>
+                    <td>
+                        <p>Impeccable Memory III</p>
+                        <img alt="Icon" src="../resources/Phantom/S9.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3
+                    </th>
+                    <td>
+                        <p>Penombre</p>
+                        <img alt="Icon" src="../resources/Phantom/S11.png">
+                    </td>
+                    <td>
+                        <p>Impeccable Memory I</p>
+                        <img alt="Icon" src="../resources/Phantom/S2.png">
+                    </td>
+                    <td>
+                        <p>Impeccable Memory IV</p>
+                        <img alt="Icon" src="../resources/Phantom/S13.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="shade">Shade</h2>
+        <div class="section">
+            <h3>Basic</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Spirit Claw</p>
+                        <img alt="Icon" src="../resources/Shade/S12.png">
+                    </td>
+                    <td>
+                        <p>Bomb Punch</p>
+                        <img alt="Icon" src="../resources/Shade/S11.png">
+                    </td>
+                    <td>
+                        <p>Spirit incarnation</p>
+                        <img alt="Icon" src="../resources/Shade/S15.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Spirit Frenzy</p>
+                        <img alt="Icon" src="../resources/Shade/S8.png">
+                    </td>
+                    <td>
+                        <p>Fox Spirits</p>
+                        <img alt="Icon" src="../resources/Shade/S5.png">
+                    </td>
+                    <td>
+                        <p>Death Mark</p>
+                        <img alt="Icon" src="../resources/Shade/S13.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>High Level Main</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Spirit Claw</p>
+                        <img alt="Icon" src="../resources/Shade/S12.png">
+                    </td>
+                    <td>
+                        <p>Bomb Punch</p>
+                        <img alt="Icon" src="../resources/Shade/S11.png">
+                    </td>
+                    <td>
+                        <p>Spirit incarnation</p>
+                        <img alt="Icon" src="../resources/Shade/S15.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Spirit Frenzy</p>
+                        <img alt="Icon" src="../resources/Shade/S8.png">
+                    </td>
+                    <td>
+                        <p>Fox Spirits</p>
+                        <img alt="Icon" src="../resources/Shade/S5.png">
+                    </td>
+                    <td>
+                        <p>Death Mark</p>
+                        <img alt="Icon" src="../resources/Shade/S13.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3
+                    </th>
+                    <td>
+                        <p>Soul Splitter</p>
+                        <img alt="Icon" src="../resources/Shade/S14.png">
+                    </td>
+                    <td>
+                        <p>Shockwave Punch</p>
+                        <img alt="Icon" src="../resources/Shade/S6.png">
+                    </td>
+                    <td>
+                        <p>Ground Pound</p>
+                        <img alt="Icon" src="../resources/Shade/S2.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #4
+                    </th>
+                    <td>
+                        <p>Blade Imp - Spin Slash</p>
+                        <img alt="Icon" src="../resources/Shade/S7.png">
+                    </td>
+                    <td>
+                        <p>Blade Imp - Downward</p>
+                        <img alt="Icon" src="../resources/Shade/S3.png">
+                    </td>
+                    <td>
+                        <p>Blade Imp - Forward</p>
+                        <img alt="Icon" src="../resources/Shade/S4.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="shad">Shadower</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Assassinate</p>
+                        <img alt="Icon" src="../resources/Shadower/S6.png">
+                    </td>
+                    <td>
+                        <p>Shadow Veil</p>
+                        <img alt="Icon" src="../resources/Shadower/S9.png">
+                    </td>
+                    <td>
+                        <p>Meso Explosion</p>
+                        <img alt="Icon" src="../resources/Shadower/S3.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Cruel Stab</p>
+                        <img alt="Icon" src="../resources/Shadower/S7.png">
+                    </td>
+                    <td>
+                        <p>Sudden Raid</p>
+                        <img alt="Icon" src="../resources/Shadower/S8.png">
+                    </td>
+                    <td>
+                        <p>Dark Flare</p>
+                        <img alt="Icon" src="../resources/Shadower/S5.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="tb">Thunder Breaker</h2>
+        <div class="section">
+            <h3>Boss Mule</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Thunderbolt</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S9.png">
+                    </td>
+                    <td>
+                        <p>Annihilate</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S8.png">
+                    </td>
+                    <td>
+                        <p>Gale</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S7.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Main</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Primary
+                    </th>
+                    <td>
+                        <p>Thunderbolt</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S9.png">
+                    </td>
+                    <td>
+                        <p>Annihilate</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S8.png">
+                    </td>
+                    <td>
+                        <p>Gale</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S7.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Secondary
+                    </th>
+                    <td>
+                        <p>Ascension</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S5.png">
+                    </td>
+                    <td>
+                        <p>Thunder</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S6.png">
+                    </td>
+                    <td>
+                        <p>Tidal Crash</p>
+                        <img alt="Icon" src="../resources/ThunderBreaker/S4.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="wh">Wild Hunter</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th >
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Wild Arrow Blast</p>
+                        <img alt="Icon" src="../resources/WildHunter/S8.png">
+                    </td>
+                    <td>
+                        <p>Summon Jaguar</p>
+                        <img alt="Icon" src="../resources/WildHunter/S2.png">
+                    </td>
+                    <td>
+                        <p>Final Attack</p>
+                        <img alt="Icon" src="../resources/WildHunter/S3.png">
+                    </td>
+                </tr>
+                <tr class="important">
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Exploding Arrows</p>
+                        <img alt="Icon" src="../resources/WildHunter/S10.png">
+                    </td>
+                    <td>
+                        <p>Sonic Roar</p>
+                        <img alt="Icon" src="../resources/WildHunter/S7.png">
+                    </td>
+                    <td>
+                        <p>Hunting Assistant</p>
+                        <img alt="Icon" src="../resources/WildHunter/S6.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Optional
+                    </th>
+                    <td>
+                        <p>Dash 'n Slash</p>
+                        <img alt="Icon" src="../resources/WildHunter/S5.png">
+                    </td>
+                    <td>
+                        <p>Swipe</p>
+                        <img alt="Icon" src="../resources/WildHunter/S4.png">
+                    </td>
+                    <td>
+                        <p>Drill Salvo</p>
+                        <img alt="Icon" src="../resources/WildHunter/S9.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="wa">Wind Archer</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Song of Heaven</p>
+                        <img alt="Icon" src="../resources/WindArcher/S7.png">
+                    </td>
+                    <td>
+                        <p>Trifling Wind</p>
+                        <img alt="Icon" src="../resources/WindArcher/S4.png">                    
+                    </td>
+                    <td>
+                        <p>Storm Bringer</p>
+                        <img alt="Icon" src="../resources/WindArcher/S10.png">                    
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #2
+                    </th>
+                    <td class="important">
+                        <p >Fairy Spiral</p>
+                        <img alt="Icon" src="../resources/WindArcher/S8.png">
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="xenon">Xenon</h2>
+        <div class="section">
+            <table>
+                <tr class="important">
+                    <th >
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Beam dance</p>
+                        <img alt="Icon" src="../resources/Xenon/S10.png">
+                    </td>
+                    <td>
+                        <p>Mecha Purge</p>
+                        <img alt="Icon" src="../resources/Xenon/S11.png">
+                    </td>
+                    <td>
+                        <p>Hologram Field</p>
+                        <img alt="Icon" src="../resources/Xenon/S12.png">
+                    </td>
+                </tr>
+                <tr class="important">
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Triangulation</p>
+                        <img alt="Icon" src="../resources/Xenon/S9.png">
+                    </td>
+                    <td>
+                        <p>Pinpoint Salvo</p>
+                        <img alt="Icon" src="../resources/Xenon/S2.png">
+                    </td>
+                    <td>
+                        <p>Aegis System</p>
+                        <img alt="Icon" src="../resources/Xenon/S8.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Farming
+                    </th>
+                    <td>
+                        <p>Combat Switch</p>
+                        <img alt="Icon" src="../resources/Xenon/S5.png">
+                    </td>
+                    <td>
+                        <p>Diagonal Chase</p>
+                        <img alt="Icon" src="../resources/Xenon/S6.png">
+                    </td>
+                    <td>
+                        <p>Orbital Cataclysm</p>
+                        <img alt="Icon" src="../resources/Xenon/S14.png">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <h2 id="zero">Zero</h2>
+        <div class="section">
+            <h3>Farming</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Wind Cutter</p>
+                        <img alt="Icon" src="../resources/Zero/S7.png">
+                    </td>
+                    <td>
+                        <p>Wind Striker</p>
+                        <img alt="Icon" src="../resources/Zero/S8.png">
+                    </td>
+                    <td>
+                        <p>Storm Break</p>
+                        <img alt="Icon" src="../resources/Zero/S9.png">
+                    </td>
+                </tr>
+            </table>
+            <h3>Bossing</h3>
+            <table>
+                <tr class="important">
+                    <th>
+                        Trio #1
+                    </th>
+                    <td>
+                        <p>Rolling Assault</p>
+                        <img alt="Icon" src="../resources/Zero/S6.png">
+                    </td>
+                    <td>
+                        <p>Rolling Cross</p>
+                        <img alt="Icon" src="../resources/Zero/S5.png">
+                    </td>
+                    <td>
+                        <p>Spin Cutter</p>
+                        <img alt="Icon" src="../resources/Zero/S4.png">
+                    </td>
+                </tr>
+                <tr class="important">
+                    <th>
+                        Trio #2
+                    </th>
+                    <td>
+                        <p>Moon Strike</p>
+                        <img alt="Icon" src="../resources/Zero/S1.png">
+                    </td>
+                    <td>
+                        <p>Piercing Thrust</p>
+                        <img alt="Icon" src="../resources/Zero/S2.png">
+                    </td>
+                    <td>
+                        <p>Shadow Rain</p>
+                        <img alt="Icon" src="../resources/Zero/S10.png">
+                    </td>
+                </tr>
+                <tr>
+                    <th>
+                        Trio #3<br>
+                        (Optional)
+                    </th>
+                    <td>
+                        <p>Flash Assault</p>
+                        <img alt="Icon" src="../resources/Zero/S3.png">
+                    </td>
+                    <td>
+                        
+                    </td>
+                    <td>
+                        
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-    <h2 id="pf">Path Finder</h2>
-    <h2 id="phant">Phantom</h2>
-    <h2 id="shade">Shade</h2>
-    <h2 id="shad">Shadower</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Assassinate</p>
-                    <img alt="Icon" src="../resources/Shadower/S6.png">
-                </td>
-                <td>
-                    <p>Shadow Veil</p>
-                    <img alt="Icon" src="../resources/Shadower/S9.png">
-                </td>
-                <td>
-                    <p>Meso Explosion</p>
-                    <img alt="Icon" src="../resources/Shadower/S3.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Cruel Stab</p>
-                    <img alt="Icon" src="../resources/Shadower/S7.png">
-                </td>
-                <td>
-                    <p>Sudden Raid</p>
-                    <img alt="Icon" src="../resources/Shadower/S8.png">
-                </td>
-                <td>
-                    <p>Dark Flare</p>
-                    <img alt="Icon" src="../resources/Shadower/S5.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="tb">Thunder Breaker</h2>
-    <div class="section">
-        <h3>Boss Mule</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Thunderbolt</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S9.png">
-                </td>
-                <td>
-                    <p>Annihilate</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S8.png">
-                </td>
-                <td>
-                    <p>Gale</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S7.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Main</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Primary
-                </th>
-                <td>
-                    <p>Thunderbolt</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S9.png">
-                </td>
-                <td>
-                    <p>Annihilate</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S8.png">
-                </td>
-                <td>
-                    <p>Gale</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S7.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Secondary
-                </th>
-                <td>
-                    <p>Ascension</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S5.png">
-                </td>
-                <td>
-                    <p>Thunder</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S6.png">
-                </td>
-                <td>
-                    <p>Tidal Crash</p>
-                    <img alt="Icon" src="../resources/ThunderBreaker/S4.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="wh">Wild Hunter</h2>
-    <h2 id="wa">Wind Archer</h2>
-    <div class="section">
-        <table>
-            <tr class="important">
-                <th>
-                    Bossing
-                </th>
-                <td>
-                    <p>Execution</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S7.png">
-                </td>
-                <td>
-                    <p>Nether Shield</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S8.png">
-                </td>
-                <td>
-                    <p>Infernal Exceed</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S11.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Extra
-                </th>
-                <td>
-                    <p>Lunar Slash</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S4.png">
-                </td>
-                <td>
-                    <p>Nether Slice</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S9.png">
-                </td>
-                <td>
-                    <p>Thousand Swords</p>
-                    <img alt="Icon" src="../resources/DemonAvenger/S12.png">
-                </td>
-            </tr>
-        </table>
-    </div>
-    <h2 id="xenon">Xenon</h2>
-
-
-    <h2 id="zero">Zero</h2>
-    <div class="section">
-        <h3>Farming</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Wind Cutter</p>
-                    <img alt="Icon" src="../resources/Zero/S7.png">
-                </td>
-                <td>
-                    <p>Wind Striker</p>
-                    <img alt="Icon" src="../resources/Zero/S8.png">
-                </td>
-                <td>
-                    <p>Storm Break</p>
-                    <img alt="Icon" src="../resources/Zero/S9.png">
-                </td>
-            </tr>
-        </table>
-        <h3>Bossing</h3>
-        <table>
-            <tr class="important">
-                <th>
-                    Trio #1
-                </th>
-                <td>
-                    <p>Rolling Assault</p>
-                    <img alt="Icon" src="../resources/Zero/S6.png">
-                </td>
-                <td>
-                    <p>Rolling Cross</p>
-                    <img alt="Icon" src="../resources/Zero/S5.png">
-                </td>
-                <td>
-                    <p>Spin Cutter</p>
-                    <img alt="Icon" src="../resources/Zero/S4.png">
-                </td>
-            </tr>
-            <tr class="important">
-                <th>
-                    Trio #2
-                </th>
-                <td>
-                    <p>Moon Strike</p>
-                    <img alt="Icon" src="../resources/Zero/S1.png">
-                </td>
-                <td>
-                    <p>Piercing Thrust</p>
-                    <img alt="Icon" src="../resources/Zero/S2.png">
-                </td>
-                <td>
-                    <p>Shadow Rain</p>
-                    <img alt="Icon" src="../resources/Zero/S10.png">
-                </td>
-            </tr>
-            <tr>
-                <th>
-                    Trio #3<br>
-                    (Optional)
-                </th>
-                <td>
-                    <p>Flash Assault</p>
-                    <img alt="Icon" src="../resources/Zero/S3.png">
-                </td>
-                <td>
-                    
-                </td>
-                <td>
-                    
-                </td>
-            </tr>
-        </table>
-    </div>
+    
     
 </body>
