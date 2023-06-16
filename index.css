@@ -30,3 +30,6 @@ section{
 textarea{
     font-family: Arial, Helvetica, sans-serif;
 }
+#output{
+padding-left: 50px;
+}
