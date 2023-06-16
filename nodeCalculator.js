@@ -1,10 +1,16 @@
 // coords = list of elements in [x,y] notation
-function test(master,every,coord){
+// half is the list of half boost requirements
+function test(master,every,coord,half,halfbool){
     // how many boosts each node recieves
     // if every node recieves 2 or more boosts then you have optimal boost nodes 
     let counts = []
+    let halfCount = []
     for(let i = 0;i<every.length;i++){
         counts.push(0)
+    }
+    // half array
+    for(let i = 0;i<half.length;i++){
+        halfCount.push(0)
     }
     // tests our list of coordinates
     for (let i = 0; i<coord.length;i++){
@@ -16,12 +22,29 @@ function test(master,every,coord){
                 if (every[j].trim() === temp[k].trim())
                     counts[j]+=1
             }
-        }    
+        }   
+        if(halfbool){
+            for (let j = 0; j<half.length;j++){
+                for (let k = 0; k<temp.length;k++){
+                    // compare and count
+                    if (half[j].trim() === temp[k].trim())
+                        halfCount[j]+=1
+                }
+            }
+        } 
     }
     // check the validity 
     for (let i = 0; i<counts.length;i++){
         if (counts[i] < 2)
             return false
+    }
+    // check half boosts
+    if(halfbool){
+        for (let i = 0; i<halfCount.length;i++){
+            if (halfCount[i] < 1)
+                
+                return false
+        }
     }
     // optimal boost node
     return true
@@ -31,7 +54,7 @@ function test(master,every,coord){
 // sorted a list of "buckets" of nodes more detail in the main function
 // every a list of all useful nodes parts
 // outerCheck = test1 in the python code
-function outterCheck(coords,sorted,every){
+function outterCheck(coords,sorted,every,half,halfbool){
     // max is the list of maxes for the y aka the length of the buckets in position sorted[x]
     // max1 is the list of maxes for the x's should me sorted.length,sorted.length-1,... reversed
     let max = []
@@ -44,7 +67,7 @@ function outterCheck(coords,sorted,every){
     for (let i = 0; i<max.length;i++){
         max1[max1.length-i-1] -= i
     }
-    if (innerCheck(sorted,max,coords,every))
+    if (innerCheck(sorted,max,coords,every,half,halfbool))
         return true
     // you can think of this while as a bunch of nested for loops
     while(itterate(coords,max1,0)!=false){
@@ -54,7 +77,7 @@ function outterCheck(coords,sorted,every){
             max.push(sorted[coords[i][0]].length)
         }
         // iterates the y coordinates instead of the x coordinates
-        if (innerCheck(sorted,max,coords,every))
+        if (innerCheck(sorted,max,coords,every,half,halfbool))
             return true
         // resets coords when it is done
         for(let i = 0; i<coords.length;i++){
@@ -91,14 +114,14 @@ function itterate(coord,max,i){
 // sorted a list of "buckets" of nodes more detail in the main function
 // every a list of all useful nodes parts
 // max is a list of the lengths of the "buckets" in sorted
-function innerCheck(sorted,max,coord,every){
+function innerCheck(sorted,max,coord,every,half,halfbool){
     // it isnt useful for when we change y but it is very helpful when we itterate x
     // for y we always return to 0
-    if (test(sorted,every,coord))
+    if (test(sorted,every,coord,half,halfbool))
         return true
     // the itterate function was my solution to using 3-9 nested for loops
     while(itterate(coord,max,1)){
-        if (test(sorted,every,coord))
+        if (test(sorted,every,coord,half,halfbool))
             return true
     }
     return false
@@ -113,13 +136,17 @@ function inside(variable,array){
     return false
 }
 var nodes = document.getElementById('optimal');
+// add in half boost functionality
+var halfBoost = document.getElementById("half"); 
 var trios = document.getElementById('trio');
 var out = document.getElementById('output');
 var calc = document.getElementById('calc');
-function main(trio,node){
+function main(trio,node,halfB){
     // parse input into an array of strings
     let lines = trio.value.split('\n')
     let op = node.value.split(",")
+    let allowHalf = halfB.value != ""
+    let halves = halfBoost.value.split(",")
     for(let i = 0; i<lines.length;i++){
         lines[i] = lines[i].toLowerCase()
         lines[i] = lines[i].trim()
@@ -128,6 +155,18 @@ function main(trio,node){
     for(let i = 0; i<op.length;i++){
         op[i] = op[i].toLowerCase()
         op[i] = op[i].trim()
+    }
+    // lowest number
+    let optimal = Math.ceil((op.length/3)*2)
+    let real = (op.length/3)*2
+    // boolean that triggers searching from half list
+    allowHalf = (optimal>real) && halves.length>0 && allowHalf
+
+    if(allowHalf){
+        for(let i = 0; i<halves.length;i++){
+            halves[i] = halves[i].toLowerCase()
+            halves[i] = halves[i].trim()
+        }
     }
     // you can think of sorted as an array of buckets
     let sorted = []
@@ -138,7 +177,7 @@ function main(trio,node){
             // similar to how radix sort works but we only focus on the first value
             if (lines[j][0] === op[i]){
                 // remove nodes that do not have 3 optimal parts
-                if(inside(lines[j][1],op) && inside(lines[j][2].trim(),op)){
+                if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][1],halves))){
                     empty.push(lines[j])
                 }
             }
@@ -147,8 +186,24 @@ function main(trio,node){
             sorted.push(empty)
         }
     }
-    // lowest number
-    let optimal = Math.ceil((op.length/3)*2)
+    if(allowHalf){
+        for (let i = 0; i<halves.length;i++){
+            let empty = []
+            for (let j = 0; j<lines.length;j++){
+                // nodes are sorted into buckets based off their starting value
+                // similar to how radix sort works but we only focus on the first value
+                if (lines[j][0] === halves[i]){
+                    // remove nodes that do not have 3 optimal parts
+                    if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][1],halves))){
+                        empty.push(lines[j])
+                    }
+                }
+            }
+            if (empty.length >0){
+                sorted.push(empty)
+            }
+        }
+    }
     // leng holds the length of each "bucket" in sorted 
     let leng = []
     for(let i = 0; i< sorted.length;i++){
@@ -168,8 +223,8 @@ function main(trio,node){
         return 
     }
     // start of the brute force
-    if (outterCheck(curr,sorted,op)){
-        //print out the results
+    if (outterCheck(curr,sorted,op,halves,allowHalf)){
+        //print out the results        
         for(let i = 0; i< curr.length;i++){        
             out.appendChild(document.createTextNode(sorted[curr[i][0]][curr[i][1]]))
             out.appendChild(document.createElement("br"))
@@ -205,14 +260,12 @@ function loadStorage(){
     trios.value = t
 }
 function store(){
-    console.log(nodes.value)
-    console.log(trios.value)
     localStorage.Essential= JSON.stringify(nodes.value);
     localStorage.Trios = JSON.stringify(trios.value)
 }
 calc.addEventListener('click', function(evt) {
     store()
-    main(trios,nodes)
+    main(trios,nodes,halfBoost)
 })
 document.addEventListener("DOMContentLoaded", function() {
     loadStorage()
