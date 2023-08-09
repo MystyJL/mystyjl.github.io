@@ -1,51 +1,101 @@
-Class, Nodes used, Total Nodes, Chance to get mix and match trios in 200 nodes
-Adele, 6, 10, 99.88%
-Angelic, 6, 12, 85.63%
-Aran, 3, 13, 9.47%
-Ark, 8, 8, 100.0%
-BattleMage, 6, 10, 99.86%
-BeastTamer, 9, 16, 87.58%
-Bishop, 6, 8, 100.0%
-Blaster, 3, 12, 13.99%
-BlazeWizard, 6, 10, 99.86%
-Bowmaster, 3, 10, 34.02%
-Buccaneer, 6, 8, 100.0%
-Cadena, 8, 8, 100.0%
-CannonMaster, 6, 15, 25.06%
-Corsair, 9, 14, 99.79%
-DarkKnight, 6, 8, 100.0%
-DawnWarrior, 3, 8, 73.11%
-DemonAvenger, 6, 12, 85.77%
-DemonSlayer, 6, 15, 25.25%
-DualBlade, 6, 15, 25.36%
-Evan, 6, 12, 85.59%
-FirePoison, 9, 13, 99.99%
-Hayato, 5, 23, 0.14%
-Hero, 6, 10, 99.84%
-Hoyoung, 8, 9, 100.0%
-IceLightning, 6, 11, 97.32%
-Illium, 6, 8, 100.0%
-Jett, 3, 12, 13.94%
-Kain, 8, 8, 100.0%
-Kaiser, 6, 13, 64.91%
-Kanna, 6, 15, 25.17%
-Khali, 6, 9, 100.0%
-Kinesis, 6, 13, 64.81%
-Lara, 6, 8, 100.0%
-Luminous, 3, 13, 9.3%
-Marksman, 3, 7, 91.72%
-Mechanic, 3, 14, 6.37%
-Mercedes, 6, 10, 99.85%
-Mihile, 5, 9, 99.76%
-NightLord, 6, 10, 99.85%
-NightWalker, 3, 9, 52.68%
-Paladin, 6, 9, 100.0%
-PathFinder, 6, 9, 100.0%
-Phantom, 6, 14, 42.86%
-Shade, 6, 15, 25.94%
-Shadower, 6, 9, 100.0%
-ThunderBreaker, 3, 10, 34.39%
-WildHunter, 6, 10, 99.93%
-WindArcher, 4, 10, 66.23%
-Xenon, 6, 14, 42.48%
-Zero, 10, 10, 100.0%
+Class,Nodes used,Total Nodes,Chance to get mix and match trios in 200 nodes
+
+Adele,6,10,99.47%
+
+AngelicBuster,6,12,77.68%
+
+Aran,6,13,54.15%
+
+Ark,8,8,100.0%
+
+BattleMage,6,10,99.45%
+
+BeastTamer,9,16,76.84%
+
+Bishop,6,8,100.0%
+
+Blaster,6,12,77.7%
+
+BlazeWizard,6,10,99.61%
+
+Bowmaster,6,10,99.51%
+
+Buccaneer,6,8,100.0%
+
+Cadena,8,8,100.0%
+
+CannonMaster,6,15,18.23%
+
+Corsair,9,14,99.09%
+
+DarkKnight,6,8,100.0%
+
+DawnWarrior,3,8,68.35%
+
+DemonAvenger,6,12,78.39%
+
+DemonSlayer,6,15,17.85%
+
+DualBlade,6,15,18.86%
+
+Evan,6,12,77.24%
+
+FirePoison,9,13,99.98%
+
+Hayato,5,10,92.97%
+
+Hero,6,10,99.56%
+
+Hoyoung,8,9,100.0%
+
+IceLightning,6,11,94.43%
+
+Illium,6,8,100.0%
+
+Jett,6,12,77.23%
+
+Kain,8,8,100.0%
+
+Kaiser,6,13,53.95%
+
+Kanna,6,15,18.77%
+
+Khali,6,9,99.99%
+
+Kinesis,6,13,52.98%
+
+Lara,6,8,100.0%
+
+Luminous,3,13,7.74%
+
+Marksman,3,7,88.27%
+
+Mechanic,3,14,4.88%
+
+Mercedes,6,10,99.49%
+
+Mihile,5,9,99.24%
+
+NightLord,6,10,99.54%
+
+NightWalker,3,9,44.73%
+
+Paladin,6,9,99.99%
+
+PathFinder,6,9,100.0%
+
+Phantom,6,14,32.99%
+
+Shade,6,15,18.71%
+
+Shadower,6,9,100.0%
+
+ThunderBreaker,6,10,99.54%
+
+WildHunter,6,10,99.58%
+
+WindArcher,4,10,58.51%
+
+Xenon,6,14,33.69%
+
+Zero,10,10,100.0%
