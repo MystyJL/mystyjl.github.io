@@ -108,6 +108,7 @@ for(let i = 0; i<classes.length;i++){
 selecting.addEventListener("change",(event) => {
     imgs.innerHTML = ''
     clas = event.target.value
+    console.log(event.target)
     for(let i = 0; i<file[clas].length;i++){
         image =  document.createElement("img")
         image.src = directory+clas+"/"+file[clas][i]
