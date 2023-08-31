@@ -2,33 +2,26 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Hello OpenCV.js</title>
+<title>Mysty's Image Solver</title>
 </head>
 <body>
 <img id="template" hidden src="./template.png">
 <select id="classes">
 </select>
+<p>Requirements:</p>
 <ul id="imgL">
+</ul>
+<p>Half Boosts:</p>
+<ul id="halfB">
 </ul>
 <div>
  <div class="inputoutput">
- <img id="imageSrc" alt="No Image" />
- <div class="caption">imageSrc <input type="file" id="fileInput" name="file" /></div>
- </div>
- <div class="inputoutput">
- <canvas id="canvasOutput" ></canvas>
- <div class="caption">canvasOutput</div>
+ <div class="caption">imageSrc <input multiple type="file" id="fileInput" name="file" /></div>
  </div>
 </div>
+<table id="viewing"></table>
+<button type="button" onclick="calculate()">calculate</button>
 <script type="text/javascript">
-function inside(x,y){
-    for(let i = 0; i<y.length;i++){
-        if(x==y[i]){
-            return true
-        }
-    }
-    return false
-}
 function sumRegion(im1,im2,start,region){
     let R = 0
     let G = 0
@@ -39,8 +32,8 @@ function sumRegion(im1,im2,start,region){
         // square
         for (let j = 0; j<14;j++){
             for (let i = j; i<27;i++){
-                let pixel1 = im1.charPtr(start[0]+i+3,start[1]+j+2)
-                let pixel2 = im2.charPtr(i+3,j+2)
+                let pixel1 = im1.ucharPtr(start[0]+i+3,start[1]+j+2)
+                let pixel2 = im2.ucharPtr(i+3,j+2)
                 R+=Math.pow(pixel1[0]/255-pixel2[0]/255,2)
                 G+=Math.pow(pixel1[1]/255-pixel2[1]/255,2)
                 B+=Math.pow(pixel1[2]/255-pixel2[2]/255,2)
@@ -54,8 +47,8 @@ function sumRegion(im1,im2,start,region){
         // j = i-32-i-3
         for (let i = 0; i<14; i++){
             for (let j = i+3;j<32-i-2;j++){
-                let pixel1 = im1.charPtr(start[0]+i+2,start[1]+j)
-                let pixel2 = im2.charPtr(i+2,j)
+                let pixel1 = im1.ucharPtr(start[0]+i+2,start[1]+j)
+                let pixel2 = im2.ucharPtr(i+2,j)
                 R+=Math.pow(pixel1[0]/255-pixel2[0]/255,2)
                 G+=Math.pow(pixel1[1]/255-pixel2[1]/255,2)
                 B+=Math.pow(pixel1[2]/255-pixel2[2]/255,2)
@@ -67,8 +60,8 @@ function sumRegion(im1,im2,start,region){
     else{
         for (let j = 0; j<13;j++){
             for(let i = 16-j; i<30;i++){
-                let pixel1 = im1.charPtr(start[0]+i,start[1]+j+17)
-                let pixel2 = im2.charPtr(i,j+17)
+                let pixel1 = im1.ucharPtr(start[0]+i,start[1]+j+17)
+                let pixel2 = im2.ucharPtr(i,j+17)
                 R+=Math.pow(pixel1[0]/255-pixel2[0]/255,2)
                 G+=Math.pow(pixel1[1]/255-pixel2[1]/255,2)
                 B+=Math.pow(pixel1[2]/255-pixel2[2]/255,2)
@@ -85,8 +78,6 @@ function identify(img,loc,img_lib,region){
         choices.push(0) 
         choices[i] = sumRegion(img,img_lib[i],loc,region)
     }
-    console.log(choices)
-    console.log(Math.min(...choices))
     if (Math.min(...choices) < 0.1){
         return choices.indexOf(Math.min(...choices))
     }
@@ -124,18 +115,17 @@ function trioFinder(img_rgb, template, reqSkills){
     clean = []
     for(let i = 0; i<coords.length;i++){
         dont = false
-        if(inside(i,skip)){
+        if(ins(i,skip)){
             continue;
         }
         for(let j = i+1; j<coords.length;j++){
-            // console.log(j,i,coords[i],coords[j],"distance=",(Math.abs(coords[i][0]-coords[j][0])+Math.abs(coords[i][1]-coords[j][1])))
             if ((Math.abs(coords[i][0]-coords[j][0])+Math.abs(coords[i][1]-coords[j][1]))<15){
                 let pixel = dst.floatPtr(i, j);
                 if(dst.floatPtr(coords[i][0],coords[i][1])[0]>=dst.floatPtr(coords[j][0],coords[j][1])[0]){
                     skip.push(j)
                 }
                 else if(dst.floatPtr(coords[i][0],coords[i][1])[0]<dst.floatPtr(coords[j][0],coords[j][1])[0]){
-                    dont = True
+                    dont = true
                     break;
                 }
             }
@@ -144,7 +134,6 @@ function trioFinder(img_rgb, template, reqSkills){
             clean.push(coords[i])
         } 
     }
-    // console.log(clean)
     let count = []
     // create nodes
     for(let pt = 0; pt<clean.length;pt++){
@@ -152,7 +141,6 @@ function trioFinder(img_rgb, template, reqSkills){
         main = identify(src,clean[pt],reqSkills,1)
         up = identify(src,clean[pt],reqSkills,2)
         last = identify(src,clean[pt],reqSkills,3)
-        console.log([main,up,last])
         if (main !=-1 && top !=-1 && last !=-1){
             count.push([main.toString(),up.toString(),last.toString()])
         }
@@ -162,23 +150,52 @@ function trioFinder(img_rgb, template, reqSkills){
     src.delete()
     return count 
 }
-let selection = []
-let imgElement = document.getElementById('imageSrc');
+let viewing = document.getElementById('viewing')
+let readimgs = []
 let inputElement = document.getElementById('fileInput');
 inputElement.addEventListener('change', (e) => {
- imgElement.src = URL.createObjectURL(e.target.files[0]);
+    readimgs = []
+    for(let i = 0; i<e.target.files.length;i++){
+        let tempim =  document.createElement("img")
+        tempim.src = URL.createObjectURL(e.target.files[i]);
+        readimgs.push(tempim)
+    }
 }, false);
-imgElement.onload = function() {
+function calculate() {
     nodelib = document.getElementsByClassName("nodeLib")
-    console.log(nodelib)
-    img_library =[] 
+    let img_library =[] 
+    let req = []
+    let nodes = []
+    let half = []
     for(let i = 0;i<nodelib.length;i++){
         img_library.push(cv.imread(nodelib[i]))
     }
-
-    console.log(trioFinder(imgElement,'template',img_library))
-    // cv.imshow('canvasOutput',img_library[2])
-
+    for(let i = 0; i<stateList.length;i++){
+        if(stateList[i]){
+            req.push(i.toString())
+        }
+    }
+    for(let i = 0; i<stateList.length;i++){
+        if(halfState[i]){
+            req.push(i.toString())
+        }
+    }
+    for(let i = 0; i<readimgs.length;i++){
+        nodes = [...nodes,...trioFinder(readimgs[i],'template',img_library)]
+    }
+    trios = main1(nodes,req,half)
+    let fileList = file[clas]
+    for(let i = 0; i<trios.length;i++){
+        row1 = document.createElement('tr')
+        for(let j = 0; j<3;j++){
+            let image = document.createElement('img')
+            image.src = directory+clas+"/"+fileList[parseInt(trios[i][j])]
+            data = document.createElement('td')
+            data.appendChild(image)
+            row1.appendChild(data)
+        }
+        viewing.appendChild(row1)
+    }
 };
 </script>
 <script async src="opencv.js" type="text/javascript"></script>
