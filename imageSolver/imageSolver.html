@@ -184,7 +184,6 @@ function calculate() {
     for(let i = 0; i<readimgs.length;i++){
         nodes = [...nodes,...trioFinder(readimgs[i],'template',img_library)]
     }
-    console.log(half,req)
     trios = main1(nodes,req,half)
     let fileList = file[clas]
     if(trios =="impossible"){

@@ -154,7 +154,6 @@ function main1(trio,node,halfB){
     let optimal = Math.ceil((op.length/3)*2)
     
     let real = (op.length/3)*2
-    console.log(optimal,real)
     // boolean that triggers searching from half list
     allowHalf = (optimal>real) && halves.length>0 && allowHalf
 
@@ -335,7 +334,6 @@ for(let i = 0; i<file[clas].length;i++){
         else{
             event.target.style.border = "";
         }
-        console.log(halfState)
     })
     referenceList.push(image)
     halfreference.push(halfimage)
@@ -382,7 +380,6 @@ selecting.addEventListener("change",(event) => {
             else{
                 event.target.style.border = "";
             }
-            console.log(halfState)
         })
         referenceList.push(image)
         halfreference.push(halfimage)
