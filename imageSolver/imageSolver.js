@@ -167,13 +167,18 @@ function main1(trio,node,halfB){
             if (lines[j][0] === op[i]){
                 if(op.length<3){
                     if((inside(lines[j][1],op) || inside(lines[j][1],halves))||( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
-                        empty.push(lines[j])
+                        if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
+                            empty.push(lines[j])
+                        }
+                        
                     }
                 }
                 else{
                     // remove nodes that do not have 3 optimal parts
                     if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
-                        empty.push(lines[j])
+                        if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
+                            empty.push(lines[j])
+                        }
                     }
                 }
                 
@@ -193,7 +198,9 @@ function main1(trio,node,halfB){
                 if (lines[j][0] === halves[i]){
                     // remove nodes that do not have 3 optimal parts
                     if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
-                        empty.push(lines[j])
+                        if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
+                            empty.push(lines[j])
+                        }
                     }
                 }
             }
@@ -214,6 +221,8 @@ function main1(trio,node,halfB){
         curr.push([i,0])
     }
     // impossible case
+    console.log(sorted.length, optimal)
+    console.log(sorted)
     if(sorted.length < optimal){
         return "bad input (unlock nodes or open more nodes)"
     }
