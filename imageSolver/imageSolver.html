@@ -176,27 +176,37 @@ function calculate() {
             req.push(i.toString())
         }
     }
-    for(let i = 0; i<stateList.length;i++){
+    for(let i = 0; i<halfState.length;i++){
         if(halfState[i]){
-            req.push(i.toString())
+            half.push(i.toString())
         }
     }
     for(let i = 0; i<readimgs.length;i++){
         nodes = [...nodes,...trioFinder(readimgs[i],'template',img_library)]
     }
+    console.log(half,req)
     trios = main1(nodes,req,half)
     let fileList = file[clas]
-    for(let i = 0; i<trios.length;i++){
-        row1 = document.createElement('tr')
-        for(let j = 0; j<3;j++){
-            let image = document.createElement('img')
-            image.src = directory+clas+"/"+fileList[parseInt(trios[i][j])]
-            data = document.createElement('td')
-            data.appendChild(image)
-            row1.appendChild(data)
-        }
-        viewing.appendChild(row1)
+    if(trios =="impossible"){
+        viewing.appendChild(document.createTextNode(trios))
     }
+    else if (trios == "bad input (unlock nodes or open more nodes)"){
+        viewing.appendChild(document.createTextNode(trios))
+    }
+    else{
+        for(let i = 0; i<trios.length;i++){
+            row1 = document.createElement('tr')
+            for(let j = 0; j<3;j++){
+                let image = document.createElement('img')
+                image.src = directory+clas+"/"+fileList[parseInt(trios[i][j])]
+                data = document.createElement('td')
+                data.appendChild(image)
+                row1.appendChild(data)
+            }
+            viewing.appendChild(row1)
+        }
+    }
+    
 };
 </script>
 <script async src="opencv.js" type="text/javascript"></script>

@@ -152,7 +152,9 @@ function main1(trio,node,halfB){
     let halves = halfB
     // lowest number
     let optimal = Math.ceil((op.length/3)*2)
+    
     let real = (op.length/3)*2
+    console.log(optimal,real)
     // boolean that triggers searching from half list
     allowHalf = (optimal>real) && halves.length>0 && allowHalf
 
@@ -164,10 +166,18 @@ function main1(trio,node,halfB){
             // nodes are sorted into buckets based off their starting value
             // similar to how radix sort works but we only focus on the first value
             if (lines[j][0] === op[i]){
-                // remove nodes that do not have 3 optimal parts
-                if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][1],halves))){
-                    empty.push(lines[j])
+                if(op.length<3){
+                    if((inside(lines[j][1],op) || inside(lines[j][1],halves))||( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
+                        empty.push(lines[j])
+                    }
                 }
+                else{
+                    // remove nodes that do not have 3 optimal parts
+                    if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
+                        empty.push(lines[j])
+                    }
+                }
+                
             }
         }
         if (empty.length >0){
@@ -180,9 +190,10 @@ function main1(trio,node,halfB){
             for (let j = 0; j<lines.length;j++){
                 // nodes are sorted into buckets based off their starting value
                 // similar to how radix sort works but we only focus on the first value
+                
                 if (lines[j][0] === halves[i]){
                     // remove nodes that do not have 3 optimal parts
-                    if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][1],halves))){
+                    if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
                         empty.push(lines[j])
                     }
                 }
@@ -205,7 +216,7 @@ function main1(trio,node,halfB){
     }
     // impossible case
     if(sorted.length < optimal){
-        return "impossible"
+        return "bad input (unlock nodes or open more nodes)"
     }
     // start of the brute force
     if (outterCheck(curr,sorted,op,halves,allowHalf)){
@@ -324,6 +335,7 @@ for(let i = 0; i<file[clas].length;i++){
         else{
             event.target.style.border = "";
         }
+        console.log(halfState)
     })
     referenceList.push(image)
     halfreference.push(halfimage)
@@ -361,18 +373,19 @@ selecting.addEventListener("change",(event) => {
             for(let i = 0; i<halfState.length;i++){
                 check = check || halfState[i]
             }
-            if((stateList[referenceList.indexOf(event.target)] && check) || !check){
-                stateList[referenceList.indexOf(event.target)] = !stateList[referenceList.indexOf(event.target)]
+            if((halfState[halfreference.indexOf(event.target)] && check) || !check){
+                halfState[halfreference.indexOf(event.target)] = !halfState[halfreference.indexOf(event.target)]
             }
-            
-            if(stateList[referenceList.indexOf(event.target)]){
+            if(halfState[halfreference.indexOf(event.target)]){
                 event.target.style.border = "5px solid #0090ff";
             }
             else{
                 event.target.style.border = "";
             }
+            console.log(halfState)
         })
         referenceList.push(image)
+        halfreference.push(halfimage)
         stateList.push(false)
         halfState.push(false)
         imgs.appendChild(image)
