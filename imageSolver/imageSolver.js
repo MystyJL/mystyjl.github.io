@@ -221,8 +221,6 @@ function main1(trio,node,halfB){
         curr.push([i,0])
     }
     // impossible case
-    console.log(sorted.length, optimal)
-    console.log(sorted)
     if(sorted.length < optimal){
         return "bad input (unlock nodes or open more nodes)"
     }
@@ -403,7 +401,6 @@ selecting.addEventListener("change",(event) => {
 document.onpaste = async (event) => {
   
     let items = (event.clipboardData ?? event.originalEvent.clipboardData).items;
-    console.log(items)
     for (const item of items) {
       if (item.kind === "file") {
         let tempim = document.createElement("img")
