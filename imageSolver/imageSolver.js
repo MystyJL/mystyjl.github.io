@@ -417,9 +417,23 @@ const dropimages = async (e) => {
         let showim = document.createElement("img")
         showim.width = 400
         let source = URL.createObjectURL(file);
-        console.log(source)
         tempim.src = source
+        showim.classList.add("theShown");
         showim.src = source
+        showim.addEventListener('click',(event)=>{
+            let curr = event.target
+            let shown = document.getElementsByClassName('theShown')
+            let index = 0
+            for(let i = 0;i<shown.length;i++){
+                if(shown[0]==curr){
+                    index = i
+                }
+            }
+            let rev = readimgs.splice(index,1)
+            curr.remove()
+            rev[0].remove()
+            
+        })
         readimgs.push(tempim)
         checking.appendChild(showim)
     }
@@ -438,11 +452,26 @@ document.onpaste = async (event) => {
         let source = URL.createObjectURL(blob);
         tempim.src = source
         showim.src = source
+        showim.classList.add("theShown");
+        showim.addEventListener('click',(event)=>{
+            let curr = event.target
+            let shown = document.getElementsByClassName('theShown')
+            let index = 0
+            for(let i = 0;i<shown.length;i++){
+                if(shown[0]==curr){
+                    index = i
+                }
+            }
+            let rev = readimgs.splice(index,1)
+            curr.remove()
+            rev[0].remove()
+        })
         readimgs.push(tempim)
         checking.appendChild(showim)
       }
     }
 }
+
 selecting.value = "Adele"
 
 

@@ -23,6 +23,7 @@
 <table id="viewing"></table>
 <br>
 <button type="button" onclick="calculate()">calculate</button>
+<p>Click images to remove</p>
 <div id="lastCheck"></div>
 <script type="text/javascript">
 function sumRegion(im1,im2,start,region){
@@ -164,7 +165,22 @@ inputElement.addEventListener('change', (e) => {
         showim.width = 400
         let source = URL.createObjectURL(e.target.files[i]);
         tempim.src = source
+        showim.classList.add("theShown");
         showim.src = source
+        showim.addEventListener('click',(event)=>{
+            let curr = event.target
+            
+            let shown = document.getElementsByClassName('theShown')
+            let index = 0
+            for(let i = 0;i<shown.length;i++){
+                if(shown[0]==curr){
+                    index = i
+                }
+            }
+            let rev = readimgs.splice(index,1)
+            curr.remove()
+            rev[0].remove()
+        })
         readimgs.push(tempim)
         checking.appendChild(showim)
     }
@@ -192,7 +208,7 @@ function calculate() {
     for(let i = 0; i<readimgs.length;i++){
         nodes = [...nodes,...trioFinder(readimgs[i],'template',img_library)]
     }
-    readimgs = []
+    
     document.querySelectorAll("#lastCheck img").forEach(img => img.remove());
     last.innerHTML=""
     trios = main1(nodes,req,half)
@@ -220,7 +236,7 @@ function calculate() {
     for (let i = 0; i<readimgs;i++){
         readimgs[i].remove()
     }
-    
+    readimgs = []
 };
 </script>
 <script async src="opencv.js" type="text/javascript"></script>
