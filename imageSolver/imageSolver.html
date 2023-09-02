@@ -214,6 +214,9 @@ function calculate() {
         }
 
     }
+    for (let i = 0; i<readimgs;i++){
+        readimgs[i].remove()
+    }
     readimgs = []
     document.querySelectorAll("#lastCheck img").forEach(img => img.remove());
     last.innerHTML=""
