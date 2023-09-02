@@ -398,6 +398,34 @@ selecting.addEventListener("change",(event) => {
     }
 
   });
+const droparea = document.querySelector('html');
+const droppable = () => droparea.style.border = 'solid red 5px';
+['dragenter', 'dragover'].forEach(e => droparea.addEventListener(e, droppable));
+const prevent = (e) => e.preventDefault();
+['dragenter', 'dragover', 'dragleave', 'drop'].forEach(e => droparea.addEventListener(e, prevent));
+const nodrop = () => droparea.style.border = '';
+['dragleave', 'drop'].forEach(e => droparea.addEventListener(e, nodrop));
+const dropimages = async (e) => {
+    let data = e.dataTransfer;
+    let files = [...data.files];
+
+    for (let file of files) {
+        if (file.type !== 'image/png'){
+            continue;
+        } 
+        let tempim = document.createElement("img")
+        let showim = document.createElement("img")
+        showim.width = 400
+        let source = URL.createObjectURL(file);
+        console.log(source)
+        tempim.src = source
+        showim.src = source
+        readimgs.push(tempim)
+        checking.appendChild(showim)
+    }
+};
+droparea.addEventListener('drop', dropimages);
+
 document.onpaste = async (event) => {
   
     let items = (event.clipboardData ?? event.originalEvent.clipboardData).items;

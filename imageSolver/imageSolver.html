@@ -192,6 +192,9 @@ function calculate() {
     for(let i = 0; i<readimgs.length;i++){
         nodes = [...nodes,...trioFinder(readimgs[i],'template',img_library)]
     }
+    readimgs = []
+    document.querySelectorAll("#lastCheck img").forEach(img => img.remove());
+    last.innerHTML=""
     trios = main1(nodes,req,half)
     let fileList = file[clas]
     if(trios =="impossible"){
@@ -217,9 +220,7 @@ function calculate() {
     for (let i = 0; i<readimgs;i++){
         readimgs[i].remove()
     }
-    readimgs = []
-    document.querySelectorAll("#lastCheck img").forEach(img => img.remove());
-    last.innerHTML=""
+    
 };
 </script>
 <script async src="opencv.js" type="text/javascript"></script>
