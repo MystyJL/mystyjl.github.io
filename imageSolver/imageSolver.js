@@ -248,6 +248,7 @@ function main1(trio,node,halfB){
 let halfBoost = document.getElementById("halfB")
 let selecting = document.getElementById("classes")
 let imgs = document.getElementById("imgL")
+let checking = document.getElementById("lastCheck")
 
 var file = {Adele:['S1.png', 'S10.png', 'S2.png', 'S3.png', 'S4.png', 'S5.png', 'S6.png', 'S7.png', 'S8.png', 'S9.png'],
 AngelicBuster:['S1.png', 'S10.png', 'S11.png', 'S12.png', 'S2.png', 'S3.png', 'S4.png', 'S5.png', 'S6.png', 'S7.png', 'S8.png', 'S9.png'],
@@ -399,6 +400,24 @@ selecting.addEventListener("change",(event) => {
     }
 
   });
+document.onpaste = async (event) => {
+  
+    let items = (event.clipboardData ?? event.originalEvent.clipboardData).items;
+    console.log(items)
+    for (const item of items) {
+      if (item.kind === "file") {
+        let tempim = document.createElement("img")
+        let showim = document.createElement("img")
+        showim.width = 400
+        let blob = item.getAsFile();
+        let source = URL.createObjectURL(blob);
+        tempim.src = source
+        showim.src = source
+        readimgs.push(tempim)
+        checking.appendChild(showim)
+      }
+    }
+}
 selecting.value = "Adele"
 
 

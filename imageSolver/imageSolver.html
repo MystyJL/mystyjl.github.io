@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="stylesheet" href="./imageSolver.css">
 <title>Mysty's Image Solver</title>
 </head>
 <body>
@@ -16,11 +17,13 @@
 </ul>
 <div>
  <div class="inputoutput">
- <div class="caption">imageSrc <input multiple type="file" id="fileInput" name="file" /></div>
+ <div class="caption">You can also ctrl+v(paste) the image directly into this window<br><br><input multiple type="file" id="fileInput" name="file" /></div>
  </div>
 </div>
 <table id="viewing"></table>
+<br>
 <button type="button" onclick="calculate()">calculate</button>
+<div id="lastCheck"></div>
 <script type="text/javascript">
 function sumRegion(im1,im2,start,region){
     let R = 0
@@ -135,7 +138,6 @@ function trioFinder(img_rgb, template, reqSkills){
         } 
     }
     let count = []
-    console.log(clean)
     // create nodes
     for(let pt = 0; pt<clean.length;pt++){
         // print(pt1)
@@ -154,12 +156,17 @@ function trioFinder(img_rgb, template, reqSkills){
 let viewing = document.getElementById('viewing')
 let readimgs = []
 let inputElement = document.getElementById('fileInput');
+let last = document.getElementById("lastCheck")
 inputElement.addEventListener('change', (e) => {
-    readimgs = []
     for(let i = 0; i<e.target.files.length;i++){
-        let tempim =  document.createElement("img")
-        tempim.src = URL.createObjectURL(e.target.files[i]);
+        let tempim = document.createElement("img")
+        let showim = document.createElement("img")
+        showim.width = 400
+        let source = URL.createObjectURL(e.target.files[i]);
+        tempim.src = source
+        showim.src = source
         readimgs.push(tempim)
+        checking.appendChild(showim)
     }
 }, false);
 function calculate() {
@@ -185,7 +192,6 @@ function calculate() {
     for(let i = 0; i<readimgs.length;i++){
         nodes = [...nodes,...trioFinder(readimgs[i],'template',img_library)]
     }
-    console.log(nodes)
     trios = main1(nodes,req,half)
     let fileList = file[clas]
     if(trios =="impossible"){
@@ -206,8 +212,11 @@ function calculate() {
             }
             viewing.appendChild(row1)
         }
+
     }
-    
+    readimgs = []
+    document.querySelectorAll("#lastCheck img").forEach(img => img.remove());
+    last.innerHTML=""
 };
 </script>
 <script async src="opencv.js" type="text/javascript"></script>
