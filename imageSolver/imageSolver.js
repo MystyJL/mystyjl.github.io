@@ -169,8 +169,7 @@ function main1(trio,node,halfB){
                     if((inside(lines[j][1],op) || inside(lines[j][1],halves))||( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
                         if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
                             empty.push(lines[j])
-                        }
-                        
+                        }     
                     }
                 }
                 else{

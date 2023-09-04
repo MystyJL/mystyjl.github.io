@@ -16,4 +16,8 @@ a:link, a:visited {
     color: cyan;
     background-color: transparent;
     text-decoration: none;
-  }
+}
+#buttons{
+    display: flex;
+    gap: 20px;
+}

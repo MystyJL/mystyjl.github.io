@@ -23,8 +23,13 @@
 </div>
 <table id="viewing"></table>
 <br>
-<button type="button" onclick="calculate()">calculate</button>
+<div id="buttons">
+    <button type="button" onclick="calculate(true)" >Calculate</button>
+    <button type="button" onclick="deleteImgs()">Clear All</button>
+    <button type="button" onclick="calculate(false)">Show Nodes</button>
+</div>
 <p>Click images to remove</p>
+
 <div id="lastCheck"></div>
 <script type="text/javascript">
 function sumRegion(im1,im2,start,region){
@@ -83,12 +88,19 @@ function identify(img,loc,img_lib,region){
         choices.push(0) 
         choices[i] = sumRegion(img,img_lib[i],loc,region)
     }
-    if (Math.min(...choices) < 0.2){
+    if (Math.min(...choices) < 0.15){
         return choices.indexOf(Math.min(...choices))
     }
     return -1
 }
-    
+function deleteImgs(){
+    for (let i = 0; i<readimgs;i++){
+        readimgs[i].remove()
+    }
+    document.querySelectorAll("#lastCheck img").forEach(img => img.remove());
+    last.innerHTML=""
+    readimgs = []
+}
 function trioFinder(img_rgb, template, reqSkills){
     // setup
     let threshold = 0.3;
@@ -186,7 +198,16 @@ inputElement.addEventListener('change', (e) => {
         checking.appendChild(showim)
     }
 }, false);
-function calculate() {
+function filter1(nodes){
+    clean = []
+    for(let i = 0; i<nodes.length;i++){
+        if(nodes[i][0]!=nodes[i][1] && nodes[i][0]!=nodes[i][2] && nodes[i][2]!=nodes[i][1]){
+            clean.push(nodes[i])
+        }
+    }
+    return clean
+}
+function calculate(tabs) {
     nodelib = document.getElementsByClassName("nodeLib")
     viewing.innerHTML = ''
     let img_library =[] 
@@ -209,35 +230,46 @@ function calculate() {
     for(let i = 0; i<readimgs.length;i++){
         nodes = [...nodes,...trioFinder(readimgs[i],'template',img_library)]
     }
-    
-    document.querySelectorAll("#lastCheck img").forEach(img => img.remove());
-    last.innerHTML=""
-    trios = main1(nodes,req,half)
     let fileList = file[clas]
-    if(trios =="impossible"){
-        viewing.appendChild(document.createTextNode(trios))
-    }
-    else if (trios == "bad input (unlock nodes or open more nodes)"){
-        viewing.appendChild(document.createTextNode(trios))
+    if(tabs){
+        trios = main1(nodes,req,half)
+        if(trios =="impossible"){
+            viewing.appendChild(document.createTextNode(trios))
+        }
+        else if (trios == "bad input (unlock nodes or open more nodes)"){
+            viewing.appendChild(document.createTextNode(trios))
+        }
+        else{
+            for(let i = 0; i<trios.length;i++){
+                row1 = document.createElement('tr')
+                for(let j = 0; j<3;j++){
+                    let image = document.createElement('img')
+                    image.src = directory+clas+"/"+fileList[parseInt(trios[i][j])]
+                    data = document.createElement('td')
+                    data.appendChild(image)
+                    row1.appendChild(data)
+                }
+                viewing.appendChild(row1)
+            }
+
+        }
     }
     else{
-        for(let i = 0; i<trios.length;i++){
-            row1 = document.createElement('tr')
-            for(let j = 0; j<3;j++){
-                let image = document.createElement('img')
-                image.src = directory+clas+"/"+fileList[parseInt(trios[i][j])]
-                data = document.createElement('td')
-                data.appendChild(image)
-                row1.appendChild(data)
+        nodes = filter1(nodes)
+        for(let i = 0; i<nodes.length;i++){
+                row1 = document.createElement('tr')
+                for(let j = 0; j<3;j++){
+                    let image = document.createElement('img')
+                    image.src = directory+clas+"/"+fileList[parseInt(nodes[i][j])]
+                    data = document.createElement('td')
+                    data.appendChild(image)
+                    row1.appendChild(data)
+                }
+                viewing.appendChild(row1)
             }
-            viewing.appendChild(row1)
-        }
-
     }
-    for (let i = 0; i<readimgs;i++){
-        readimgs[i].remove()
-    }
-    readimgs = []
+    
+    
 };
 </script>
 <script async src="opencv.js" type="text/javascript"></script>
