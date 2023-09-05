@@ -15,9 +15,15 @@ html{
 a:link, a:visited {
     color: cyan;
     background-color: transparent;
-    text-decoration: none;
+}
+h1{
+    flex:100%;
+    text-align: center;
 }
 #buttons{
     display: flex;
     gap: 20px;
+}
+body{
+    margin-left: 2%;
 }
