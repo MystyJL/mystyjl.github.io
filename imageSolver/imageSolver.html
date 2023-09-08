@@ -12,6 +12,7 @@
 <p class="title"> <a href="../reference/NodeGuide.html">Node Guide</a></p>
 <p class="title"> <a href="../index.html">Text Based Node Guide(old)</a></p>
 <img id="template" hidden src="./template.png">
+<img id="template1" hidden src="./template1.png">
 <select id="classes">
 </select>
 <p>Requirements:</p>
@@ -32,7 +33,7 @@
     <button type="button" onclick="deleteImgs()">Clear All</button>
     <button type="button" onclick="calculate(false)">Show Nodes</button>
 </div>
-<p>Click images to remove</p>
+<p>Experimentally accepts locked nodes<br>Click images to remove</p>
 
 <div id="lastCheck"></div>
 <script type="text/javascript">
@@ -71,9 +72,23 @@ function sumRegion(im1,im2,start,region){
             } 
         } 
     }
-    else{
+    else if(region == 3){
         for (let j = 0; j<13;j++){
             for(let i = 16-j; i<30;i++){
+                let pixel1 = im1.ucharPtr(start[0]+i,start[1]+j+17)
+                let pixel2 = im2.ucharPtr(i,j+17)
+                R+=Math.pow(pixel1[0]/255-pixel2[0]/255,2)
+                G+=Math.pow(pixel1[1]/255-pixel2[1]/255,2)
+                B+=Math.pow(pixel1[2]/255-pixel2[2]/255,2)
+                total+=1
+                // im2[i,j+17] = np.array([0,0,255])
+            } 
+        }
+    }
+    else{
+        offset = [0,0,0,0,5,7,9,10,11,11,11,11,10]
+        for (let j = 0; j<13;j++){
+            for(let i = 16-j; i<30-offset[j];i++){
                 let pixel1 = im1.ucharPtr(start[0]+i,start[1]+j+17)
                 let pixel2 = im2.ucharPtr(i,j+17)
                 R+=Math.pow(pixel1[0]/255-pixel2[0]/255,2)
@@ -131,6 +146,7 @@ function trioFinder(img_rgb, template, reqSkills){
             }  
         }
     }
+    
     // clean the coordinates
     skip = []
     clean = []
@@ -155,6 +171,7 @@ function trioFinder(img_rgb, template, reqSkills){
             clean.push(coords[i])
         } 
     }
+    
     let count = []
     // create nodes
     for(let pt = 0; pt<clean.length;pt++){
@@ -162,6 +179,9 @@ function trioFinder(img_rgb, template, reqSkills){
         main = identify(src,clean[pt],reqSkills,1)
         up = identify(src,clean[pt],reqSkills,2)
         last = identify(src,clean[pt],reqSkills,3)
+        if(last==main || last == up || last == -1){
+            last = identify(src,clean[pt],reqSkills,4)
+        }
         if (main !=-1 && top !=-1 && last !=-1){
             count.push([main.toString(),up.toString(),last.toString()])
         }
@@ -259,7 +279,7 @@ function calculate(tabs) {
         }
     }
     else{
-        nodes = filter1(nodes)
+        // nodes = filter1(nodes)
         for(let i = 0; i<nodes.length;i++){
                 row1 = document.createElement('tr')
                 for(let j = 0; j<3;j++){
