@@ -327,7 +327,7 @@ function calculate(tabs) {
     if(tabs){
         
         trios = main1(nodes,req,half)
-        
+        console.log(trios)
         if(trios =="impossible"){
             viewing.appendChild(document.createTextNode(trios))
         }
@@ -336,7 +336,7 @@ function calculate(tabs) {
         }
         else{
             HugeSet = trios
-            
+            console.log(HugeSet)
             totalNodes = HugeSet.length
             TotalTag.innerHTML = "Total sets: "+ (indexOfSet+1)+"/"+totalNodes
             for(let i = 0; i<HugeSet[indexOfSet].length;i++){
@@ -355,6 +355,7 @@ function calculate(tabs) {
     }
     else{
         // nodes = filter1(nodes)
+        console.log(nodes)
         for(let i = 0; i<nodes.length;i++){
                 row1 = document.createElement('tr')
                 for(let j = 0; j<3;j++){

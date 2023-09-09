@@ -130,8 +130,14 @@ function innerCheck(sorted,max,coord,every,half,halfbool,totalNodes){
     let ret = false
     // it isnt useful for when we change y but it is very helpful when we itterate x
     // for y we always return to 0
-    if (test(sorted,every,coord,half,halfbool))
-        return true
+    if (test(sorted,every,coord,half,halfbool)){
+        let set = []
+        for(let i = 0; i<coord.length; i++){
+            set.push(sorted[coord[i][0]][coord[i][1]])
+        }
+        totalNodes.push(set)
+        ret = true
+    }        
     // the itterate function was my solution to using 3-9 nested for loops
     while(itterate(coord,max,1)){
         if (test(sorted,every,coord,half,halfbool)){
@@ -231,6 +237,8 @@ function main1(trio,node,halfB){
     }
     // impossible case
     if(sorted.length < optimal){
+        console.log(sorted.length)
+        console.log(optimal)
         return "bad input (unlock nodes or open more nodes)"
     }
     let nodeTotal = []
@@ -240,8 +248,9 @@ function main1(trio,node,halfB){
         for(let i = 0; i<nodeTotal.length;i++){
             nodeTotal[i] = JSON.stringify(nodeTotal[i])
         }
-        let uniqueNodeTotal= [...new Set(nodeTotal)]
-        console
+        let uniqueNodeTotal= [...(new Set(nodeTotal))]
+        console.log("nodeTotal:"+nodeTotal)
+        console.log("uniquenodetotal:"+uniqueNodeTotal)
         for(let i = 0; i<uniqueNodeTotal.length;i++){
             uniqueNodeTotal[i] = JSON.parse(uniqueNodeTotal[i])
         }
