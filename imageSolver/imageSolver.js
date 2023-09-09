@@ -203,6 +203,10 @@ function main1(trio,node,halfB){
             sorted.push(empty)
         }
     }
+    sortedInOrder = []
+    for(let i = 0; i<sorted.length;i++){
+        sortedInOrder.push(sorted[i][0][0])
+    }
     if(allowHalf){
         for (let i = 0; i<halves.length;i++){
             let empty = []
@@ -249,11 +253,15 @@ function main1(trio,node,halfB){
             nodeTotal[i] = JSON.stringify(nodeTotal[i])
         }
         let uniqueNodeTotal= [...(new Set(nodeTotal))]
-        console.log("nodeTotal:"+nodeTotal)
-        console.log("uniquenodetotal:"+uniqueNodeTotal)
         for(let i = 0; i<uniqueNodeTotal.length;i++){
+            
             uniqueNodeTotal[i] = JSON.parse(uniqueNodeTotal[i])
+            for(let j = 0; j<uniqueNodeTotal[i].length;j++){
+                uniqueNodeTotal[i][j].push(sorted[sortedInOrder.indexOf(uniqueNodeTotal[i][j][0])].length)
+            }
+            
         }
+        console.log(uniqueNodeTotal)
         return uniqueNodeTotal
     }
     return "impossible"

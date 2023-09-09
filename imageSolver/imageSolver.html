@@ -205,7 +205,7 @@ function trioFinder(img_rgb, template,templateLock, reqSkills){
         if(last==main || last == up || last == -1){
             last = identify(src,clean[pt],reqSkills,4)
         }
-        if (main !=-1 && top !=-1 && last !=-1){
+        if (main !=-1 && up !=-1 && last !=-1){
             count.push([main.toString(),up.toString(),last.toString()])
         }
     }
@@ -272,10 +272,13 @@ function showNext(){
         for(let j = 0; j<3;j++){
             let image = document.createElement('img')
             image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
-            data = document.createElement('td')
+            let data = document.createElement('td')
             data.appendChild(image)
             row1.appendChild(data)
         }
+        let data = document.createElement('td')
+        data.appendChild(document.createTextNode("#Copies: "+HugeSet[indexOfSet][i][3]))
+        row1.appendChild(data)
         viewing.appendChild(row1)
     }
 }
@@ -292,10 +295,13 @@ function showPrev(){
         for(let j = 0; j<3;j++){
             let image = document.createElement('img')
             image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
-            data = document.createElement('td')
+            let data = document.createElement('td')
             data.appendChild(image)
             row1.appendChild(data)
         }
+        let data = document.createElement('td')
+        data.appendChild(document.createTextNode("#Copies: "+HugeSet[indexOfSet][i][3]))
+        row1.appendChild(data)
         viewing.appendChild(row1)
     }
 }
@@ -344,18 +350,20 @@ function calculate(tabs) {
                 for(let j = 0; j<3;j++){
                     let image = document.createElement('img')
                     image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
-                    data = document.createElement('td')
+                    let data = document.createElement('td')
                     data.appendChild(image)
                     row1.appendChild(data)
                 }
+                let data = document.createElement('td')
+                data.appendChild(document.createTextNode("#Copies: "+HugeSet[indexOfSet][i][3]))
+                row1.appendChild(data)
                 viewing.appendChild(row1)
             }
 
         }
     }
     else{
-        // nodes = filter1(nodes)
-        console.log(nodes)
+        nodes = filter1(nodes)
         for(let i = 0; i<nodes.length;i++){
                 row1 = document.createElement('tr')
                 for(let j = 0; j<3;j++){
