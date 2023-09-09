@@ -307,6 +307,7 @@ function showPrev(){
 }
 function calculate(tabs) {
     indexOfSet = 0
+    totalNodes = 0
     nodelib = document.getElementsByClassName("nodeLib")
     viewing.innerHTML = ''
     let img_library =[] 
@@ -348,6 +349,7 @@ function calculate(tabs) {
         }
     }
     else{
+        TotalTag.innerHTML = "Total sets: "+ (indexOfSet)+"/"+totalNodes
         nodes = filter1(nodes)
         for(let i = 0; i<nodes.length;i++){
                 row1 = document.createElement('tr')
