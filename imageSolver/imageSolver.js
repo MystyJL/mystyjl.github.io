@@ -63,11 +63,12 @@ function test(master,every,coord,half,halfbool){
 // sorted a list of "buckets" of nodes more detail in the main function
 // every a list of all useful nodes parts
 // outerCheck = test1 in the python code
-function outterCheck(coords,sorted,every,half,halfbool){
+function outterCheck(coords,sorted,every,half,halfbool,nodeTotal){
     // max is the list of maxes for the y aka the length of the buckets in position sorted[x]
     // max1 is the list of maxes for the x's should me sorted.length,sorted.length-1,... reversed
     let max = []
     let max1 = []
+    let ret = false
     // initializing max and max1
     for(let i = 0; i<coords.length;i++){
         max.push((sorted[coords[i][0]]).length)
@@ -76,7 +77,7 @@ function outterCheck(coords,sorted,every,half,halfbool){
     for (let i = 0; i<max.length;i++){
         max1[max1.length-i-1] -= i
     }
-    if (innerCheck(sorted,max,coords,every,half,halfbool))
+    if (innerCheck(sorted,max,coords,every,half,halfbool,nodeTotal))
         return true
     // you can think of this while as a bunch of nested for loops
     while(itterate(coords,max1,0)!=false){
@@ -86,14 +87,16 @@ function outterCheck(coords,sorted,every,half,halfbool){
             max.push(sorted[coords[i][0]].length)
         }
         // iterates the y coordinates instead of the x coordinates
-        if (innerCheck(sorted,max,coords,every,half,halfbool))
-            return true
+        if (innerCheck(sorted,max,coords,every,half,halfbool,totalNodes)){
+            ret = true
+        }
+            
         // resets coords when it is done
         for(let i = 0; i<coords.length;i++){
             coords[i][1] = 0
         }
     }
-    return false
+    return ret
 }
 // what caused me 2 hours of pain
 // coord is coordinate array of structure [[x,y],...]
@@ -123,17 +126,24 @@ function itterate(coord,max,i){
 // sorted a list of "buckets" of nodes more detail in the main function
 // every a list of all useful nodes parts
 // max is a list of the lengths of the "buckets" in sorted
-function innerCheck(sorted,max,coord,every,half,halfbool){
+function innerCheck(sorted,max,coord,every,half,halfbool,totalNodes){
+    let ret = false
     // it isnt useful for when we change y but it is very helpful when we itterate x
     // for y we always return to 0
     if (test(sorted,every,coord,half,halfbool))
         return true
     // the itterate function was my solution to using 3-9 nested for loops
     while(itterate(coord,max,1)){
-        if (test(sorted,every,coord,half,halfbool))
-            return true
+        if (test(sorted,every,coord,half,halfbool)){
+            let set = []
+            for(let i = 0; i<coord.length; i++){
+                set.push(sorted[coord[i][0]][coord[i][1]])
+            }
+            totalNodes.push(set)
+            ret = true
+        }
     }
-    return false
+    return ret
 }
 // if you ever used python this is just a modified in opperator 
 function inside(variable,array){
@@ -223,14 +233,11 @@ function main1(trio,node,halfB){
     if(sorted.length < optimal){
         return "bad input (unlock nodes or open more nodes)"
     }
+    let nodeTotal = []
     // start of the brute force
-    if (outterCheck(curr,sorted,op,halves,allowHalf)){
+    if (outterCheck(curr,sorted,op,halves,allowHalf,nodeTotal)){
         //print out the results   
-        returnNodes = []     
-        for(let i = 0; i< curr.length;i++){   
-            returnNodes.push(sorted[curr[i][0]][curr[i][1]])     
-        }
-        return returnNodes
+        return nodeTotal
     }
     return "impossible"
 }

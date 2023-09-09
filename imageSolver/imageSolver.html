@@ -25,9 +25,15 @@
  <div class="inputoutput">
  <div class="caption">You can also ctrl+v(paste) the image directly into this window<br><br><input multiple type="file" id="fileInput" name="file" /></div>
  </div>
+ <p id="totalNodes">Total sets: 0</p>
 </div>
 <table id="viewing"></table>
 <br>
+<div id="buttons">
+<button type="button" onclick="showPrev()" >Prev</button>
+<button type="button" onclick="showNext()" >Next</button>
+</div>
+
 <div id="buttons">
     <button type="button" onclick="calculate(true)" >Calculate</button>
     <button type="button" onclick="deleteImgs()">Clear All</button>
@@ -186,7 +192,6 @@ function trioFinder(img_rgb, template,templateLock, reqSkills){
             clean.push(coords[i])
         } 
     }
-    console.log(clean)
     let count = []
     // create nodes
     for(let pt = 0; pt<clean.length;pt++){
@@ -207,10 +212,14 @@ function trioFinder(img_rgb, template,templateLock, reqSkills){
     src.delete()
     return count 
 }
+let TotalTag = document.getElementById("totalNodes")
 let viewing = document.getElementById('viewing')
 let readimgs = []
 let inputElement = document.getElementById('fileInput');
 let last = document.getElementById("lastCheck")
+let indexOfSet = 0
+let totalNodes = 0
+let HugeSet = []
 inputElement.addEventListener('change', (e) => {
     for(let i = 0; i<e.target.files.length;i++){
         let tempim = document.createElement("img")
@@ -247,7 +256,48 @@ function filter1(nodes){
     }
     return clean
 }
+function showNext(){
+    if(indexOfSet>=totalNodes-1){
+        return
+    }
+    indexOfSet++
+    let fileList = file[clas]
+    viewing.innerHTML = ''
+    TotalTag.innerHTML = "Total sets: "+ (indexOfSet+1)+"/"+totalNodes
+    for(let i = 0; i<HugeSet[indexOfSet].length;i++){
+        row1 = document.createElement('tr')
+        for(let j = 0; j<3;j++){
+            let image = document.createElement('img')
+            image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
+            data = document.createElement('td')
+            data.appendChild(image)
+            row1.appendChild(data)
+        }
+        viewing.appendChild(row1)
+    }
+}
+function showPrev(){
+    if(indexOfSet<=0){
+        return
+    }
+    indexOfSet--
+    let fileList = file[clas]
+    viewing.innerHTML = ''
+    TotalTag.innerHTML = "Total sets: "+ (indexOfSet+1)+"/"+totalNodes
+    for(let i = 0; i<HugeSet[indexOfSet].length;i++){
+        row1 = document.createElement('tr')
+        for(let j = 0; j<3;j++){
+            let image = document.createElement('img')
+            image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
+            data = document.createElement('td')
+            data.appendChild(image)
+            row1.appendChild(data)
+        }
+        viewing.appendChild(row1)
+    }
+}
 function calculate(tabs) {
+    indexOfSet = 0
     nodelib = document.getElementsByClassName("nodeLib")
     viewing.innerHTML = ''
     let img_library =[] 
@@ -272,7 +322,9 @@ function calculate(tabs) {
     }
     let fileList = file[clas]
     if(tabs){
+        
         trios = main1(nodes,req,half)
+        
         if(trios =="impossible"){
             viewing.appendChild(document.createTextNode(trios))
         }
@@ -280,11 +332,15 @@ function calculate(tabs) {
             viewing.appendChild(document.createTextNode(trios))
         }
         else{
-            for(let i = 0; i<trios.length;i++){
+            HugeSet = trios
+            console.log(HugeSet)
+            totalNodes = HugeSet.length
+            TotalTag.innerHTML = "Total sets: "+ (indexOfSet+1)+"/"+totalNodes
+            for(let i = 0; i<HugeSet[indexOfSet].length;i++){
                 row1 = document.createElement('tr')
                 for(let j = 0; j<3;j++){
                     let image = document.createElement('img')
-                    image.src = directory+clas+"/"+fileList[parseInt(trios[i][j])]
+                    image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
                     data = document.createElement('td')
                     data.appendChild(image)
                     row1.appendChild(data)
