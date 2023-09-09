@@ -78,7 +78,7 @@ function outterCheck(coords,sorted,every,half,halfbool,nodeTotal){
         max1[max1.length-i-1] -= i
     }
     if (innerCheck(sorted,max,coords,every,half,halfbool,nodeTotal))
-        return true
+        ret = true
     // you can think of this while as a bunch of nested for loops
     while(itterate(coords,max1,0)!=false){
         // max needs to change every time because the "buckets" do not have equal lengths
@@ -87,7 +87,7 @@ function outterCheck(coords,sorted,every,half,halfbool,nodeTotal){
             max.push(sorted[coords[i][0]].length)
         }
         // iterates the y coordinates instead of the x coordinates
-        if (innerCheck(sorted,max,coords,every,half,halfbool,totalNodes)){
+        if (innerCheck(sorted,max,coords,every,half,halfbool,nodeTotal)){
             ret = true
         }
             

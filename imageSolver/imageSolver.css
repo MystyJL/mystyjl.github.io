@@ -27,3 +27,8 @@ h1{
 body{
     margin-left: 2%;
 }
+#displayArea{
+    border:1px solid black;
+    width: 50%;
+    padding: 3%;
+}

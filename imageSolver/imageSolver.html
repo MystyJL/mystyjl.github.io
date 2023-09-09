@@ -25,15 +25,18 @@
  <div class="inputoutput">
  <div class="caption">You can also ctrl+v(paste) the image directly into this window<br><br><input multiple type="file" id="fileInput" name="file" /></div>
  </div>
- <p id="totalNodes">Total sets: 0</p>
+ 
 </div>
-<table id="viewing"></table>
+<div id="displayArea">
+    <p id="totalNodes">Total sets: 0</p>
+    <table id="viewing"></table>
+    <br>
+    <div id="buttons">
+    <button type="button" onclick="showPrev()" >Prev</button>
+    <button type="button" onclick="showNext()" >Next</button>
+    </div>
+</div>
 <br>
-<div id="buttons">
-<button type="button" onclick="showPrev()" >Prev</button>
-<button type="button" onclick="showNext()" >Next</button>
-</div>
-
 <div id="buttons">
     <button type="button" onclick="calculate(true)" >Calculate</button>
     <button type="button" onclick="deleteImgs()">Clear All</button>
