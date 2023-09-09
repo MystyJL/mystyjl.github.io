@@ -236,8 +236,16 @@ function main1(trio,node,halfB){
     let nodeTotal = []
     // start of the brute force
     if (outterCheck(curr,sorted,op,halves,allowHalf,nodeTotal)){
-        //print out the results   
-        return nodeTotal
+        //print out the results  
+        for(let i = 0; i<nodeTotal.length;i++){
+            nodeTotal[i] = JSON.stringify(nodeTotal[i])
+        }
+        let uniqueNodeTotal= [...new Set(nodeTotal)]
+        console
+        for(let i = 0; i<uniqueNodeTotal.length;i++){
+            uniqueNodeTotal[i] = JSON.parse(uniqueNodeTotal[i])
+        }
+        return uniqueNodeTotal
     }
     return "impossible"
 }
