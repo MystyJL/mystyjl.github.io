@@ -259,14 +259,8 @@ function filter1(nodes){
     }
     return clean
 }
-function showNext(){
-    if(indexOfSet>=totalNodes-1){
-        return
-    }
-    indexOfSet++
+function display(){
     let fileList = file[clas]
-    viewing.innerHTML = ''
-    TotalTag.innerHTML = "Total sets: "+ (indexOfSet+1)+"/"+totalNodes
     for(let i = 0; i<HugeSet[indexOfSet].length;i++){
         row1 = document.createElement('tr')
         for(let j = 0; j<3;j++){
@@ -282,6 +276,25 @@ function showNext(){
         viewing.appendChild(row1)
     }
 }
+function showNext(){
+    if(indexOfSet>=totalNodes-1){
+        return
+    }
+    indexOfSet++
+    let fileList = file[clas]
+    viewing.innerHTML = ''
+    TotalTag.innerHTML = "Total sets: "+ (indexOfSet+1)+"/"+totalNodes
+    display()
+}
+function comparefn(a,b){
+    suma = 0
+    sumb = 0
+    for(let i = 0;i<a.length;i++){
+        suma+=a[i][3]
+        sumb+=b[i][3]
+    }
+    return -(suma-sumb)
+}
 function showPrev(){
     if(indexOfSet<=0){
         return
@@ -290,20 +303,7 @@ function showPrev(){
     let fileList = file[clas]
     viewing.innerHTML = ''
     TotalTag.innerHTML = "Total sets: "+ (indexOfSet+1)+"/"+totalNodes
-    for(let i = 0; i<HugeSet[indexOfSet].length;i++){
-        row1 = document.createElement('tr')
-        for(let j = 0; j<3;j++){
-            let image = document.createElement('img')
-            image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
-            let data = document.createElement('td')
-            data.appendChild(image)
-            row1.appendChild(data)
-        }
-        let data = document.createElement('td')
-        data.appendChild(document.createTextNode("#Copies: "+HugeSet[indexOfSet][i][3]))
-        row1.appendChild(data)
-        viewing.appendChild(row1)
-    }
+    display()
 }
 function calculate(tabs) {
     indexOfSet = 0
@@ -331,7 +331,6 @@ function calculate(tabs) {
     }
     let fileList = file[clas]
     if(tabs){
-        
         trios = main1(nodes,req,half)
         console.log(trios)
         if(trios =="impossible"){
@@ -342,24 +341,10 @@ function calculate(tabs) {
         }
         else{
             HugeSet = trios
-            console.log(HugeSet)
+            HugeSet.sort(comparefn)
             totalNodes = HugeSet.length
             TotalTag.innerHTML = "Total sets: "+ (indexOfSet+1)+"/"+totalNodes
-            for(let i = 0; i<HugeSet[indexOfSet].length;i++){
-                row1 = document.createElement('tr')
-                for(let j = 0; j<3;j++){
-                    let image = document.createElement('img')
-                    image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
-                    let data = document.createElement('td')
-                    data.appendChild(image)
-                    row1.appendChild(data)
-                }
-                let data = document.createElement('td')
-                data.appendChild(document.createTextNode("#Copies: "+HugeSet[indexOfSet][i][3]))
-                row1.appendChild(data)
-                viewing.appendChild(row1)
-            }
-
+            display()
         }
     }
     else{
