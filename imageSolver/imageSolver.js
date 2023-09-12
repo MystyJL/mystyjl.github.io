@@ -241,8 +241,6 @@ function main1(trio,node,halfB){
     }
     // impossible case
     if(sorted.length < optimal){
-        console.log(sorted.length)
-        console.log(optimal)
         return "bad input (unlock nodes or open more nodes)"
     }
     let nodeTotal = []
@@ -261,7 +259,6 @@ function main1(trio,node,halfB){
             }
             
         }
-        console.log(uniqueNodeTotal)
         return uniqueNodeTotal
     }
     return "impossible"
@@ -303,7 +300,6 @@ function filler(clas){
         paraHalf.classList.add("formatting");
         halfimage.classList.add("halfLib"); 
         grouping.addEventListener("click",(event)=>{
-            console.log(grouping)
             stateList[referenceList.indexOf(grouping)] = !stateList[referenceList.indexOf(grouping)]
             if(stateList[referenceList.indexOf(grouping)]){
                 grouping.style.border = "5px solid #0090ff";
