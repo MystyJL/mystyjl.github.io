@@ -15,10 +15,10 @@
 <img id="template1" hidden src="./template1.png">
 <select id="classes">
 </select>
-<p>Requirements:</p>
+<h2>Requirements:</h2>
 <ul id="imgL">
 </ul>
-<p>Half Boosts:</p>
+<h2>Half Boosts:</h2>
 <ul id="halfB">
 </ul>
 <div>
@@ -261,13 +261,18 @@ function filter1(nodes){
 }
 function display(){
     let fileList = file[clas]
+    let skills = skillNames[clas]
     for(let i = 0; i<HugeSet[indexOfSet].length;i++){
         row1 = document.createElement('tr')
         for(let j = 0; j<3;j++){
             let image = document.createElement('img')
-            image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
+            let para = document.createElement('p')
             let data = document.createElement('td')
+            let texty = document.createTextNode(skills[parseInt(HugeSet[indexOfSet][i][j])])
+            image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
+            para.appendChild(texty)
             data.appendChild(image)
+            data.appendChild(para)
             row1.appendChild(data)
         }
         let data = document.createElement('td')
@@ -355,9 +360,13 @@ function calculate(tabs) {
                 row1 = document.createElement('tr')
                 for(let j = 0; j<3;j++){
                     let image = document.createElement('img')
+                    let para = document.createElement('p')
+                    let data = document.createElement('td')
+                    let texty = document.createTextNode(skills[parseInt(HugeSet[indexOfSet][i][j])])
                     image.src = directory+clas+"/"+fileList[parseInt(nodes[i][j])]
-                    data = document.createElement('td')
+                    para.appendChild(texty)
                     data.appendChild(image)
+                    data.appendChild(para)
                     row1.appendChild(data)
                 }
                 viewing.appendChild(row1)
@@ -367,6 +376,7 @@ function calculate(tabs) {
     
 };
 </script>
+<script type="text/javascript" src="classImages.js"></script>
 <script async src="opencv.js" type="text/javascript"></script>
 <script src="imageSolver.js" type="text/javascript"></script>
 </body>

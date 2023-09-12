@@ -33,3 +33,27 @@ body{
     padding: 3%;
     margin: 2%;
 }
+td,th {
+    width: 120px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+#imgL,#halfB{
+    display: flex;
+    flex-wrap: wrap;
+}
+.formatting{
+    display: block;
+    padding:0%;
+    margin:0%;
+}
+.nodelib{
+    padding:0%;
+    margin:0%;
+}
+#viewing{
+    display: grid;
+    outline: black;
+    border-collapse: collapse;
+}
