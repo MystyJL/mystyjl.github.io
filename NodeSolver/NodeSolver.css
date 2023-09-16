@@ -1,36 +1,37 @@
+ul{
+    display: flex;
+    list-style: none;
+}
 html{
-    width: 100%;
-    min-height: 100%;
-    max-height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     color:white;
     background-color: #36393f;
-    
 }
-.elementary2 a{
-    color: cyan;
+a{
+    color: aqua;
+    align-items: center;
+}
+li{
+    flex:50%;
+    padding:50px;
+}
+h1{
+    flex:100%;
     text-align: center;
-    font-size: 17px;
 }
-.module{
+section{
     display: flex;
-    border: 1px solid #1e66d2;
+    justify-content: center;
+    align-items: center;
 }
-.elementary1{
-    flex:25%;
-    border: 1px solid #1e66d2;
-}
-.elementary2{
-    flex:75%;
-    border: 1px solid #1e66d2;
-}
-.centerElem{
+.title{
     text-align: center;
 }
-body{
-    margin-left: 2%;
-    padding-top: 25px;
-    padding-bottom: 30px;
+textarea{
+    font-family: Arial, Helvetica, sans-serif;
+}
+#output{
+padding-left: 50px;
 }
 #navBar{
     width: 100%;
@@ -61,6 +62,6 @@ body{
     background-color: #1e66d2;
     color: white;
 }
-h1{
-    text-align: center;
+body{
+    padding-top: 25px;
 }

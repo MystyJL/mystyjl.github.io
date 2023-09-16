@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widli=device-widli, initial-scale=1.0">
+    <title>Node Solver</title>
+    <script src="./nodeCalculator.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="./NodeSolver.css">
+</head>
+<div id="navBar">
+    <a href="../index.html">Home</a>
+    <a href="../reference/NodeGuide.html">Node Guide</a>
+    <a class="active" href="./NodeSolver.html">Text Node Solver(Old)</a>
+    <a href="../imageSolver/imageSolver.html">Image Node Solver(New)</a>
+</div>
+
+
+<body>
+    <h1>Maplestory Node Solver</h1>
+<p class="title">Made by: mastermysty</p>
+<p class="title"> <a href="https://www.youtube.com/watch?v=_bAR37VUxg0">Demo</a></p>
+    <ul>
+        <li>
+            <form id="perfect">
+                <p><label for="optimal">Step 1:<br>
+                To begin first input the names of your nodes seperated by a comma like the example below.
+                </label></p>
+                <textarea id="optimal" rows="8" cols="50"></textarea>
+                <br>
+            </form>
+        </li>
+        <li>
+            <form id="trios">
+                <p><label for="trio">Step 2:<br>
+                Next input your trios into the text box below. Seperate the parts by a comma and the node as a whole with a new line. There is an example below.
+                </label></p>
+                <textarea id="trio" rows="8" cols="50"></textarea>
+                <br>
+            </form>
+        </li>
+        <li>
+            <form id="halfsies">
+                <p><label for="half">Step 3 (optional):<br>
+                EXPERIMENTAL: early phases of this. Half boosts are very limited. They are only allowed if you already have 1 free space after filling in mandatory nodes put in "STEP 1".<br>
+                This is an optional parameter so it does not need to be filled. (Realistically you only need 1 half boost).
+                </label></p>
+                <textarea id="half" rows="8" cols="50"></textarea>
+                <br>
+            </form>
+        </li>
+    </ul>
+    <p id="output"></p>
+    <section>
+        <input id="calc" type="submit" value="Calculate">
+    </section>
+
+    
+</body>

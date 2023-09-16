@@ -5,46 +5,53 @@
 <link rel="stylesheet" href="./imageSolver.css">
 <title>Mysty's Image Solver</title>
 </head>
+
 <body>
-<h1>Maplestory Node Solver</h1>
-<p class="title">Made by: mastermysty</p>
-<p class="title"> <a href="https://www.youtube.com/watch?v=YO5fkfG3Gv4">Demo</a></p>
-<p class="title"> <a href="../reference/NodeGuide.html">Node Guide</a></p>
-<p class="title"> <a href="../index.html">Text Based Node Guide(old)</a></p>
-<img id="template" hidden src="./template.png">
-<img id="template1" hidden src="./template1.png">
-<select id="classes">
-</select>
-<h2>Requirements:</h2>
-<ul id="imgL">
-</ul>
-<h2>Half Boosts:</h2>
-<ul id="halfB">
-</ul>
-<div>
- <div class="inputoutput">
- <div class="caption">You can also ctrl+v(paste) the image directly into this window<br><br><input multiple type="file" id="fileInput" name="file" /></div>
- </div>
- 
-</div>
-<div id="displayArea">
-    <p id="totalNodes">Total sets: 0</p>
-    <table id="viewing"></table>
+    <div id="navBar">
+        <a href="../index.html">Home</a>
+        <a href="../reference/NodeGuide.html">Node Guide</a>
+        <a href="../NodeSolver/NodeSolver.html">Text Node Solver(Old)</a>
+        <a class="active" href="./imageSolver.html">Image Node Solver(New)</a>
+    </div>
+    <h1>Maplestory Node Solver</h1>
+    <p class="title">Made by: mastermysty</p>
+    <p class="title"> <a href="https://www.youtube.com/watch?v=YO5fkfG3Gv4">Demo</a></p>
+    
+    <img id="template" hidden src="./template.png">
+    <img id="template1" hidden src="./template1.png">
+    <select id="classes">
+    </select>
+    <h2>Requirements:</h2>
+    <ul id="imgL">
+    </ul>
+    <h2>Half Boosts:</h2>
+    <ul id="halfB">
+    </ul>
+    <div>
+     <div class="inputoutput">
+     <div class="caption">You can also ctrl+v(paste) the image directly into this window<br><br><input multiple type="file" id="fileInput" name="file" /></div>
+     </div>
+     
+    </div>
+    <div id="displayArea">
+        <p id="totalNodes">Total sets: 0</p>
+        <table id="viewing"></table>
+        <br>
+        <div id="buttons">
+        <button type="button" onclick="showPrev()" >Prev</button>
+        <button type="button" onclick="showNext()" >Next</button>
+        </div>
+    </div>
     <br>
     <div id="buttons">
-    <button type="button" onclick="showPrev()" >Prev</button>
-    <button type="button" onclick="showNext()" >Next</button>
+        <button type="button" onclick="calculate(true)" >Calculate</button>
+        <button type="button" onclick="deleteImgs()">Clear All</button>
+        <button type="button" onclick="calculate(false)">Show Nodes</button>
     </div>
-</div>
-<br>
-<div id="buttons">
-    <button type="button" onclick="calculate(true)" >Calculate</button>
-    <button type="button" onclick="deleteImgs()">Clear All</button>
-    <button type="button" onclick="calculate(false)">Show Nodes</button>
-</div>
-<p>Experimentally accepts locked nodes<br>Click images to remove</p>
+    <p>Experimentally accepts locked nodes<br>Click images to remove</p>
+    
+    <div id="lastCheck"></div>
 
-<div id="lastCheck"></div>
 <script type="text/javascript">
 function sumRegion(im1,im2,start,region){
     let R = 0

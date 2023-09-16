@@ -24,9 +24,7 @@ h1{
     display: flex;
     gap: 20px;
 }
-body{
-    margin-left: 2%;
-}
+
 #displayArea{
     border:1px solid black;
     width: 50%;
@@ -56,4 +54,38 @@ td,th {
     display: grid;
     outline: black;
     border-collapse: collapse;
+}
+body{
+    margin-left: 2%;
+    padding-top: 25px;
+
+}
+#navBar{
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    background-color: #333;
+    box-sizing: border-box;
+    display: inline-block;
+    position:fixed;
+    top:0px;
+    left:0px;
+}
+#navBar a{
+    float: left;
+    color: cyan;
+    text-align: center;
+    font-size: 17px;
+    text-decoration: none;
+    padding: 14px 16px;
+    margin: 0px;
+}
+#navBar a:hover{
+    background-color:antiquewhite ;
+    color: black;
+}
+
+#navBar a.active {
+    background-color: #1e66d2;
+    color: white;
 }

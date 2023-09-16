@@ -1,54 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="widli=device-widli, initial-scale=1.0">
-    <title>Node Solver</title>
-    <script src="./nodeCalculator.js" type="text/javascript" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Home</title>
+    <meta name=" description" content= "Project directory" >
     <link rel="stylesheet" href="./index.css">
 </head>
-<h1>Maplestory Node Solver</h1>
-<p class="title">Made by: mastermysty</p>
-<p class="title"> <a href="./imageSolver/imageSolver.html">Better Node Solver</a></p>
-<p class="title"> <a href="https://www.youtube.com/watch?v=_bAR37VUxg0">Demo</a></p>
-<p class="title"> <a href="./reference/NodeGuide.html">Node Guide</a></p>
-
 <body>
-    <ul>
-        <li>
-            <form id="perfect">
-                <p><label for="optimal">Step 1:<br>
-                To begin first input the names of your nodes seperated by a comma like the example below.
-                </label></p>
-                <textarea id="optimal" rows="8" cols="50"></textarea>
-                <br>
-            </form>
-        </li>
-        <li>
-            <form id="trios">
-                <p><label for="trio">Step 2:<br>
-                Next input your trios into the text box below. Seperate the parts by a comma and the node as a whole with a new line. There is an example below.
-                </label></p>
-                <textarea id="trio" rows="8" cols="50"></textarea>
-                <br>
-            </form>
-        </li>
-        <li>
-            <form id="halfsies">
-                <p><label for="half">Step 3 (optional):<br>
-                EXPERIMENTAL: early phases of this. Half boosts are very limited. They are only allowed if you already have 1 free space after filling in mandatory nodes put in "STEP 1".<br>
-                This is an optional parameter so it does not need to be filled. (Realistically you only need 1 half boost).
-                </label></p>
-                <textarea id="half" rows="8" cols="50"></textarea>
-                <br>
-            </form>
-        </li>
-    </ul>
-    <p id="output"></p>
-    <section>
-        <input id="calc" type="submit" value="Calculate">
-    </section>
+<div id="navBar">
+    <a class="active" href="../index.html">Home</a>
+    <a href="../reference/NodeGuide.html">Node Guide</a>
+    <a href="../NodeSolver/NodeSolver.html">Text Node Solver(Old)</a>
+    <a href="../imageSolver/imageSolver.html">Image Node Solver(New)</a>
+</div>
+<h1>Main Project Directory</h1>
+<div class="module">
+    <div class="elementary1">
+        <img src="indexImages/Image_Solver.png" width="500px">
+    </div>
+    <div class="elementary2">
+        <div class="centerElem">
+            <a href="./imageSolver/imageSolver.html">Image Node Solver(New)</a>
+        </div>
+        <p>This project takes in images from Maplestory's 5th job node page and input from the user to determine requirements to give
+            multiple mix and match trios. It uses the same algorithm as the text solver but it uses computer vision techniques to
+            analyze screen shots and extract the necessary information from just the screen shots. No Machine learning was used.
+        </p>
+    </div>
+</div>
+<div class="module">
+    <div class="elementary1">
+        <img src="indexImages/Node_Guide.png" width="500px">
+    </div>
+    <div class="elementary2">
+        <div class="centerElem">
+            <a href="./reference/NodeGuide.html">Node Guide</a>
+        </div>
+        <p>
+            This project is a general reference guide for Maplestory's 5th job system that is seperated by each class in the game.
+            It is updated regularly by me whenever it is brought to my attention someone is outdated or inaccurate. I update sections
+            after thorough research as to ensure the quality of the guide. This is a guide meant for players that have a general 
+            understanding of the 5th job system and is by no means a beginner guide.
+        </p>
+    </div>
+</div>
+<div class="module">
+    <div class="elementary1">
+        <img src="indexImages/Text_Solver.png" width="500px">
+    </div>
+    <div class="elementary2">
+        <div class="centerElem">
+            <a href="./NodeSolver/NodeSolver.html">Text Solver</a>
+        </div>
+        <p>
+            This project is a general text based solver. The user puts a list of requirements in the left text box in the form
+            "a,b,c,...". Then inputs a list of trios on the box to the right in the form:<br>
+            "a,b,c<br>b,c,d<br>...".<br> Then after pressing calculate, the program will try and find a subset of the inputs given in the 
+            middle box such that each element of the trios will span the requirements list twice, but it will not include trios which 
+            begin with the same element.
+        </p>
+    </div>
+</div>
 
-    
 </body>
