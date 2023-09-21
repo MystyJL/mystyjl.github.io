@@ -15,8 +15,15 @@
     </div>
     <h1>Maplestory Node Solver</h1>
     <p class="title">Made by: mastermysty</p>
-    <p class="title"> <a href="https://www.youtube.com/watch?v=YO5fkfG3Gv4">Demo</a></p>
-    
+    <div class="title">
+        <p >Demo video:</p>
+        <button onclick="hideVid()">hide</button>
+        <div id="video">
+            <iframe  width="560" height="315" src="https://www.youtube.com/embed/YO5fkfG3Gv4?si=6S1dy_PIIs3ylxyO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+
+        </div>
+    </div>
+       
     <img id="template" hidden src="./template.png">
     <img id="template1" hidden src="./template1.png">
     <select id="classes">
@@ -53,6 +60,14 @@
     <div id="lastCheck"></div>
 
 <script type="text/javascript">
+function hideVid(){
+var x = document.getElementById("video");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 function sumRegion(im1,im2,start,region){
     let R = 0
     let G = 0

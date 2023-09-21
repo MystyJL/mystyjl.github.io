@@ -271,6 +271,14 @@ function main1(trio,node,halfB){
 
 
 /**************************************end of node solver code*******************************************************/
+function hideVid(){
+var x = document.getElementById("video");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 function filler(clas){
     referenceList = []
     stateList = []
