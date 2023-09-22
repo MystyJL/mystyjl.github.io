@@ -103,23 +103,26 @@ function outterCheck(coords,sorted,every,half,halfbool,nodeTotal){
 // max is the max that x or y can go to depending on i
 // i tells us whether to look at x or y
 function itterate(coord,max,i){
-    // base case of the recursion
-    if(coord.length ===0){
+    let pos = coord.length-1
+    let carry = true
+    let stack = coord.length
+    while(pos>=0 && carry){
+        coord[pos][i] = (coord[pos][i]+carry)%(max[pos])
+        carry = (coord[pos][i]==0)
+        if(carry){
+            stack = pos
+            pos--;
+        }
+        
+    }
+    if(stack<=0){
         return false
     }
-    // the itteration
-    coord[coord.length-1][i]+=1
-    // carrying over the 1 like when you add 1 to 9999999999 and you have to recursively carry over
-    if (coord[coord.length-1][i]>=max[max.length-1]){
-        coord[coord.length-1][i] = 0
-        // the recursive (inductive) step
-        let boolz = true && itterate(coord.slice(0,coord.length-1),max.slice(0,max.length-1),i)
-        if (i == 0 && coord.length >1 && coord[coord.length-1][i]<= coord[coord.length-2][i]){
-            coord[coord.length-1][i] = coord[coord.length-2][i]+1
-        }
-        return boolz
+    for(let j = stack+(coord.length*(i!=0)); j<coord.length;j++){
+        coord[j][i] = coord[j-1][i]+1
     }
-    return true
+    return (pos>=0)
+
 }
 // given our coord array of structure [[x,y],...]
 // we itterate the y portion by 1 and test to see if that next combination is valid
