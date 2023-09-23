@@ -292,6 +292,7 @@ function display(){
             let data = document.createElement('td')
             let texty = document.createTextNode(skills[parseInt(HugeSet[indexOfSet][i][j])])
             image.src = directory+clas+"/"+fileList[parseInt(HugeSet[indexOfSet][i][j])]
+            data.classList.add("tableDisplay"); 
             para.appendChild(texty)
             data.appendChild(image)
             data.appendChild(para)
@@ -375,6 +376,7 @@ function calculate(tabs) {
         }
     }
     else{
+        let skills = skillNames[clas]
         TotalTag.innerHTML = "Total sets: "+ (indexOfSet)+"/"+totalNodes
         nodes = filter1(nodes)
         for(let i = 0; i<nodes.length;i++){
@@ -383,8 +385,9 @@ function calculate(tabs) {
                     let image = document.createElement('img')
                     let para = document.createElement('p')
                     let data = document.createElement('td')
-                    let texty = document.createTextNode(skills[parseInt(HugeSet[indexOfSet][i][j])])
+                    let texty = document.createTextNode(skills[parseInt(nodes[i][j])])
                     image.src = directory+clas+"/"+fileList[parseInt(nodes[i][j])]
+                    data.classList.add("tableDisplay"); 
                     para.appendChild(texty)
                     data.appendChild(image)
                     data.appendChild(para)

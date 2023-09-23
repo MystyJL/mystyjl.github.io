@@ -27,12 +27,20 @@ h1{
 
 #displayArea{
     border:1px solid black;
-    width: 50%;
+    width: 70%;
     padding: 3%;
     margin: 2%;
 }
-td,th {
+
+.requirements {
     width: 120px;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+}
+.tableDisplay{
+    min-width: 120px;
+    height: 70px;
     text-align: center;
     border: 1px solid black;
     padding: 5px;

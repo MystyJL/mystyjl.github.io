@@ -7,7 +7,20 @@ function ins(x,y){
     return false
 }
 /*************************************node solver code************************************/
-
+function binarySearch(array,element){
+    start = 0
+    end = array.length-1
+    while(start<=end){
+        curr = (start+end)//2
+        if(array[curr] == element){
+            return curr
+        }
+        messanger = (array[curr]<element)
+        start = (messanger*(curr+1))+((!messanger)*start)
+        end = ((!messanger)*(curr-1))+((messanger)*end)
+    }
+    return -1
+}
 
 function test(master,every,coord,half,halfbool){
     // how many boosts each node recieves
@@ -25,20 +38,14 @@ function test(master,every,coord,half,halfbool){
     for (let i = 0; i<coord.length;i++){
         // use the coordinates to find what it is refering to in master aka sorted
         temp = master[coord[i][0]][coord[i][1]]
-        for (let j = 0; j<every.length;j++){
+        for (let k = 0; k<temp.length;k++){
+            // compare and count
+            counts[binarySearch(every,temp[k].trim())]++
+        }  
+        if(halfbool){
             for (let k = 0; k<temp.length;k++){
                 // compare and count
-                if (every[j].trim() === temp[k].trim())
-                    counts[j]+=1
-            }
-        }   
-        if(halfbool){
-            for (let j = 0; j<half.length;j++){
-                for (let k = 0; k<temp.length;k++){
-                    // compare and count
-                    if (half[j].trim() === temp[k].trim())
-                        halfCount[j]+=1
-                }
+                halfCount[binarySearch(half,temp[k])]++
             }
         } 
     }
@@ -51,7 +58,6 @@ function test(master,every,coord,half,halfbool){
     if(halfbool){
         for (let i = 0; i<halfCount.length;i++){
             if (halfCount[i] < 1)
-                
                 return false
         }
     }
@@ -167,6 +173,7 @@ function main1(trio,node,halfB){
     // parse input into an array of strings
     let lines = trio
     let op = node
+    op.sort()
     let allowHalf = halfB.length!=0
     let halves = halfB
     // lowest number
@@ -299,6 +306,8 @@ function filler(clas){
         halfGroup.appendChild(paraHalf)
         grouping.appendChild(image)
         grouping.appendChild(para)
+        halfGroup.classList.add("requirements");
+        grouping.classList.add("requirements");
         image.classList.add("nodeLib"); 
         para.classList.add("formatting");
         paraHalf.classList.add("formatting");
