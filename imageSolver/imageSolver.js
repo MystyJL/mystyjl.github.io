@@ -6,7 +6,7 @@ function ins(x,y){
     }
     return false
 }
-/*************************************node solver code************************************/
+/**********************************************************node solver code**********************************************************/
 function binarySearch(array,element){
     start = 0
     end = array.length-1
@@ -185,12 +185,15 @@ function main1(trio,node,halfB){
 
     // you can think of sorted as an array of buckets
     let sorted = []
+    let trueLength = []
     for (let i = 0; i<op.length;i++){
         let empty = []
+        let trueEvery = []
         for (let j = 0; j<lines.length;j++){
             // nodes are sorted into buckets based off their starting value
             // similar to how radix sort works but we only focus on the first value
             if (lines[j][0] === op[i]){
+                trueEvery.push(lines[j])
                 if(op.length<3){
                     if((inside(lines[j][1],op) || inside(lines[j][1],halves))||( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
                         if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
@@ -211,6 +214,7 @@ function main1(trio,node,halfB){
         }
         if (empty.length >0){
             sorted.push(empty)
+            trueLength.push(trueEvery)
         }
     }
     sortedInOrder = []
@@ -265,7 +269,7 @@ function main1(trio,node,halfB){
             
             uniqueNodeTotal[i] = JSON.parse(uniqueNodeTotal[i])
             for(let j = 0; j<uniqueNodeTotal[i].length;j++){
-                uniqueNodeTotal[i][j].push(sorted[sortedInOrder.indexOf(uniqueNodeTotal[i][j][0])].length)
+                uniqueNodeTotal[i][j].push(trueLength[sortedInOrder.indexOf(uniqueNodeTotal[i][j][0])].length)
             }
             
         }
@@ -273,6 +277,7 @@ function main1(trio,node,halfB){
     }
     return "impossible"
 }
+/******************************************************end of node solver code*******************************************************/
 
 
 
@@ -280,7 +285,6 @@ function main1(trio,node,halfB){
 
 
 
-/**************************************end of node solver code*******************************************************/
 
 function filler(clas){
     referenceList = []
