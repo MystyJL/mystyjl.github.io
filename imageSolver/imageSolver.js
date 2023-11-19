@@ -217,18 +217,17 @@ function main1(trio,node,halfB){
             trueLength.push(trueEvery)
         }
     }
-    sortedInOrder = []
-    for(let i = 0; i<sorted.length;i++){
-        sortedInOrder.push(sorted[i][0][0])
-    }
+    
     if(allowHalf){
         for (let i = 0; i<halves.length;i++){
             let empty = []
+            let trueEvery = []
             for (let j = 0; j<lines.length;j++){
                 // nodes are sorted into buckets based off their starting value
                 // similar to how radix sort works but we only focus on the first value
                 
                 if (lines[j][0] === halves[i]){
+                    trueEvery.push(lines[j])
                     // remove nodes that do not have 3 optimal parts
                     if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
                         if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
@@ -239,8 +238,13 @@ function main1(trio,node,halfB){
             }
             if (empty.length >0){
                 sorted.push(empty)
+                trueLength.push(trueEvery)
             }
         }
+    }
+    sortedInOrder = []
+    for(let i = 0; i<sorted.length;i++){
+        sortedInOrder.push(sorted[i][0][0])
     }
     // leng holds the length of each "bucket" in sorted 
     let leng = []
