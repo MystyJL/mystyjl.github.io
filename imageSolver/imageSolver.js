@@ -173,6 +173,7 @@ function main1(trio,node,halfB){
     // parse input into an array of strings
     let lines = trio
     let op = node
+    let cleanLines = []
     op.sort()
     let allowHalf = halfB.length!=0
     let halves = halfB
@@ -182,31 +183,39 @@ function main1(trio,node,halfB){
     let real = (op.length/3)*2
     // boolean that triggers searching from half list
     allowHalf = (optimal>real) && halves.length>0 && allowHalf
-
+    let halfing = op.length%3==1
     // you can think of sorted as an array of buckets
     let sorted = []
     let trueLength = []
+    for (let i = 0;i<lines.length;i++){
+        if(lines[i][1]!=lines[i][2] && lines[i][1]!=lines[i][0] && lines[i][0]!=lines[i][2]){
+            cleanLines.push(lines[i])
+        }
+    }
     for (let i = 0; i<op.length;i++){
         let empty = []
         let trueEvery = []
-        for (let j = 0; j<lines.length;j++){
+        for (let j = 0; j<cleanLines.length;j++){
             // nodes are sorted into buckets based off their starting value
             // similar to how radix sort works but we only focus on the first value
-            if (lines[j][0] === op[i]){
-                trueEvery.push(lines[j])
-                if(op.length<3){
-                    if((inside(lines[j][1],op) || inside(lines[j][1],halves))||( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
-                        if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
-                            empty.push(lines[j])
-                        }     
+            if (cleanLines[j][0] === op[i]){
+                trueEvery.push(cleanLines[j])
+                let counter = 0
+                for(let k = 1; k<3;k++){
+                    if(inside(cleanLines[j][k],op) || inside(cleanLines[j][k],halves)){
+                        counter+=1
+                    }
+                }
+                if(op.length<3 || halfing){
+                    if(counter >= 1){
+                        empty.push(cleanLines[j])
+    
                     }
                 }
                 else{
                     // remove nodes that do not have 3 optimal parts
-                    if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
-                        if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
-                            empty.push(lines[j])
-                        }
+                    if(counter == 2){
+                        empty.push(cleanLines[j])
                     }
                 }
                 
@@ -222,17 +231,22 @@ function main1(trio,node,halfB){
         for (let i = 0; i<halves.length;i++){
             let empty = []
             let trueEvery = []
-            for (let j = 0; j<lines.length;j++){
+            for (let j = 0; j<cleanLines.length;j++){
                 // nodes are sorted into buckets based off their starting value
                 // similar to how radix sort works but we only focus on the first value
                 
-                if (lines[j][0] === halves[i]){
-                    trueEvery.push(lines[j])
-                    // remove nodes that do not have 3 optimal parts
-                    if((inside(lines[j][1],op) || inside(lines[j][1],halves))&&( inside(lines[j][2].trim(),op) || inside(lines[j][2],halves))){
-                        if(lines[j][1]!=lines[j][2] && lines[j][1]!=lines[j][0] && lines[j][0]!=lines[j][2]){
-                            empty.push(lines[j])
+                if (cleanLines[j][0] === halves[i]){
+                    let counter = 0
+                    for(let k = 1; k<3;k++){
+                        if(inside(cleanLines[j][k],op) || inside(cleanLines[j][k],halves)){
+                            counter+=1
                         }
+                    }
+                    trueEvery.push(cleanLines[j])
+                    // remove nodes that do not have 3 optimal parts
+                    if(counter==2){
+                        empty.push(cleanLines[j])
+
                     }
                 }
             }
@@ -242,6 +256,7 @@ function main1(trio,node,halfB){
             }
         }
     }
+    
     sortedInOrder = []
     for(let i = 0; i<sorted.length;i++){
         sortedInOrder.push(sorted[i][0][0])

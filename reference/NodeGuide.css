@@ -62,14 +62,14 @@ td,th {
 }
 body{
     margin: 0px;
-    padding: 0;
-    padding-top: 25px;
+    padding: 0px;
 }
 
 #mid{
     padding: 30px;
     max-width:1200px;
     margin: 0 auto;
+    margin-top: 0px;
     background-color: #36393f;
 }
 #navBar{
@@ -77,9 +77,8 @@ body{
     padding: 0px;
     margin: 0px;
     background-color: #333;
-    box-sizing: border-box;
     display: inline-block;
-    position:fixed;
+    position: fixed;
     top:0px;
     left:0px;
 }
@@ -95,9 +94,11 @@ body{
 #navBar a:hover{
     background-color:antiquewhite ;
     color: black;
+    margin: 0px;
 }
 
 #navBar a.active {
     background-color: #1e66d2;
     color: white;
+    margin: 0px;
   }
