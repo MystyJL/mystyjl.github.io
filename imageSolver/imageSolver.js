@@ -187,9 +187,13 @@ function main1(trio,node,halfB){
     // you can think of sorted as an array of buckets
     let sorted = []
     let trueLength = []
+    let remaining = []
     for (let i = 0;i<lines.length;i++){
         if(lines[i][1]!=lines[i][2] && lines[i][1]!=lines[i][0] && lines[i][0]!=lines[i][2]){
             cleanLines.push(lines[i])
+        }
+        if(inside(lines[i][0],remaining) && !inside(lines[i][0],op)){
+            remaining.push(lines[i][0])
         }
     }
     for (let i = 0; i<op.length;i++){
@@ -209,7 +213,6 @@ function main1(trio,node,halfB){
                 if(op.length<3 || halfing){
                     if(counter >= 1){
                         empty.push(cleanLines[j])
-    
                     }
                 }
                 else{
@@ -256,7 +259,34 @@ function main1(trio,node,halfB){
             }
         }
     }
+    if(halfing){
+        for (let i = 0; i<remaining.length;i++){
+            let empty = []
+            let trueEvery = []
+            for (let j = 0; j<cleanLines.length;j++){
+                // nodes are sorted into buckets based off their starting value
+                // similar to how radix sort works but we only focus on the first value
+                if (cleanLines[j][0] === remaining[i]){
+                    trueEvery.push(cleanLines[j])
+                    let counter = 0
+                    for(let k = 1; k<3;k++){
+                        if(inside(cleanLines[j][k],op) || inside(cleanLines[j][k],halves)){
+                            counter+=1
+                        }
+                    }
+                    if(counter >= 2){
+                        empty.push(cleanLines[j])
     
+                    }                 
+                }
+            }
+            if (empty.length >0){
+                sorted.push(empty)
+                trueLength.push(trueEvery)
+            }
+        }
+    }
+    console.log(sorted)
     sortedInOrder = []
     for(let i = 0; i<sorted.length;i++){
         sortedInOrder.push(sorted[i][0][0])
