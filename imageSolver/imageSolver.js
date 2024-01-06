@@ -87,6 +87,9 @@ function outterCheck(coords,sorted,every,half,halfbool,nodeTotal){
         ret = true
     // you can think of this while as a bunch of nested for loops
     while(itterate(coords,max1,0)!=false){
+        if(nodeTotal.length>=1000){
+            return true
+        }
         // max needs to change every time because the "buckets" do not have equal lengths
         max = []
         for(let i = 0; i<coords.length;i++){
@@ -149,6 +152,9 @@ function innerCheck(sorted,max,coord,every,half,halfbool,totalNodes){
     }        
     // the itterate function was my solution to using 3-9 nested for loops
     while(itterate(coord,max,1)){
+        if(totalNodes.length>=1000){
+            return true
+        }
         if (test(sorted,every,coord,half,halfbool)){
             let set = []
             for(let i = 0; i<coord.length; i++){
@@ -286,7 +292,6 @@ function main1(trio,node,halfB){
             }
         }
     }
-    console.log(sorted)
     sortedInOrder = []
     for(let i = 0; i<sorted.length;i++){
         sortedInOrder.push(sorted[i][0][0])
