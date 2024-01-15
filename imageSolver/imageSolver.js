@@ -87,7 +87,7 @@ function outterCheck(coords,sorted,every,half,halfbool,nodeTotal){
         ret = true
     // you can think of this while as a bunch of nested for loops
     while(itterate(coords,max1,0)!=false){
-        if(nodeTotal.length>=1000){
+        if(nodeTotal.length>=10000){
             return true
         }
         // max needs to change every time because the "buckets" do not have equal lengths
@@ -127,6 +127,7 @@ function itterate(coord,max,i){
     if(stack<=0){
         return false
     }
+    // only do this for i==1
     for(let j = stack+(coord.length*(i!=0)); j<coord.length;j++){
         coord[j][i] = coord[j-1][i]+1
     }
@@ -152,7 +153,7 @@ function innerCheck(sorted,max,coord,every,half,halfbool,totalNodes){
     }        
     // the itterate function was my solution to using 3-9 nested for loops
     while(itterate(coord,max,1)){
-        if(totalNodes.length>=1000){
+        if(totalNodes.length>=10000){
             return true
         }
         if (test(sorted,every,coord,half,halfbool)){
@@ -175,12 +176,27 @@ function inside(variable,array){
     }
     return false
 }
+function compare(a,b){
+    if (a[0]==b[0]&&((a[1] == b[1] && a[2] == b[2]) || (a[1] == b[2] && a[2] == b[1]))){
+        return true
+    }
+    return false
+}
+function inner(variable,array, comparison){
+    for(let i = 0; i<array.length;i++){
+        if (comparison(variable,array[i])){
+            return true
+        }
+    }
+    return false
+}
 function main1(trio,node,halfB){
     // parse input into an array of strings
     let lines = trio
     let op = node
     let cleanLines = []
     op.sort()
+    console.log(op)
     let allowHalf = halfB.length!=0
     let halves = halfB
     // lowest number
@@ -189,7 +205,7 @@ function main1(trio,node,halfB){
     let real = (op.length/3)*2
     // boolean that triggers searching from half list
     allowHalf = (optimal>real) && halves.length>0 && allowHalf
-    let halfing = op.length%3==1
+    let halfing = op.length%3!=0
     // you can think of sorted as an array of buckets
     let sorted = []
     let trueLength = []
@@ -198,7 +214,7 @@ function main1(trio,node,halfB){
         if(lines[i][1]!=lines[i][2] && lines[i][1]!=lines[i][0] && lines[i][0]!=lines[i][2]){
             cleanLines.push(lines[i])
         }
-        if(inside(lines[i][0],remaining) && !inside(lines[i][0],op)){
+        if(!inside(lines[i][0],remaining) && !inside(lines[i][0],op)){
             remaining.push(lines[i][0])
         }
     }
@@ -235,36 +251,6 @@ function main1(trio,node,halfB){
             trueLength.push(trueEvery)
         }
     }
-    
-    if(allowHalf){
-        for (let i = 0; i<halves.length;i++){
-            let empty = []
-            let trueEvery = []
-            for (let j = 0; j<cleanLines.length;j++){
-                // nodes are sorted into buckets based off their starting value
-                // similar to how radix sort works but we only focus on the first value
-                
-                if (cleanLines[j][0] === halves[i]){
-                    let counter = 0
-                    for(let k = 1; k<3;k++){
-                        if(inside(cleanLines[j][k],op) || inside(cleanLines[j][k],halves)){
-                            counter+=1
-                        }
-                    }
-                    trueEvery.push(cleanLines[j])
-                    // remove nodes that do not have 3 optimal parts
-                    if(counter==2){
-                        empty.push(cleanLines[j])
-
-                    }
-                }
-            }
-            if (empty.length >0){
-                sorted.push(empty)
-                trueLength.push(trueEvery)
-            }
-        }
-    }
     if(halfing){
         for (let i = 0; i<remaining.length;i++){
             let empty = []
@@ -292,14 +278,27 @@ function main1(trio,node,halfB){
             }
         }
     }
-    sortedInOrder = []
+    // TODO: remove dupes from sorted
+    console.log("start")
+    let noDupes = []
     for(let i = 0; i<sorted.length;i++){
-        sortedInOrder.push(sorted[i][0][0])
+        let row = []
+        for(let j = 0; j<sorted[i].length;j++){
+            if(!inner(sorted[i][j],row,compare)){
+                row.push(sorted[i][j])
+            }
+        }
+        noDupes.push(row)
+    }
+    console.log("end")
+    sortedInOrder = []
+    for(let i = 0; i<noDupes.length;i++){
+        sortedInOrder.push(noDupes[i][0][0])
     }
     // leng holds the length of each "bucket" in sorted 
     let leng = []
-    for(let i = 0; i< sorted.length;i++){
-        leng.push(sorted[i].length)
+    for(let i = 0; i< noDupes.length;i++){
+        leng.push(noDupes[i].length)
     }
     // curr is a list of coordinates [x,y] of nodes in sorted
     // this is what we test
@@ -308,12 +307,12 @@ function main1(trio,node,halfB){
         curr.push([i,0])
     }
     // impossible case
-    if(sorted.length < optimal){
+    if(noDupes.length < optimal){
         return "bad input (unlock nodes or open more nodes)"
     }
     let nodeTotal = []
     // start of the brute force
-    if (outterCheck(curr,sorted,op,halves,allowHalf,nodeTotal)){
+    if (outterCheck(curr,noDupes,op,halves,allowHalf,nodeTotal)){
         //print out the results  
         for(let i = 0; i<nodeTotal.length;i++){
             nodeTotal[i] = JSON.stringify(nodeTotal[i])
