@@ -190,6 +190,26 @@ function inner(variable,array, comparison){
     }
     return false
 }
+function swap(array,a,b){
+    let c = array[a]
+    array[a] = array[b]
+    array[b] = c 
+}
+// insertion sort since it shouldn't be longer than 15
+function doubleSort(noDupe, trueLength){
+    for(let i = 0; i<trueLength.length-1;i++){
+        let highest = i
+        let highestValue =trueLength[i].length
+        for(let j = i+1; j<trueLength.length;j++){
+            if(highestValue<trueLength[j].length){
+                highestValue = trueLength[j].length
+                highest = j
+            }
+        }
+        swap(noDupe,i,highest)
+        swap(trueLength,i,highest)
+    }
+}
 function main1(trio,node,halfB){
     // parse input into an array of strings
     let lines = trio
@@ -278,7 +298,7 @@ function main1(trio,node,halfB){
             }
         }
     }
-    // TODO: remove dupes from sorted
+    // remove duplicates
     console.log("start")
     let noDupes = []
     for(let i = 0; i<sorted.length;i++){
@@ -291,6 +311,9 @@ function main1(trio,node,halfB){
         noDupes.push(row)
     }
     console.log("end")
+    // TODO: sort everything by length of bucket from largest to smallest
+    // noDupes, trueLength 
+    doubleSort(noDupes, trueLength)
     sortedInOrder = []
     for(let i = 0; i<noDupes.length;i++){
         sortedInOrder.push(noDupes[i][0][0])
