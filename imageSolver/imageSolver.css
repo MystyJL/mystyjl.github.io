@@ -37,6 +37,7 @@ h1{
     text-align: center;
     border: 1px solid black;
     padding: 5px;
+    cursor: pointer;
 }
 .tableDisplay{
     min-width: 120px;
