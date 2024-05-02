@@ -429,7 +429,7 @@ let selecting = document.getElementById("classes")
 let imgs = document.getElementById("imgL")
 let checking = document.getElementById("lastCheck")
 
-var classes = ["Adele","AngelicBuster","Aran","Ark","BattleMage","BeastTamer","Bishop","Blaster","BlazeWizard","Bowmaster","Buccaneer","Cadena","CannonMaster","Corsair","DarkKnight","DawnWarrior","DemonAvenger","DemonSlayer","DualBlade","Evan","FirePoison","Hayato","Hero","Hoyoung","IceLightning","Illium","Jett","Kain","Kaiser","Kanna","Khali","Kinesis","Lara","Luminous","Marksman","Mechanic","Mercedes","Mihile","NightLord","NightWalker","Paladin","PathFinder","Phantom","Shade","Shadower","ThunderBreaker","WildHunter","WindArcher","Xenon","Zero"]
+var classes = ["Adele","AngelicBuster","Aran","Ark","BattleMage","BeastTamer","Bishop","Blaster","BlazeWizard","Bowmaster","Buccaneer","Cadena","CannonMaster","Corsair","DarkKnight","DawnWarrior","DemonAvenger","DemonSlayer","DualBlade","Evan","FirePoison","Hayato","Hero","Hoyoung","IceLightning","Illium","Jett","Kain","Kaiser","Kanna","Khali","Kinesis","Lara","Luminous","Lynn","Marksman","Mechanic","Mercedes","Mihile","NightLord","NightWalker","Paladin","PathFinder","Phantom","Shade","Shadower","ThunderBreaker","WildHunter","WindArcher","Xenon","Zero"]
 directory = "../resources/"
 let referenceList = []
 let halfreference = []

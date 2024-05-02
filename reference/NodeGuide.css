@@ -70,6 +70,7 @@ body{
     max-width:1200px;
     margin: 0 auto;
     margin-top: 0px;
+    padding-top: 0px;
     background-color: #36393f;
 }
 #navBar{
@@ -78,7 +79,7 @@ body{
     margin: 0px;
     background-color: #333;
     display: inline-block;
-    position: fixed;
+    position:absolute;
     top:0px;
     left:0px;
 }
