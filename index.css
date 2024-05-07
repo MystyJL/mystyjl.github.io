@@ -43,6 +43,13 @@ body{
     top:0px;
     left:0px;
 }
+a{
+    color: cyan;
+    text-decoration: none;
+}
+p{
+    font-size: 20px;
+}
 #navBar a{
     float: left;
     color: cyan;
