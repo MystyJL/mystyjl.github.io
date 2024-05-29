@@ -133,12 +133,13 @@ function sumRegion(im1,im2,start,region){
     return (R+G+B)/(total*3)
 }
 function identify(img,loc,img_lib,region){
+    let threshold = 0.155
     let choices = []
     for (let i = 0; i<img_lib.length;i++){
         choices.push(0) 
         choices[i] = sumRegion(img,img_lib[i],loc,region)
     }
-    if (Math.min(...choices) < 0.14){
+    if (Math.min(...choices) < threshold){
         return choices.indexOf(Math.min(...choices))
     }
     return -1
@@ -153,7 +154,7 @@ function deleteImgs(){
 }
 function trioFinder(img_rgb, template,templateLock, reqSkills){
     // setup
-    let threshold = 0.3;
+    let threshold = 0.26;
     let src = cv.imread(img_rgb);
     let templ = cv.imread(template);
     let templLock = cv.imread(templateLock);
