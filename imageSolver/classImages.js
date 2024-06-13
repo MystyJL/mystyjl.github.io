@@ -1,7 +1,7 @@
 var file = {"Adele":
 ["S1.png","S10.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "AngelicBuster":
-["S1.png","S10.png","S11.png","S12.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
+["S1.png","S10.png","S11.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "Aran":
 ["S1.png","S10.png","S11.png","S12.png","S13.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "Ark":
@@ -103,7 +103,7 @@ var file = {"Adele":
 }
 
 skillNames = {"Adele":["Blade of Will","Aether Bloom","Magic Dispatch","Skewering","Impale","Aether Forge","Eviscerate","Reign of Destruction","Cleave","Hunting Decree"]
-,"AngelicBuster":["Soul Buster","Finale Ribbon","Soul Resonance","Supreme Supernova","Star Bubble","Lovely Sting","Pink Pummel","Soul Seeker","Shining Star Burst","Heavenly Crash","Celestial Roar","Trinity"]
+,"AngelicBuster":["Soul Buster","Soul Resonance","Supreme Supernova","Star Bubble","Lovely Sting","Pink Pummel","Soul Seeker","Star Crash","Celestial Roar","Trinity","Finale Ribbon"]
 ,"Aran":["Smash Wave","Beyond Blade","Finisher - Storm of Fear","Finisher - Hunter's Prey","Maha's Domain","Smash Swing","Final Charge","Final Attack","Final Toss","Rolling Spin","Judgement Draw","Gathering Hook","Final Blow"]
 ,"Ark":["Overcharge Drive","Ominous Nightmare","Scarlet Charge Drive","Unstoppable Impulse","Impending Death","Gust Charge","Abyss Charge","Creeping Terror"]
 ,"BattleMage":["Triple Blow","Sweeping Staff","Condemnation","Quad Blow","Dark Chain","Quintuple Blow","Battle Burst","Dark Shock","Finishing Blow","Dark Genesis"]
