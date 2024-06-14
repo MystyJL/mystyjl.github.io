@@ -44,7 +44,7 @@ padding-left: 50px;
     top:0px;
     left:0px;
 }
-#navBar .navElement{
+#navBar a{
     float: left;
     color: cyan;
     text-align: center;
