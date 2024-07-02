@@ -25,7 +25,7 @@ function helper(base,percent,flat,total){
     for (let flatOffset = 0; flatOffset<50;flatOffset++){
         for (let baseOffset = 0; baseOffset<50;baseOffset++){
             for (let percentOffset = 0; percentOffset<50;percentOffset++){
-                let calcTotal = (b+baseOffset)*((p/100)+1+percentOffset)+(f+flatOffset)
+                let calcTotal = (b+baseOffset)*(((p+percentOffset)/100)+1)+(f+flatOffset)
                 calcTotal = Math.floor(calcTotal)
                 if (t == calcTotal){
                     return [b+baseOffset,p+percentOffset,f+flatOffset]
