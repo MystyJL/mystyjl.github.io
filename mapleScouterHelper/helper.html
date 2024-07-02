@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="widli=device-widli, initial-scale=1.0">
+    <title>Node Solver</title>
+    <script src="./helper.js" type="text/javascript" defer></script>
+    <link rel="stylesheet" href="./helper.css">
+</head>
+<div id="navBar">
+    <a href="../index.html">Home</a>
+    <a href="../reference/NodeGuide.html">Node Guide</a>
+    <a href="../NodeSolver/NodeSolver.html">Text Node Solver(Old)</a>
+    <a href="../imageSolver/imageSolver.html">Image Node Solver(New)</a>
+    <a href="../mapleScouterHelper/helper.html">Maplescouter Helper</a>
+</div>
+
+
+<body>
+    <h1>Maple Scouter Helper</h1>
+<p class="warning">Warning: using this tool should be your last resort. Check that you input your other stats correctly using these <a href="https://docs.google.com/spreadsheets/d/1Gww2-driWNLFW6AKsvvAOLIQC1wMexVOqeNCEtI8U5Q/edit?gid=302638632#gid=302638632">requirements</a> and making sure it is correct </p>
+    <table>
+        <tr>
+            <form id="perfect">
+                <p>Input the values exactly how you would on maple scouter</p>
+                <table>
+                    <tr class="inputBlock">
+                        <td></td>
+                        <th>Base Value</td>
+                        <th>% Value</td>
+                        <th>% Value Not Applied</td>
+                        <th>Current Value</td>
+                    </tr>
+                    <tr class="inputBlock">
+                        <th>Main Stat</td>
+                        <td><input type="number" class="boxInput" placeholder="0" id="m1"></td>
+                        <td><input type="number" class="boxInput" placeholder="0" id="m2"></td>
+                        <td><input type="number" class="boxInput" placeholder="0" id="m3"></td>
+                        <td><input type="number" class="boxInput" placeholder="0" id="m4"></td>
+                    </tr>
+                    <tr class="inputBlock">
+                        <th>Secondary Stat</td>
+                        <td><input numeric class="boxInput" placeholder="0" id="s1"></td>
+                        <td><input numeric class="boxInput" placeholder="0" id="s2"></td>
+                        <td><input numeric class="boxInput" placeholder="0" id="s3"></td>
+                        <td><input numeric class="boxInput" placeholder="0" id="s4"></td>
+                    </tr>
+                    <tr class="inputBlock">
+                        <th>Tertiary Stat</td>
+                        <td><input numeric class="boxInput" placeholder="0" id="t1"></td>
+                        <td><input numeric class="boxInput" placeholder="0" id="t2"></td>
+                        <td><input numeric class="boxInput" placeholder="0" id="t3"></td>
+                        <td><input numeric class="boxInput" placeholder="0" id="t4"></td>
+                    </tr>
+                </table>
+                <p>Output: put these numbers directly into the corresponding boxes in maplescouter</p>
+                <table>
+                    <tr>
+                        <td></td>
+                        <th>Base Value</td>
+                        <th>% Value</td>
+                        <th>% Value Not Applied</td>
+                    </tr>
+                    <tr>
+                        <th>Main Stat</td>
+                        <td class="boxOutput" id="m1o"></td>
+                        <td class="boxOutput" id="m2o"></td>
+                        <td class="boxOutput" id="m3o"></td>
+                    </tr>
+                    <tr>
+                        <th>Secondary Stat</td>
+                            <td class="boxOutput" id="s1o"></td>
+                            <td class="boxOutput" id="s2o"></td>
+                            <td class="boxOutput" id="s3o"></td>
+                    </tr>
+                    <tr>
+                        <th>Tertiary Stat</td>
+                            <td class="boxOutput" id="t1o"></td>
+                            <td class="boxOutput" id="t2o"></td>
+                            <td class="boxOutput" id="t3o"></td>
+                    </tr>
+                </table>
+            </form>
+        </tr>
+        <tr>
+            <table>
+
+            </table>
+        </tr>
+       
+    </table>
+    <p id="output"></p>
+    <section>
+        <input id="calc" type="submit" value="Calculate">
+    </section>
+
+    
+</body>
