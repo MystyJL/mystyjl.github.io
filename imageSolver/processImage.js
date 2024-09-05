@@ -293,7 +293,8 @@ function calculate(tabs) {
     }
     let fileList = file[clas]
     if(tabs){
-        trios = main1(nodes,req,half)
+        nodesolver = new NodeSolver(nodes,req,half)
+        trios = nodesolver.solve()
         if(trios =="impossible"){
             viewing.appendChild(document.createTextNode(trios))
         }
