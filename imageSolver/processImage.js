@@ -267,6 +267,7 @@ function showPrev(){
     display()
 }
 function calculate(tabs) {
+    
     indexOfSet = 0
     totalNodes = 0
     nodelib = document.getElementsByClassName("nodeLib")
@@ -291,14 +292,16 @@ function calculate(tabs) {
     for(let i = 0; i<readimgs.length;i++){
         nodes = [...nodes,...trioFinder(readimgs[i],'template','template1',img_library)]
     }
+    
     let fileList = file[clas]
     if(tabs){
+
         nodesolver = new NodeSolver(nodes,req,half)
         trios = nodesolver.solve()
         if(trios =="impossible"){
             viewing.appendChild(document.createTextNode(trios))
         }
-        else if (trios == "bad input (unlock nodes or open more nodes)"){
+        else if (trios == "You do not have enough nodes for this combination"){
             viewing.appendChild(document.createTextNode(trios))
         }
         else{

@@ -152,6 +152,7 @@ class NodeSolver extends Solver{
                 }
                 
             }
+            console.log(uniqueNodeTotal)
             return uniqueNodeTotal
         }
         return "impossible"
