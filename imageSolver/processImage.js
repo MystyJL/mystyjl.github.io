@@ -79,6 +79,7 @@ function identify(img,loc,img_lib,region){
         choices.push(0) 
         choices[i] = sumRegion(img,img_lib[i],loc,region)
     }
+    console.log(choices,)
     if (Math.min(...choices) < threshold){
         return choices.indexOf(Math.min(...choices))
     }
