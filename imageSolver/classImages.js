@@ -87,7 +87,7 @@ var file = {"Adele":
 "Phantom":
 ["S1.png","S10.png","S11.png","S12.png","S13.png","S14.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "Shade":
-["S1.png","S10.png","S11.png","S12.png","S13.png","S14.png","S15.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
+["S1.png","S10.png","S11.png","S12.png","S13.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "Shadower":
 ["S1.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "ThunderBreaker":
@@ -146,7 +146,7 @@ skillNames = {"Adele":["Blade of Will","Aether Bloom","Magic Dispatch","Skewerin
 ,"Paladin":["Final Attack","Divine Swing","Close Combat","Divine Judgment","Leap Attack","Divine Charge","Blast","Heaven's Hammer","Smite Shield"]
 ,"PathFinder":["Cardinal Deluge","Cardinal Burst","Cardinal Torrent","Shadow Raven","Swarm Shot","Triple Impact","Glyph of Impalement","Combo Assault","Ancient Astra"]
 ,"Phantom":["Double Entendre","Mille Aiguilles","Penombre","Tempest","Impeccable Memory IV","Rose Carte Finale","Impeccable Memory I","Calling Card","Mille Cartes","Carte Blanc","Impeccable Memory II","Blason Fantome","Rapier Wit","Impeccable Memory III"]
-,"Shade":["Flash Fist","Spirit Redemption","Bomb Punch","Spirit Claw","Death Mark","Soul Splitter","Spirit Incarnation","Ground Pound","Blade Imp - Downward Slash","Blade Imp - Forward Slash","Fox Spirits","Shockwave Punch","Blade Imp - Spin Slash","Spirit Frenzy","Spirit Trap"]
+,"Shade":["Flash Fist","Spirit Claw","Death Mark","Spirit Splitter","Spirit Incarnation","Ground Pound","Blade Imp","Fox Spirits","Shockwave Punch","Spirit Frenzy","Spirit Trap","Spirit Redemption","Bomb Punch"]
 ,"Shadower":["Savage Blow","Phase Dash","Meso Explosion","Midnight Carnival","Dark Flare","Assassinate","Cruel Stab","Sudden Raid","Shadow Veil",""]
 ,"ThunderBreaker":["Lightning Punch","Deep Rising","Flash","Shark Sweep","Tidal Crash","Ascension","Thunder","Gale","Annihilate","Thunderbolt"]
 ,"WildHunter":["Double Shot","Exploding Arrows","Summon Jaguar","Final Attack","Swipe","Dash 'n Slash","Hunting Assistant Unit","Sonic Roar","Wild Arrow Blast","Drill Salvo"]
