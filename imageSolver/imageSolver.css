@@ -31,7 +31,9 @@ h1{
     padding: 3%;
     margin: 2%;
 }
-
+.important{
+    color: red;
+}
 .requirements {
     width: 120px;
     text-align: center;
