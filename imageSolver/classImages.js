@@ -76,6 +76,8 @@ var file = {"Adele":
 ["S1.png","S10.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "Mihile":
 ["S1.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
+"MoXuan":
+["S1.png","S10.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "NightLord":
 ["S1.png","S10.png","S2.png","S3.png","S4.png","S5.png","S6.png","S7.png","S8.png","S9.png"],
 "NightWalker":
@@ -141,6 +143,7 @@ skillNames = {"Adele":["Blade of Will","Aether Bloom","Magic Dispatch","Skewerin
 ,"Mechanic":["Drillhands","Support Unit","Giant Robot","Bots 'n Tots","Heavy and AP Salvo Plus","Distortion Bomb","Gatling Gun","Rocket Booster","Heavy Gatling Gun","Homing Beacon","Robo Launcher","Punch Launcher","Rock 'n Shock","Heavy and AP Salvo"]
 ,"Mercedes":["Swift Dual Shot","Wrath of Enlil","Rising Rush","Stunning Strikes","Leaf Tornado","Unicorn Spike","Elemental Knights","Ishtar's Ring","Spikes Royale","Lightning Edge"]
 ,"Mihile":["Shining Pierce","Royal Guard","Four-Point Assault","Radiant Driver","Final Attack","Soul Release","Install Shield","Radiant Cross","Charging Light"]
+,"MoXuan":["Xuanshan Arts [Tian]","Soul Art: Black Wind","Divine Art: Erupting Flame","Divine Art: Swirling Tide","Divine Art: Righteous Thunder","Divine Art: Howling Storm","Secret Art: Qi Disruption","Xuanshan Arts [Di]","Divine Art: Tearing Wind","Secret Art: Qi Projection",]
 ,"NightLord":["Shuriken Burst","Death Star","Gust Charm","Assassin's Mark","Dark Flare","Triple Throw","Shuriken Challenge","Quad Star","Sudden Raid","Showdown"]
 ,"NightWalker":["Lucky Seven","Shadow Bat","Triple Throw","Quad Star","Shadow Spark","Quintuple Star","Dark Omen","Shadow Stitch","Dominion"]
 ,"Paladin":["Final Attack","Divine Swing","Close Combat","Divine Judgment","Leap Attack","Divine Charge","Blast","Heaven's Hammer","Smite Shield"]
