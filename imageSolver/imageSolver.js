@@ -302,7 +302,7 @@ class NodeSolver extends Solver{
             ret = true
         // you can think of this while as a bunch of nested for loops
         while(this.itterate(coords,max1,0)!=false){
-            if(nodeTotal.length>=10000){
+            if(nodeTotal.length>=100){
                 return true
             }
             // max needs to change every time because the "buckets" do not have equal lengths
