@@ -30,7 +30,7 @@
         <h4 class="important">Note: at resolutions above 1920x1080 maplestory tends to stretch images so for best results set the resolution of your game to 1920x1080 (windowed) </h4>
         <p> Also turn off any image filters you may have for the game</p>
         <p >Demo video:</p>
-        <button onclick="hideVid()">hide</button>
+        <button class="cssbuttons-io" onclick="hideVid()"><span id="vidHide">hide</span></button>
         <div id="video">
             <iframe  width="560" height="315" src="https://www.youtube.com/embed/YO5fkfG3Gv4?si=6S1dy_PIIs3ylxyO" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
 
@@ -47,9 +47,53 @@
     <h2>Half Boosts:</h2>
     <ul id="halfB">
     </ul>
+    <table>
+        <tr>
+            <td>
+                <h2>Priority Node Builder:</h2>
+            </td>
+            <td>
+                <button class="cssbuttons-io" onclick="showBuilder()" ><span id="nodeHide">show</span></button>
+            </td>
+        </tr>
+    </table>
+    
+    <div id="priorityNodeBuilder" style="display:none">
+        
+        <h3>Main Node selector:</h3>
+        <p class="important">Select 1 main node and 2 sub nodes and the solver will try its best to include the nodes into the solution</p>
+        <p class="important">Priority nodes will show up below</p>
+        <ul id="prioMain">
+        
+        </ul>
+        <h3>Sub Node selector:</h3>
+        <ul id="prioSub">
+        </ul>
+        <table>
+            <tr>
+                <td>
+                    <button class="cssbuttons-io" onclick="buildNode()"><span>Build Node</span></button>
+                </td>
+                <td>
+                    <button class="cssbuttons-io" onclick="priorityClearAll()"><span>Clear All</span></button>
+                </td>
+            </tr>
+        </table>
+        
+        <ul id="prioNodes">
+
+        </ul>
+    </div>
+    
+    
+    <br>
+    <br>
+    <br>
     <div>
      <div class="inputoutput">
-     <div class="caption">You can also ctrl+v(paste) the image directly into this window<br><br><input multiple type="file" id="fileInput" name="file" /></div>
+  
+     <div class="caption">You can also ctrl+v(paste) the image directly into this window<br>
+        <br><input multiple type="file" id="fileInput" name="file" /></div>
      </div>
      
     </div>
@@ -58,15 +102,15 @@
         <table id="viewing"></table>
         <br>
         <div id="buttons">
-        <button type="button" onclick="showPrev()" >Prev</button>
-        <button type="button" onclick="showNext()" >Next</button>
+        <button class="cssbuttons-io" type="button" onclick="showPrev()" ><span>Prev</span></button>
+        <button class="cssbuttons-io" type="button" onclick="showNext()" ><span>Next</span></button>
         </div>
     </div>
     <br>
     <div id="buttons">
-        <button type="button" onclick="calculate(true)" >Calculate</button>
-        <button type="button" onclick="deleteImgs()">Clear All</button>
-        <button type="button" onclick="calculate(false)">Show Nodes</button>
+        <button class="cssbuttons-io" type="button" onclick="calculate(true)" ><span>Calculate</span></button>
+        <button class="cssbuttons-io" type="button" onclick="deleteImgs()"><span>Clear All</span></button>
+        <button class="cssbuttons-io" type="button" onclick="calculate(false)"><span>Show Nodes</span></button>
     </div>
     <p>Experimentally accepts locked nodes<br>Click images to remove</p>
     

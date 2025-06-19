@@ -9,7 +9,6 @@ function ins(x,y){
 /**********************************************************node solver code**********************************************************/
 class Solver{
     constructor(){
-
     }
     inner(variable,array, comparison){
         for(let i = 0; i<array.length;i++){
@@ -52,6 +51,13 @@ class Solver{
             this.swap(trueLength,i,highest)
         }
     }
+    // insert an element into a position and shift over the elements to the right of it 
+    insert(noDupe,trueLength,position,element){
+        for(let i = position; i<element; i++){
+            this.swap(noDupe,i,element)
+            this.swap(trueLength,i,element)
+        }
+    }
     binarySearch(array,element){
         let start = 0
         let end = array.length-1
@@ -86,7 +92,8 @@ class Solver{
         if(stack<=0){
             return false
         }
-        // only do this for i==1
+        // only do this for i==0
+        // make sure that main nodes do not duplicate
         for(let j = stack+(coord.length*(i!=0)); j<coord.length;j++){
             coord[j][i] = coord[j-1][i]+1
         }
@@ -95,8 +102,9 @@ class Solver{
     }
 }
 class NodeSolver extends Solver{
-    constructor(trio,node,halfB){
+    constructor(trio,node,halfB,priorityNodes = []){
         super();
+        this.hardLimit = 100
         this.halves = halfB;
         this.lines = trio;
         this.optimalList = node;
@@ -113,6 +121,7 @@ class NodeSolver extends Solver{
         this.allowHalf = halfB.length!=0;
         this.allowHalf = (this.optimalNodeSlots>real) && this.halves.length>0 && this.allowHalf;
         this.halfing = this.optimalList.length%3!=0;
+        this.priorityNodes = priorityNodes
         this.clean();
         this.fillBuckets(sorted);
         if(this.halfing){
@@ -120,6 +129,7 @@ class NodeSolver extends Solver{
         }
         this.removeDupes(sorted);
         this.doubleSort(this.noDupes, this.trueLength)
+        this.prioritize()
         for(let i = 0; i<this.noDupes.length;i++){
             this.sortedInOrder.push(this.noDupes[i][0][0]);
         }
@@ -152,10 +162,39 @@ class NodeSolver extends Solver{
                 }
                 
             }
-            console.log(uniqueNodeTotal)
             return uniqueNodeTotal
         }
         return "impossible"
+    }
+    // need access to the list of nodes, lengths of the list with duplicates included, and priority nodes 
+    prioritize(){
+        let prio = []
+        if (this.priorityNodes.length == 0){
+            return
+        }
+        for(let i = 0; i<this.priorityNodes.length;i++){
+            prio.push(this.priorityNodes[i][0])
+        }
+        for(let i = 0; i<prio.length;i++){
+            let curr = prio[i]
+            for(let j = 0; j<this.noDupes.length;j++){
+                if (this.noDupes[j][0][0] == curr){
+                    this.insert(this.noDupes,this.trueLength,i,j)
+                    break
+                }
+            }
+        }
+        for(let i = 0; i<prio.length;i++){
+            let curr = this.priorityNodes[i]
+            for(let j = 0; j<this.noDupes.length;j++){
+                for(let k = 0; k<this.noDupes[j].length;k++){
+                if (this.compare(curr,this.noDupes[j][k])){
+                    this.swap(this.noDupes[j],k,0)
+                }
+                }
+                
+            }
+        }
     }
     clean(){
         for (let i = 0;i<this.lines.length;i++){
@@ -302,7 +341,7 @@ class NodeSolver extends Solver{
             ret = true
         // you can think of this while as a bunch of nested for loops
         while(this.itterate(coords,max1,0)!=false){
-            if(nodeTotal.length>=100){
+            if(nodeTotal.length>=this.hardLimit){
                 return true
             }
             // max needs to change every time because the "buckets" do not have equal lengths
@@ -341,7 +380,7 @@ class NodeSolver extends Solver{
         }        
         // the itterate function was my solution to using 3-9 nested for loops
         while(this.itterate(coord,max,1)){
-            if(totalNodes.length>=10000){
+            if(totalNodes.length>=this.hardLimit){
                 return true
             }
             if (this.test(coord)){
@@ -362,82 +401,203 @@ class NodeSolver extends Solver{
 
 
 /******************************************************end of node solver code*******************************************************/
+function createImage(img, imgName, isMain, prio = false){
+    let grouping = document.createElement("td")
+    grouping.classList.add("requirements")
+    
+    let image = document.createElement("img")
+    image.src = directory+clas+"/"+img
+    if(isMain){
+        image.classList.add("nodeLib")
+    }
+    else if(!isMain && !prio){
+        image.classList.add("halfLib")
+    }
 
 
+    let skillNames = document.createTextNode(imgName)
+    let skill = document.createElement("p")
+    skill.appendChild(skillNames)
+    skill.classList.add("formatting");
+
+    grouping.appendChild(image)
+    grouping.appendChild(skill)
+
+
+    return grouping
+}
+function groupClickEvent(self, max, state, reference ){
+    let check = 0
+    for(let i = 0; i<state.length;i++){
+        check += 1*(state[i])
+    }
+    // if priority state of this priority group is true and 
+    if((state[reference.indexOf(self)] && check==max) || check<max){
+        state[reference.indexOf(self)] = !state[reference.indexOf(self)]
+    }
+    if(state[reference.indexOf(self)]){
+        self.style.border = "5px solid #0090ff";
+    }
+    else{
+        self.style.border = "1px solid #000000";
+    }
+
+}
 function filler(clas){
     referenceList = []
     stateList = []
     halfreference = []
+    priorityReference = []
     halfState = []
+    priorityState = []
+    priorityReferenceMain = []
+    priorityStateMain = []
+    priorityReferenceSub = []
+    priorityStateSub = []
+    priorityNodesList = []
     halfBoost.innerHTML = ''
     imgs.innerHTML = ''
+    prioMain.innerHTML=  ''
+    prioSub.innerHTML = ''
     for(let i = 0; i<file[clas].length;i++){
-        let grouping = document.createElement("td")
-        let halfGroup = document.createElement("td")
-        let image = document.createElement("img")
-        let para = document.createElement("p")
-        let paraHalf = document.createElement("p")
-        let texty = document.createTextNode(skillNames[clas][i])
-        let textyhalf = document.createTextNode(skillNames[clas][i])
-        let halfimage = document.createElement("img")
-        image.src = directory+clas+"/"+file[clas][i]
-        halfimage.src = directory+clas+"/"+file[clas][i]
-        para.appendChild(texty)
-        paraHalf.appendChild(textyhalf)
-        halfGroup.appendChild(halfimage)
-        halfGroup.appendChild(paraHalf)
-        grouping.appendChild(image)
-        grouping.appendChild(para)
-        halfGroup.classList.add("requirements");
-        grouping.classList.add("requirements");
-        image.classList.add("nodeLib"); 
-        para.classList.add("formatting");
-        paraHalf.classList.add("formatting");
-        halfimage.classList.add("halfLib"); 
+        let grouping = createImage(file[clas][i], skillNames[clas][i],true)
+        let halfGroup = createImage(file[clas][i], skillNames[clas][i],false)
+        let priorityGroupMain = createImage(file[clas][i], skillNames[clas][i],false,true)
+        let priorityGroupSub = createImage(file[clas][i], skillNames[clas][i],false,true)
         grouping.addEventListener("click",(event)=>{
-            stateList[referenceList.indexOf(grouping)] = !stateList[referenceList.indexOf(grouping)]
-            if(stateList[referenceList.indexOf(grouping)]){
-                grouping.style.border = "5px solid #0090ff";
-            }
-            else{
-                grouping.style.border = "1px solid #000000";
-            }
+            groupClickEvent(grouping,file[clas].length,stateList,referenceList)
         })
         halfGroup.addEventListener("click",(event)=>{
-            let check = false
-            for(let i = 0; i<halfState.length;i++){
-                check = check || halfState[i]
+            groupClickEvent(halfGroup,1,halfState,halfreference)
+        })
+        priorityGroupMain.addEventListener("click",(event)=>{
+            groupClickEvent(priorityGroupMain,1,priorityStateMain,priorityReferenceMain)
+        })
+        priorityGroupSub.addEventListener("click",(event)=>{
+            let check = 0
+            max = 2
+            for(let i = 0; i<priorityStateSub.length;i++){
+                check += 1*(priorityStateSub[i])
             }
-            if((halfState[halfreference.indexOf(halfGroup)] && check) || !check){
-                halfState[halfreference.indexOf(halfGroup)] = !halfState[halfreference.indexOf(halfGroup)]
+            // if priority state of this priority group is true and 
+            if(((priorityStateSub[priorityReferenceSub.indexOf(priorityGroupSub)] && check==max) || check<max)&&(!priorityStateMain[priorityReferenceSub.indexOf(priorityGroupSub)])){
+                priorityStateSub[priorityReferenceSub.indexOf(priorityGroupSub)] = !priorityStateSub[priorityReferenceSub.indexOf(priorityGroupSub)]
             }
-            if(halfState[halfreference.indexOf(halfGroup)]){
-                halfGroup.style.border = "5px solid #0090ff";
+            if(priorityStateSub[priorityReferenceSub.indexOf(priorityGroupSub)]){
+                priorityGroupSub.style.border = "5px solid #0090ff";
             }
             else{
-                halfGroup.style.border = "1px solid #000000";
+                priorityGroupSub.style.border = "1px solid #000000";
             }
         })
         referenceList.push(grouping)
-        halfreference.push(halfGroup)
         stateList.push(false)
-        halfState.push(false)
         imgs.appendChild(grouping)
-        halfBoost.append(halfGroup)
+
+        halfreference.push(halfGroup)
+        halfState.push(false)
+        halfBoost.appendChild(halfGroup)
+
+        priorityReferenceMain.push(priorityGroupMain)
+        priorityStateMain.push(false)
+        prioMain.appendChild(priorityGroupMain)
+
+        priorityReferenceSub.push(priorityGroupSub)
+        priorityStateSub.push(false)
+        prioSub.appendChild(priorityGroupSub)
     }
 }
+function buildNode(){
+    
+    priority = []
+    let curr = ""
+    let within = false
+    for(let i = 0; i<priorityStateMain.length; i++){
+        if(priorityStateMain[i]){
+            priority.push((i).toString())
+            curr = i.toString()
+            priorityStateMain[i] = false
+            priorityReferenceMain[i].style.border = "1px solid #000000";
+        }
+    }
+    for(let i = 0; i<priorityStateSub.length; i++){
+
+        if(priorityStateSub[i]){
+            priority.push(i.toString())
+            priorityStateSub[i] = false
+            priorityReferenceSub[i].style.border = "1px solid #000000";
+        }
+    }
+    for(let i = 0; i<priorityNodesList.length;i++){
+        if (curr == priorityNodesList[i][0]){
+            within = true
+        }
+    }
+    if(!within && priority.length == 3){
+        priorityNodesList.push(priority) 
+    }
+    priorityNodeShow()       
+}
+
+function createCell(img, imgName){
+    let grouping = document.createElement("td")
+    grouping.classList.add("requirements")
+    
+    let image = document.createElement("img")
+    image.src = directory+clas+"/"+img
+
+    let skillNames = document.createTextNode(imgName)
+    let skill = document.createElement("p")
+    skill.appendChild(skillNames)
+
+
+    grouping.appendChild(image)
+    grouping.appendChild(skill)
+
+    
+    return grouping
+}
+
+function priorityNodeShow(){
+    prioNodes.innerHTML = ''
+    
+    for(let i = 0; i<priorityNodesList.length;i++){
+        let row = document.createElement("tr")
+        for(let j = 0; j<3;j++){
+            cell = createCell(file[clas][priorityNodesList[i][j]], skillNames[clas][priorityNodesList[i][j]])
+            row.appendChild(cell)
+        }
+        prioNodes.appendChild(row)
+    }
+
+}
+function priorityClearAll(){
+    priorityNodesList = []
+    priorityNodeShow()
+}
+
+
+
 let halfBoost = document.getElementById("halfB")
 let selecting = document.getElementById("classes")
 let imgs = document.getElementById("imgL")
+let prioMain = document.getElementById("prioMain")
+let prioSub = document.getElementById("prioSub")
+let prioNodes = document.getElementById("prioNodes")
 let checking = document.getElementById("lastCheck")
 
-// var classes = ["Adele","AngelicBuster","Aran","Ark","BattleMage","BeastTamer","Bishop","Blaster","BlazeWizard","Bowmaster","Buccaneer","Cadena","CannonMaster","Corsair","DarkKnight","DawnWarrior","DemonAvenger","DemonSlayer","DualBlade","Evan","FirePoison","Hayato","Hero","Hoyoung","IceLightning","Illium","Jett","Kain","Kaiser","Kanna","Khali","Kinesis","Lara","Luminous","Lynn","Marksman","Mechanic","Mercedes","Mihile","NightLord","NightWalker","Paladin","PathFinder","Phantom","Shade","Shadower","ThunderBreaker","WildHunter","WindArcher","Xenon","Zero"]
 var classes = Object.keys(file)
 directory = "../resources/"
 let referenceList = []
 let halfreference = []
 let stateList = []
 let halfState = []
+let priorityReferenceMain = []
+let priorityStateMain = []
+let priorityReferenceSub = []
+let priorityStateSub = []
+let priorityNodesList = []
+
 for(let i = 0; i<classes.length;i++){
     option = document.createElement("option")
     option.text = classes[i]

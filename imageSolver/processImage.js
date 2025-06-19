@@ -296,7 +296,7 @@ function calculate(tabs) {
     let fileList = file[clas]
     if(tabs){
 
-        nodesolver = new NodeSolver(nodes,req,half)
+        nodesolver = new NodeSolver(nodes,req,half,priorityNodesList)
         trios = nodesolver.solve()
         if(trios =="impossible"){
             viewing.appendChild(document.createTextNode(trios))
@@ -337,10 +337,26 @@ function calculate(tabs) {
     
 };
 function hideVid(){
+    
+    var button = document.getElementById("vidHide")
     var x = document.getElementById("video");
       if (x.style.display === "none") {
         x.style.display = "block";
+        button.textContent = "hide"
       } else {
         x.style.display = "none";
+        button.textContent = "show"
       }
-    }
+}
+
+function showBuilder(){
+    var button = document.getElementById("nodeHide")
+    var x = document.getElementById("priorityNodeBuilder");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        button.textContent = "hide"
+      } else {
+        x.style.display = "none";
+        button.textContent = "show"
+      }
+}
