@@ -133,7 +133,7 @@ function trioFinder(img_rgb, template,templateLock, reqSkills){
             }  
         }
     }
-    
+
     // clean the coordinates
     skip = []
     clean = []
@@ -158,6 +158,7 @@ function trioFinder(img_rgb, template,templateLock, reqSkills){
             clean.push(coords[i])
         } 
     }
+   
     let count = []
     // create nodes
     for(let pt = 0; pt<clean.length;pt++){
@@ -172,6 +173,7 @@ function trioFinder(img_rgb, template,templateLock, reqSkills){
             count.push([main.toString(),up.toString(),last.toString()])
         }
     }
+    
     dst.delete()
     dstLock.delete()
     source.delete()
@@ -279,20 +281,20 @@ function calculate(tabs) {
     for(let i = 0;i<nodelib.length;i++){
         img_library.push(cv.imread(nodelib[i]))
     }
-    for(let i = 0; i<stateList.length;i++){
-        if(stateList[i]){
+    
+    for(let i = 0; i<mainList.state.length;i++){
+        if(mainList.state[i]){
             req.push(i.toString())
         }
     }
-    for(let i = 0; i<halfState.length;i++){
-        if(halfState[i]){
+    for(let i = 0; i<halfList.state.length;i++){
+        if(halfList.state[i]){
             half.push(i.toString())
         }
     }
     for(let i = 0; i<readimgs.length;i++){
         nodes = [...nodes,...trioFinder(readimgs[i],'template','template1',img_library)]
     }
-    
     let fileList = file[clas]
     if(tabs){
 

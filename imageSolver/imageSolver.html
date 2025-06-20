@@ -93,7 +93,18 @@
      <div class="inputoutput">
   
      <div class="caption">You can also ctrl+v(paste) the image directly into this window<br>
-        <br><input multiple type="file" id="fileInput" name="file" /></div>
+        <br> <div class="file-input-container">
+        <!-- The actual file input, which will be hidden -->
+        <input multiple type="file" id="fileInput" name="file" class="file-input">
+      
+        <!-- The styled label, which acts as the visible button -->
+        <label for="fileInput" class="inputbuttons-io">
+            <!-- Text for the button -->
+            <span class="button-text">Choose Files</span>
+
+        </label>
+    </div>
+    </div>
      </div>
      
     </div>
@@ -115,8 +126,10 @@
     <p>Experimentally accepts locked nodes<br>Click images to remove</p>
     
     <div id="lastCheck"></div>
+<script type="text/javascript" src="imageRows.js"></script>
 <script type="text/javascript" src="advancedInput.js"></script>
 <script type="text/javascript" src="classImages.js"></script>
+<script type="text/javascript" src="solver.js"></script>
 <script async src="opencv.js" type="text/javascript"></script>
 <script src="imageSolver.js" type="text/javascript"></script>
 <script async src="processImage.js" type="text/javascript"></script>
