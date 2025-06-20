@@ -101,7 +101,6 @@ class Solver{
 class NodeSolver extends Solver{
     constructor(trio,node,halfB,priorityNodes = []){
         super();
-        console.log(trio)
         this.hardLimit = 100
         this.halves = halfB;
         this.lines = trio;

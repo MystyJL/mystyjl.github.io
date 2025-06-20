@@ -3,7 +3,6 @@ class interactableImages{
         this.state = []
         this.reference = []
         this.isMain = isMain
-        console.log(this.isMain)
         this.listOfClassesHTML = listOfClassesHTML
         this.prio = prio
         this.max = max
@@ -15,7 +14,6 @@ class interactableImages{
         let image = document.createElement("img")
         image.src = directory+clas+"/"+img
         if(this.isMain){
-            console.log()
             image.classList.add("nodeLib")
         }
         else if(!this.isMain && !this.prio){
@@ -113,9 +111,7 @@ class mainSubImages{
             check += 1*(this.stateMain[i])
         }
         // if priority state of this priority group is true and 
-        console.log(this.stateMain)
         if(((this.stateMain[this.referenceMain.indexOf(self)] && check==1) || check<1)){
-            console.log("fuck fuck fuck")
             this.stateMain[this.referenceMain.indexOf(self)] = !this.stateMain[this.referenceMain.indexOf(self)]
         }
         if(this.stateMain[this.referenceMain.indexOf(self)]){
