@@ -4,7 +4,7 @@ html{
     max-height: 100%;
     font-family: Arial, Helvetica, sans-serif;
     color:white;
-    background-color: #36393f;
+    background-color: #2e3047;
     
 }
 .elementary2 a{
@@ -36,7 +36,7 @@ body{
     width: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: #333;
+    background-color: #3c3f98;
     box-sizing: border-box;
     display: inline-block;
     position:fixed;

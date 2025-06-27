@@ -71,13 +71,13 @@ body{
     margin: 0 auto;
     margin-top: 48px;
     padding-top: 0px;
-    background-color: #36393f;
+    background-color: #2e3047;
 }
 #navBar{
     width: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: #333;
+    background-color: #3c3f98;
     display: inline-block;
     position:absolute;
     top:0px;

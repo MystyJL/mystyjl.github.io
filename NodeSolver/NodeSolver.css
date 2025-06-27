@@ -5,7 +5,7 @@ ul{
 html{
     font-family: Arial, Helvetica, sans-serif;
     color:white;
-    background-color: #36393f;
+    background-color: #2e3047;
 }
 a{
     color: aqua;
@@ -37,7 +37,7 @@ padding-left: 50px;
     width: 100%;
     padding: 0px;
     margin: 0px;
-    background-color: #333;
+    background-color: #3c3f98;
     box-sizing: border-box;
     display: inline-block;
     position:fixed;
