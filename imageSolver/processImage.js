@@ -362,3 +362,14 @@ function showBuilder(){
         button.textContent = "show"
       }
 }
+function hideInstructions(){
+    var button = document.getElementById("hideInstruct")
+    var x = document.getElementById("instructions");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+        button.textContent = "hide"
+      } else {
+        x.style.display = "none";
+        button.textContent = "show"
+      }
+}
