@@ -98,7 +98,7 @@ skillNames = {"Adele": ["Blade of Will", "Aether Bloom", "Magic Dispatch", "Skew
 "Paladin": ["Final Attack", "Divine Swing", "Close Combat", "Divine Judgment", "Leap Attack", "Divine Charge", "Blast", "Heaven's Hammer", "Smite Shield"],
 "PathFinder": ["Cardinal Deluge", "Cardinal Burst", "Cardinal Torrent", "Shadow Raven", "Swarm Shot", "Triple Impact", "Glyph of Impalement", "Combo Assault", "Ancient Astra"],
 "Phantom": ["Double Entendre", "Mille Aiguilles", "Penombre", "Tempest", "Impeccable Memory IV", "Rose Carte Finale", "Impeccable Memory I", "Calling Card", "Mille Cartes", "Carte Blanc", "Impeccable Memory II", "Blason Fantome", "Rapier Wit", "Impeccable Memory III"],
-"Ren": ["Plum Blossom Sword: Slice", "Plum Blossom Sword: Strike", "Imugi Spirit Sword: Spirit Strike", "Plum Blossom Sword: Slash", "Second Plum Blossom Sword: Raining Blossoms", "Final Imugi Spirit Sword", "Plum Blossom Sword: Storm", "Third Plum Blossom Sword: Riotous Heart", "Second Imugi Spirit Sword: Serpant's Fang\n\n"],
+"Ren": ["Slice", "Strike", "Spirit Strike", "Slash", "Raining Blossoms", "Burrowing Earth", "Storm", "Riotous Heart", "Serpant's Fang"],
 "Shade": ["Flash Fist", "Spirit Claw", "Death Mark", "Spirit Splitter", "Spirit Incarnation", "Ground Pound", "Blade Imp", "Fox Spirits", "Shockwave Punch", "Spirit Frenzy", "Spirit Trap", "Spirit Redemption", "Bomb Punch"],
 "Shadower": ["Savage Blow", "Phase Dash", "Meso Explosion", "Midnight Carnival", "Dark Flare", "Assassinate", "Cruel Stab", "Sudden Raid", "Shadow Veil", ""],
 "Sia": ["Ray", "Stellar IX - Canopus", "Boom", "Pole", "Starlight", "Stellar I - Antares", "Stellar II - Algol", "Stellar V - Fomalhaut", "Stellar VI - Izar", "Stellar VII - Vega"],
