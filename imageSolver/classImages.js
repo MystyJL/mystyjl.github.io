@@ -103,7 +103,7 @@ skillNames = {"Adele": ["Blade of Will", "Aether Bloom", "Magic Dispatch", "Skew
 "Shadower": ["Savage Blow", "Phase Dash", "Meso Explosion", "Midnight Carnival", "Dark Flare", "Assassinate", "Cruel Stab", "Sudden Raid", "Shadow Veil", ""],
 "Sia": ["Ray", "Stellar IX - Canopus", "Boom", "Pole", "Starlight", "Stellar I - Antares", "Stellar II - Algol", "Stellar V - Fomalhaut", "Stellar VI - Izar", "Stellar VII - Vega"],
 "ThunderBreaker": ["Lightning Punch", "Deep Rising", "Flash", "Shark Sweep", "Tidal Crash", "Ascension", "Thunder", "Gale", "Annihilate", "Thunderbolt"],
-"WildHunter": ["Double Shot", "Exploding Arrows", "Summon Jaguar", "Final Attack", "Swipe", "Dash 'n Slash", "Hunting Assistant Unit", "Sonic Roar", "Wild Arrow Blast", "Drill Salvo"],
+"WildHunter": ["Wild Arrow Blast: Proto", "Comand: Titan Pounce", "Assist: Render Swipe", "Assist: Snapping Fangs", "Final Attack", "White Heat Rush", "Assist: Skull Bash", "Trap Seed", "Wild Arrow Blast: Apex", "Command: Alpha Surge"],
 "WindArcher": ["Breeze Arrow", "Storm Bringer", "Spiraling Vortex", "Gust Shot", "Trifling Wind", "Sentient Arrow", "Pinpoint Pierce", "Song of Heaven", "Fairy Spiral", "Monsoon"],
 "Xenon": ["Beam Spline", "Beam Dance", "Mecha Purge", "Hypogram Field", "Entangling Lash", "Orbital Cataclysm", "Pinpoint Salvo", "Quicksilver", "Ion Thrust", "Combat Switch", "Diagonal Chase", "Gravity Pillar", "Aegis System", "Triangulation"],
 "Zero": ["Moon Strike", "Shadow Rain", "Piercing Thrust", "Flash Assault", "Spin Cutter", "Rolling Cross", "Rolling Assault", "Wind Cutter", "Wind Striker", "Storm Break"]}
