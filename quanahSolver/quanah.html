@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="./quanah.css">
+<title>Quanah Solver</title>
+
+<meta property="og:title" content="Quanah Solver"/>
+<meta property="og:description" content="Tool for finding mix and match Libae gear in maplestory."/>
+<meta name="description" content="Tool for finding mix and match Libae gear in maplestory.">
+<meta property="og:url" content="https://mystyjl.github.io/quanahSolver/quanah.html" />
+<link rel="canonical" href="https://mystyjl.github.io/quanahSolver/quanah.html">
+<meta property="og:site_name" content="Image Node Solver">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_US">
+</head>
+
+<body>
+    <div id="navBar">
+        <a href="../index.html">Home</a>
+        <a href="../reference/NodeGuide.html">Node Guide</a>
+        <a href="../NodeSolver/NodeSolver.html">Text Node Solver(Old)</a>
+        <a href="./imageSolver.html">Image Node Solver(New)</a>
+        <a href="../mapleScouterHelper/helper.html">Maplescouter Helper</a>
+    </div>
+    <h1>Maplestory Quanah Solver</h1>
+    <p class="title">Made by: mastermysty</p>
+
+
+       
+
+    
+    <div id="quanah">
+        <p>Click 1: </p>
+
+        <ul id="equip" class="prioMain">
+
+        </ul>
+        <br>
+        <p>Click 3:</p>
+        <ul id="lines" class="prioMain">
+
+        </ul>
+
+    </div>
+    <p id="error" class="important"></p>
+    <ul id="quantity" class="prioMain">
+
+    </ul>
+    <button class="cssbuttons-io" type="button" onclick="page.check()"><span>Change</span></button>
+    
+    <br>
+    <br>
+    
+    </div>
+     </div>
+     
+    </div>
+    <div id="displayArea">
+        <p id="totalNodes">Combination Result:</p>
+        <table id="viewing"></table>
+    </div>
+    <br>
+    <div id="buttons">
+        <button class="cssbuttons-io" type="button" onclick="solve()" ><span>Calculate</span></button>
+        <button class="cssbuttons-io" type="button" onclick="deleteAll()"><span>Clear All</span></button>
+        <button class="cssbuttons-io" type="button" onclick="page.Save()"><span>Save</span></button>
+        <button class="cssbuttons-io" type="button" onclick="page.load()"><span>Load</span></button>
+        <button class="cssbuttons-io" type="button" onclick="page.reset()"><span>Clear Storage</span></button>
+    </div>
+    <p>Pieces shown Below<br>Click images to remove</p>
+    
+    <div id="lastCheck"></div>
+
+<script type="text/javascript" src="solver.js"></script>
+<script type="text/javascript" src="quanah.js"></script>
+
+
+
+</body>
+</html>
