@@ -143,8 +143,7 @@ class ListManager{
             this.gearList.reset()
             this.labelList.reset()
             this.all.push(full)
-            let row = this.createRow(full)
-            this.view.appendChild(row)
+            this.render()
         }
 
     }
